@@ -1,0 +1,34 @@
+.features {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 5%;
+  align-items: flex-start;
+}
+
+.features-left {
+  width: 45%;
+}
+
+.features-right {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature-block {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background: white;
+}
+
+.features-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #0042cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
