@@ -78,7 +78,7 @@ function JobTypes() {
             {/* Image Container */}
             <div className="image-frame">
               <div className="placeholder-img">
-                <span>Replace with your image</span>
+                <span>.....</span>
               </div>
             </div>
           </div>
