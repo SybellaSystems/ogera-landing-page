@@ -1,6 +1,7 @@
 "use client";
 
 import "./Contact.css";
+import { MapPinIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 
 function ContactSection() {
   return (
@@ -13,7 +14,9 @@ function ContactSection() {
         <div className="contact-cards-container">
           {/* Card 1: Location */}
           <div className="contact-card">
-            <span className="icon location-icon">📍</span> 
+            <span className="icon location-icon">
+              <MapPinIcon className="h-6 w-6" />
+            </span> 
 
             <div className="card-details">
               <p className="card-header">Find us</p>
@@ -23,7 +26,9 @@ function ContactSection() {
 
           {/* Card 2: Phone */}
           <div className="contact-card">
-            <span className="icon call-icon">📞</span>
+            <span className="icon call-icon">
+              <PhoneIcon className="h-6 w-6" />
+            </span>
             <div className="card-details">
               <p className="card-header">Call us</p>
               <p className="card-content">+250 783 123 456</p>
@@ -32,7 +37,9 @@ function ContactSection() {
 
           {/* Card 3: Email */}
           <div className="contact-card">
-            <span className="icon mail-icon">✉️</span>
+            <span className="icon mail-icon">
+              <EnvelopeIcon className="h-6 w-6" />
+            </span>
             <div className="card-details">
               <p className="card-header">Mail us</p>
               <p className="card-content">ma@example.com</p>

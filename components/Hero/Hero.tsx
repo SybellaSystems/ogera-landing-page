@@ -5,6 +5,13 @@ import { useState } from 'react';
 import './Hero.css';
 
 function Hero() {
+  const scrollToSearch = () => {
+    const searchSection = document.getElementById('search-section');
+    if (searchSection) {
+      searchSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section className="hero-section">
       <div className="hero-container">
@@ -26,7 +33,7 @@ function Hero() {
             Scam-free jobs near you and aboard
           </p>
           
-          <button className="hero-cta">
+          <button className="hero-cta" onClick={scrollToSearch}>
             Start your remote job search now
           </button>
         </div>

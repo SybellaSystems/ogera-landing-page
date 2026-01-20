@@ -9,6 +9,21 @@
   width: 45%;
 }
 
+.features-left h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.features-left p {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
 .features-right {
   width: 45%;
   display: flex;
@@ -21,6 +36,19 @@
   padding: 20px;
   border-radius: 8px;
   background: white;
+}
+
+.feature-block h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.feature-block p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
 }
 
 .features-btn {
