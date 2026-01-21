@@ -60,7 +60,7 @@ function ContactSection() {
         </div>
       </section>
 
-      {/* --- Footer Section --- */}
+      {/* --- Footer Section. --- */}
       <footer className="main-footer">
         <div className="footer-links">
           <Link href="/terms">Terms and Conditions</Link>
