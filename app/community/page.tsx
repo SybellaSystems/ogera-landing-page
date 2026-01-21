@@ -1,17 +1,20 @@
 "use client";
 
+import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
 import "./community.css";
 
 export default function CommunityPage() {
   return (
-    <div className="community-page">
-      <div className="community-container">
-        <Link href="/" className="home-link">
-          <span className="home-icon">←</span> Back to Home
-        </Link>
-        <h1>Community</h1>
+    <>
+      <Navbar />
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#f8f9ff] via-[#e6f0ff] to-white relative">
+      <div className="absolute top-0 left-0 right-0 h-[250px] bg-gradient-to-br from-[#083d77] to-[#0066CC] z-0"></div>
+      
+      <main className="flex-1 pt-[60px] pb-10 px-4 relative z-10">
+        <div className="community-container">
+          <h1>Community</h1>
 
         <div className="community-content">
           <p>
@@ -99,8 +102,20 @@ export default function CommunityPage() {
           </section>
         </div>
       </div>
+      </main>
+
+      <footer className="main-footer">
+        <div className="footer-links">
+          <Link href="/terms">Terms and Conditions</Link>
+          <span>|</span>
+          <Link href="/privacy-policy">Privacy policy</Link>
+          <span>|</span>
+          <Link href="/#contact">Contact Us</Link>
+        </div>
+      </footer>
 
       <Footer />
     </div>
+    </>
   );
 }

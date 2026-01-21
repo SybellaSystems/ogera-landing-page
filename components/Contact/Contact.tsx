@@ -1,9 +1,21 @@
 "use client";
 
 import "./Contact.css";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { MapPinIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 
 function ContactSection() {
+  const pathname = usePathname();
+  const isLandingPage = pathname === "/";
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div id="contact">
       {/* --- Contact Information Section --- */}
@@ -51,11 +63,15 @@ function ContactSection() {
       {/* --- Footer Section --- */}
       <footer className="main-footer">
         <div className="footer-links">
-          <a href="#">Terms and Conditions</a>
+          <Link href="/terms">Terms and Conditions</Link>
           <span>|</span>
-          <a href="#">Privacy policy</a>
+          <Link href="/privacy-policy">Privacy policy</Link>
           <span>|</span>
-          <a href="#">Contact Us</a>
+          {isLandingPage ? (
+            <button type="button" onClick={scrollToContact} style={{ background: 'none', border: 'none', color: 'inherit', cursor: 'pointer', font: 'inherit', padding: 0 }}>Contact Us</button>
+          ) : (
+            <Link href="/#contact">Contact Us</Link>
+          )}
         </div>
       </footer>
     </div>

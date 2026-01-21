@@ -1,11 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import "./Navbar.css";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const pathname = usePathname();
+  const isLandingPage = pathname === "/";
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -97,11 +101,41 @@ function Navbar() {
         </div>
 
         <ul className="nav-links">
-          <li><a href="#home" className={activeSection === "home" ? "active" : ""} onClick={(e) => handleNavClick(e, "home")}>Home</a></li>
-          <li><a href="#partners" className={activeSection === "partners" ? "active" : ""} onClick={(e) => handleNavClick(e, "partners")}>Partners and Sponsors</a></li>
-          <li><a href="#scholarship" className={activeSection === "scholarship" ? "active" : ""} onClick={(e) => handleNavClick(e, "scholarship")}>Scholarship Gateway</a></li>
-          <li><a href="#leaderboard" className={activeSection === "leaderboard" ? "active" : ""} onClick={(e) => handleNavClick(e, "leaderboard")}>Leaderboard</a></li>
-          <li><a href="#trustscore" className={activeSection === "trustscore" ? "active" : ""} onClick={(e) => handleNavClick(e, "trustscore")}>About TrustScore</a></li>
+          <li>
+            {isLandingPage ? (
+              <a href="#home" className={activeSection === "home" ? "active" : ""} onClick={(e) => handleNavClick(e, "home")}>Home</a>
+            ) : (
+              <Link href="/#home">Home</Link>
+            )}
+          </li>
+          <li>
+            {isLandingPage ? (
+              <a href="#partners" className={activeSection === "partners" ? "active" : ""} onClick={(e) => handleNavClick(e, "partners")}>Partners and Sponsors</a>
+            ) : (
+              <Link href="/#partners">Partners and Sponsors</Link>
+            )}
+          </li>
+          <li>
+            {isLandingPage ? (
+              <a href="#scholarship" className={activeSection === "scholarship" ? "active" : ""} onClick={(e) => handleNavClick(e, "scholarship")}>Scholarship Gateway</a>
+            ) : (
+              <Link href="/#scholarship">Scholarship Gateway</Link>
+            )}
+          </li>
+          <li>
+            {isLandingPage ? (
+              <a href="#leaderboard" className={activeSection === "leaderboard" ? "active" : ""} onClick={(e) => handleNavClick(e, "leaderboard")}>Leaderboard</a>
+            ) : (
+              <Link href="/#leaderboard">Leaderboard</Link>
+            )}
+          </li>
+          <li>
+            {isLandingPage ? (
+              <a href="#trustscore" className={activeSection === "trustscore" ? "active" : ""} onClick={(e) => handleNavClick(e, "trustscore")}>About TrustScore</a>
+            ) : (
+              <Link href="/#trustscore">About TrustScore</Link>
+            )}
+          </li>
         </ul>
 
         <div className="nav-actions desktop-actions">
@@ -127,19 +161,39 @@ function Navbar() {
       <div className={`mobile-modal ${isMenuOpen ? "active" : ""}`}>
         <ul className="modal-nav-links">
           <li>
-            <button type="button" onClick={() => scrollToSection("home")}>Home</button>
+            {isLandingPage ? (
+              <button type="button" onClick={() => scrollToSection("home")}>Home</button>
+            ) : (
+              <Link href="/#home" onClick={closeMenu}>Home</Link>
+            )}
           </li>
           <li>
-            <button type="button" onClick={() => scrollToSection("partners")}>Partners and Sponsors</button>
+            {isLandingPage ? (
+              <button type="button" onClick={() => scrollToSection("partners")}>Partners and Sponsors</button>
+            ) : (
+              <Link href="/#partners" onClick={closeMenu}>Partners and Sponsors</Link>
+            )}
           </li>
           <li>
-            <button type="button" onClick={() => scrollToSection("scholarship")}>Scholarship Gateway</button>
+            {isLandingPage ? (
+              <button type="button" onClick={() => scrollToSection("scholarship")}>Scholarship Gateway</button>
+            ) : (
+              <Link href="/#scholarship" onClick={closeMenu}>Scholarship Gateway</Link>
+            )}
           </li>
           <li>
-            <button type="button" onClick={() => scrollToSection("leaderboard")}>Leaderboard</button>
+            {isLandingPage ? (
+              <button type="button" onClick={() => scrollToSection("leaderboard")}>Leaderboard</button>
+            ) : (
+              <Link href="/#leaderboard" onClick={closeMenu}>Leaderboard</Link>
+            )}
           </li>
           <li>
-            <button type="button" onClick={() => scrollToSection("trustscore")}>About TrustScore</button>
+            {isLandingPage ? (
+              <button type="button" onClick={() => scrollToSection("trustscore")}>About TrustScore</button>
+            ) : (
+              <Link href="/#trustscore" onClick={closeMenu}>About TrustScore</Link>
+            )}
           </li>
         </ul>
 
