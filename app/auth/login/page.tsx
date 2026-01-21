@@ -157,10 +157,11 @@ export default function LoginPage() {
       <style>{`
         html, body {
           background: #fff !important;
-          overflow: hidden;
-          height: 100%;
           margin: 0;
           padding: 0;
+          height: 100%;
+          overflow: hidden;
+          -webkit-text-size-adjust: 100%;
         }
 
         .login-container {
@@ -177,6 +178,11 @@ export default function LoginPage() {
           align-items: center;
           justify-content: center;
           padding: 40px;
+          padding-top: max(40px, env(safe-area-inset-top));
+          padding-bottom: max(40px, env(safe-area-inset-bottom));
+          padding-left: max(40px, env(safe-area-inset-left));
+          padding-right: max(40px, env(safe-area-inset-right));
+          box-sizing: border-box;
         }
 
         .login-form-wrapper {
@@ -280,6 +286,7 @@ export default function LoginPage() {
           transition: all 0.2s ease;
           outline: none;
           background: #fff;
+          color: #000;
         }
 
         .form-group input:focus {
@@ -471,10 +478,18 @@ export default function LoginPage() {
           .login-left {
             width: 100%;
             padding: 40px 30px;
+            padding-top: max(40px, env(safe-area-inset-top));
+            padding-bottom: max(40px, env(safe-area-inset-bottom));
           }
 
           .login-form-wrapper {
             max-width: 450px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .login-left {
+            padding: 32px 24px;
           }
         }
 
@@ -530,6 +545,8 @@ export default function LoginPage() {
         @media (max-width: 400px) {
           .login-left {
             padding: 24px 16px;
+            padding-top: max(24px, env(safe-area-inset-top));
+            padding-bottom: max(24px, env(safe-area-inset-bottom));
           }
 
           .welcome-section h1 {
@@ -554,7 +571,32 @@ export default function LoginPage() {
           }
         }
 
-        /* iPhone SE and very small screens (320px) */
+        /* iPhone 6/7/8/SE 2nd gen (375px) */
+        @media (max-width: 375px) {
+          .login-left {
+            padding: 20px 14px;
+          }
+
+          .welcome-section h1 {
+            font-size: 1.25rem;
+          }
+
+          .welcome-section p {
+            font-size: 0.85rem;
+          }
+
+          .form-group input {
+            padding: 11px 12px;
+            font-size: 0.9rem;
+          }
+
+          .signin-btn {
+            padding: 11px 18px;
+            font-size: 0.9rem;
+          }
+        }
+
+        /* iPhone SE 1st gen and very small screens (320px) */
         @media (max-width: 320px) {
           html, body {
             overflow-y: auto;
@@ -563,15 +605,16 @@ export default function LoginPage() {
           .login-container {
             height: auto;
             min-height: 100vh;
+            min-height: -webkit-fill-available;
             overflow-y: auto;
           }
 
           .login-left {
-            padding: 16px 14px;
+            padding: 16px 12px;
+            padding-top: max(16px, env(safe-area-inset-top));
+            padding-bottom: max(16px, env(safe-area-inset-bottom));
             min-height: auto;
             align-items: flex-start;
-            padding-top: 24px;
-            padding-bottom: 24px;
           }
 
           .login-form-wrapper {
@@ -617,7 +660,7 @@ export default function LoginPage() {
 
           .welcome-section p {
             font-size: 0.75rem;
-            line-height: 1.3;
+            line-height: 1.4;
           }
 
           .login-form {
@@ -625,7 +668,7 @@ export default function LoginPage() {
           }
 
           .form-group {
-            gap: 3px;
+            gap: 4px;
           }
 
           .form-group label {
@@ -633,22 +676,25 @@ export default function LoginPage() {
           }
 
           .form-group input {
-            padding: 9px 10px;
-            font-size: 0.85rem;
+            padding: 10px;
+            font-size: 16px; /* Prevents zoom on iOS */
             border-radius: 6px;
+            min-height: 44px; /* Touch-friendly */
           }
 
           .password-input input {
-            padding-right: 36px;
+            padding-right: 40px;
           }
 
           .toggle-password {
             right: 8px;
+            min-width: 32px;
+            min-height: 32px;
           }
 
           .toggle-password svg {
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
           }
 
           .forgot-password {
@@ -657,19 +703,48 @@ export default function LoginPage() {
 
           .forgot-password a {
             font-size: 0.75rem;
+            min-height: 32px;
+            display: inline-flex;
+            align-items: center;
           }
 
           .signin-btn {
-            padding: 9px 14px;
-            font-size: 0.85rem;
-            margin-top: 2px;
+            padding: 12px 14px;
+            font-size: 0.9rem;
+            margin-top: 4px;
             border-radius: 6px;
+            min-height: 44px; /* Touch-friendly */
           }
 
           .signup-link {
             margin-top: 14px;
             font-size: 0.75rem;
             padding-bottom: 10px;
+          }
+        }
+
+        /* Landscape mode for small devices */
+        @media (max-height: 500px) and (orientation: landscape) {
+          .login-container {
+            height: auto;
+            min-height: 100vh;
+          }
+
+          .login-left {
+            padding: 20px;
+            align-items: flex-start;
+          }
+
+          .logo {
+            margin-bottom: 12px;
+          }
+
+          .welcome-section {
+            margin-bottom: 16px;
+          }
+
+          .login-form {
+            gap: 12px;
           }
         }
       `}</style>
