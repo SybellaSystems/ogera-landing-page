@@ -6,6 +6,13 @@ import { useState } from 'react';
 import './JobTypes.css';
 
 function JobTypes() {
+  const scrollToSearch = () => {
+    const searchSection = document.getElementById('search-section');
+    if (searchSection) {
+      searchSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const jobTypes = [
     {
       title: "Freelance",
@@ -26,7 +33,7 @@ function JobTypes() {
   ];
 
   return (
-    <section className="job-types-section">
+    <section id="leaderboard" className="job-types-section">
       <div className="job-types-container">
         {/* Left Content */}
         <div className="job-types-content">
@@ -51,7 +58,7 @@ function JobTypes() {
             ))}
           </div>
 
-          <button className="get-started-btn">Get Started</button>
+          <button className="get-started-btn" onClick={scrollToSearch}>Get Started</button>
         </div>
 
         {/* Right Visual */}

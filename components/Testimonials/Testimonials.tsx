@@ -20,7 +20,7 @@ function Testimonials() {
       quoteHighlight: "The way they protect both employer and student data gives me peace of mind .\"",
       author: "Martin Nziza",
       company: "Hired by teva",
-      avatar: "https://via.placeholder.com/60/E8D5C4/000000?text=MN"
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
     },
     {
       icon: (
@@ -36,7 +36,7 @@ function Testimonials() {
       quoteHighlight: " gave me the freedom to grow my skills and build a solid reputation.\"",
       author: "Kamanzi Darline",
       company: "Hired by Dynamos",
-      avatar: "https://via.placeholder.com/60/8B7355/FFFFFF?text=KD"
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face"
     },
     {
       icon: (
@@ -55,7 +55,7 @@ function Testimonials() {
       quoteHighlight: " track progress, and get paid quickly. It really helps me stay on top of my schedule.\"",
       author: "Kagabo Jean",
       company: "Hired by teva",
-      avatar: "https://via.placeholder.com/60/4A4A4A/FFFFFF?text=KJ"
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
     }
   ];
 
@@ -92,66 +92,71 @@ function Testimonials() {
 
       <style>{`
         .testimonials-section {
-          padding: 80px 20px;
+          padding: 60px 20px;
           background: #0066CC;
           overflow: hidden;
         }
 
         .testimonials-container {
-          max-width: 1400px;
+          max-width: 1100px;
           margin: 0 auto;
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-          gap: 30px;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
         }
 
         .testimonial-card {
           background: white;
-          border-radius: 24px;
-          padding: 40px 35px;
+          border-radius: 16px;
+          padding: 24px 20px;
           display: flex;
           flex-direction: column;
           transition: all 0.3s ease;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
         }
 
         .testimonial-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+          transform: translateY(-5px);
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
         }
 
         .card-icon {
-          width: 60px;
-          height: 60px;
-          margin-bottom: 24px;
+          width: 45px;
+          height: 45px;
+          margin-bottom: 16px;
+        }
+
+        .card-icon svg {
+          width: 45px;
+          height: 45px;
         }
 
         .card-title {
-          font-size: 1.75rem;
+          font-size: 1.35rem;
           color: #1a1a1a;
-          margin: 0 0 20px 0;
+          margin: 0 0 12px 0;
           font-weight: 600;
         }
 
         .card-description {
-          font-size: 1rem;
+          font-size: 0.9rem;
           color: #666;
-          line-height: 1.7;
-          margin: 0 0 30px 0;
+          line-height: 1.6;
+          margin: 0 0 20px 0;
         }
 
         .divider {
           width: 100%;
           height: 1px;
           background: linear-gradient(to right, #0066CC 0%, #E5E7EB 100%);
-          margin-bottom: 30px;
+          margin-bottom: 20px;
         }
 
         .testimonial-quote {
-          font-size: 1rem;
+          font-size: 0.9rem;
           color: #1a1a1a;
-          line-height: 1.6;
-          margin: 0 0 30px 0;
+          line-height: 1.5;
+          margin: 0 0 20px 0;
           font-style: normal;
         }
 
@@ -163,13 +168,13 @@ function Testimonials() {
         .author-info {
           display: flex;
           align-items: center;
-          gap: 14px;
+          gap: 10px;
           margin-top: auto;
         }
 
         .author-avatar {
-          width: 56px;
-          height: 56px;
+          width: 42px;
+          height: 42px;
           border-radius: 50%;
           object-fit: cover;
           flex-shrink: 0;
@@ -178,85 +183,265 @@ function Testimonials() {
         .author-details {
           display: flex;
           flex-direction: column;
-          gap: 4px;
+          gap: 2px;
         }
 
         .author-name {
-          font-size: 1.1rem;
+          font-size: 0.95rem;
           color: #1a1a1a;
           font-weight: 600;
           margin: 0;
         }
 
         .author-company {
-          font-size: 0.9rem;
+          font-size: 0.8rem;
           color: #666;
           margin: 0;
         }
 
         /* Responsive Design */
-        @media (max-width: 1200px) {
-          .testimonials-container {
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-          }
-        }
-
         @media (max-width: 968px) {
           .testimonials-section {
-            padding: 60px 20px;
+            padding: 50px 20px;
           }
 
           .testimonials-container {
             grid-template-columns: 1fr;
-            gap: 25px;
+            gap: 16px;
+            max-width: 400px;
           }
 
           .testimonial-card {
-            padding: 35px 30px;
+            padding: 22px 18px;
+            border-radius: 14px;
+          }
+
+          .card-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 14px;
+          }
+
+          .card-icon svg {
+            width: 40px;
+            height: 40px;
           }
 
           .card-title {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+          }
+
+          .card-description {
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+          }
+
+          .divider {
+            margin-bottom: 16px;
+          }
+
+          .testimonial-quote {
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+          }
+
+          .author-avatar {
+            width: 38px;
+            height: 38px;
+          }
+
+          .author-name {
+            font-size: 0.9rem;
+          }
+
+          .author-company {
+            font-size: 0.75rem;
           }
         }
 
         @media (max-width: 640px) {
           .testimonials-section {
-            padding: 50px 20px;
+            padding: 40px 16px;
+          }
+
+          .testimonials-container {
+            gap: 14px;
+            max-width: 340px;
           }
 
           .testimonial-card {
-            padding: 30px 25px;
+            padding: 18px 16px;
+            border-radius: 12px;
           }
 
           .card-icon {
-            width: 50px;
-            height: 50px;
+            width: 36px;
+            height: 36px;
+            margin-bottom: 12px;
+          }
+
+          .card-icon svg {
+            width: 36px;
+            height: 36px;
           }
 
           .card-title {
-            font-size: 1.35rem;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
           }
 
           .card-description {
-            font-size: 0.95rem;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            margin-bottom: 14px;
+          }
+
+          .divider {
+            margin-bottom: 14px;
           }
 
           .testimonial-quote {
-            font-size: 0.95rem;
+            font-size: 0.8rem;
+            margin-bottom: 14px;
+          }
+
+          .author-info {
+            gap: 8px;
           }
 
           .author-avatar {
-            width: 50px;
-            height: 50px;
+            width: 34px;
+            height: 34px;
           }
 
           .author-name {
-            font-size: 1rem;
+            font-size: 0.85rem;
           }
 
           .author-company {
-            font-size: 0.85rem;
+            font-size: 0.7rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .testimonials-section {
+            padding: 35px 14px;
+          }
+
+          .testimonials-container {
+            gap: 12px;
+            max-width: 300px;
+          }
+
+          .testimonial-card {
+            padding: 16px 14px;
+            border-radius: 10px;
+          }
+
+          .card-icon {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 10px;
+          }
+
+          .card-icon svg {
+            width: 32px;
+            height: 32px;
+          }
+
+          .card-title {
+            font-size: 1rem;
+            margin-bottom: 6px;
+          }
+
+          .card-description {
+            font-size: 0.75rem;
+            margin-bottom: 12px;
+          }
+
+          .divider {
+            margin-bottom: 12px;
+          }
+
+          .testimonial-quote {
+            font-size: 0.75rem;
+            margin-bottom: 12px;
+          }
+
+          .author-avatar {
+            width: 30px;
+            height: 30px;
+          }
+
+          .author-name {
+            font-size: 0.8rem;
+          }
+
+          .author-company {
+            font-size: 0.65rem;
+          }
+        }
+
+        /* Extra small devices - iPhone SE */
+        @media (max-width: 360px) {
+          .testimonials-section {
+            padding: 30px 12px;
+          }
+
+          .testimonials-container {
+            gap: 10px;
+            max-width: 280px;
+          }
+
+          .testimonial-card {
+            padding: 14px 12px;
+            border-radius: 8px;
+          }
+
+          .card-icon {
+            width: 28px;
+            height: 28px;
+            margin-bottom: 8px;
+          }
+
+          .card-icon svg {
+            width: 28px;
+            height: 28px;
+          }
+
+          .card-title {
+            font-size: 0.95rem;
+            margin-bottom: 5px;
+          }
+
+          .card-description {
+            font-size: 0.7rem;
+            line-height: 1.4;
+            margin-bottom: 10px;
+          }
+
+          .divider {
+            margin-bottom: 10px;
+          }
+
+          .testimonial-quote {
+            font-size: 0.7rem;
+            line-height: 1.4;
+            margin-bottom: 10px;
+          }
+
+          .author-avatar {
+            width: 28px;
+            height: 28px;
+          }
+
+          .author-name {
+            font-size: 0.75rem;
+          }
+
+          .author-company {
+            font-size: 0.6rem;
           }
         }
       `}</style>

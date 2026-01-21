@@ -19,15 +19,22 @@ function Features() {
     }
   ];
 
+  const scrollToSearch = () => {
+    const searchSection = document.getElementById('search-section');
+    if (searchSection) {
+      searchSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
-    <section className="features">
+    <section id="trustscore" className="features">
       <div className="features-left">
         <h2>Find your dream job, in your career path</h2>
         <p>
           Using our remote platform, you can search and apply to legitimate
           jobs at global companies while keeping your search organized.
         </p>
-        <button className="features-btn">Get started</button>
+        <button className="features-btn" onClick={scrollToSearch}>Get started</button>
       </div>
 
       <div className="features-right">

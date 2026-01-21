@@ -6,8 +6,9 @@ import './JobListings.css';
 
 function JobListings() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  
-  const jobs = [
+  const [showAll, setShowAll] = useState(false);
+
+  const allJobs = [
     {
       category: "Customer Service and Support",
       company: "Stellar business groupe",
@@ -25,8 +26,28 @@ function JobListings() {
       company: "AJ project",
       requirement: "Automation Expert",
       time: "54 min ago"
+    },
+    {
+      category: "Marketing & Sales",
+      company: "Digital Growth Inc",
+      requirement: "Social Media Manager",
+      time: "1 hour ago"
+    },
+    {
+      category: "Design & Creative",
+      company: "Creative Studios",
+      requirement: "UI/UX Designer",
+      time: "3 hours ago"
+    },
+    {
+      category: "Finance & Accounting",
+      company: "FinTech Solutions",
+      requirement: "Financial Analyst",
+      time: "5 hours ago"
     }
   ];
+
+  const jobs = showAll ? allJobs : allJobs.slice(0, 3);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % jobs.length);
@@ -48,7 +69,7 @@ const goToSlide = (index: number): void => {
 };
 
   return (
-    <section className="job-listings-section">
+    <section id="scholarship" className="job-listings-section">
       <h2 className="listings-title">Remote Job listings</h2>
       
       <div className="carousel-container">
@@ -115,7 +136,15 @@ const goToSlide = (index: number): void => {
         ))}
       </div>
 
-      <button className="show-more-btn">Show more Jobs</button>
+      <button
+        className="show-more-btn"
+        onClick={() => {
+          setShowAll(!showAll);
+          setCurrentSlide(0);
+        }}
+      >
+        {showAll ? 'Show less Jobs' : 'Show more Jobs'}
+      </button>
 
       
     </section>

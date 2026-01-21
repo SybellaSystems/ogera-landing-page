@@ -5,9 +5,11 @@ import "./SearchBar.css";
 
 function SearchBar() {
   return (
-    <section id="search-section" className="search-container">
-      <h2 className="search-title">Find your dream Jobs now</h2>
-      <p className="search-subtitle">1000+ jobs for you to explore</p>
+    <section id="search-section" className="search-container" style={{ backgroundImage: 'url(/dream.jpeg)' }}>
+      <div className="search-overlay"></div>
+      <div className="search-content">
+        <h2 className="search-title">Find your dream Jobs now</h2>
+        <p className="search-subtitle">1000+ jobs for you to explore</p>
 
       <div className="search-box">
         <input type="text" placeholder="Enter skills" />
@@ -28,6 +30,7 @@ function SearchBar() {
         </select>
 
         <button className="search-btn">Search</button>
+      </div>
       </div>
     </section>
   );

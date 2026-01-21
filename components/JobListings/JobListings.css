@@ -1,24 +1,24 @@
 
         .job-listings-section {
-          padding: 80px 20px;
+          padding: 60px 20px;
           background: #f8f9fa;
           max-width: 1400px;
           margin: 0 auto;
         }
 
         .listings-title {
-          font-size: 2.75rem;
+          font-size: 2.25rem;
           text-align: center;
-          margin-bottom: 60px;
+          margin-bottom: 40px;
           color: #1a1a1a;
           font-weight: 600;
         }
 
         .carousel-container {
           position: relative;
-          max-width: 1200px;
-          margin: 0 auto 40px;
-          padding: 0 60px;
+          max-width: 900px;
+          margin: 0 auto 30px;
+          padding: 0 50px;
         }
 
         .carousel-btn {
@@ -27,8 +27,8 @@
           transform: translateY(-50%);
           background: #6b7280;
           border: none;
-          width: 48px;
-          height: 48px;
+          width: 40px;
+          height: 40px;
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -41,6 +41,11 @@
         .carousel-btn:hover {
           background: #4b5563;
           transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-btn svg {
+          width: 20px;
+          height: 20px;
         }
 
         .prev-btn {
@@ -63,32 +68,32 @@
 
         .job-card-wrapper {
           min-width: 100%;
-          padding: 0 10px;
+          padding: 0 8px;
         }
 
         .job-card {
           background: white;
-          border-radius: 20px;
+          border-radius: 14px;
           overflow: hidden;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
           transition: all 0.3s ease;
         }
 
         .job-card:hover {
-          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
         }
 
         .job-header {
           background: #0066CC;
           color: white;
-          padding: 24px 30px;
+          padding: 16px 20px;
           display: flex;
           justify-content: space-between;
           align-items: center;
         }
 
         .job-category {
-          font-size: 1.4rem;
+          font-size: 1rem;
           font-weight: 600;
           margin: 0;
         }
@@ -96,8 +101,8 @@
         .arrow-btn {
           background: rgba(255, 255, 255, 0.2);
           border: none;
-          width: 40px;
-          height: 40px;
+          width: 32px;
+          height: 32px;
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -111,33 +116,38 @@
           transform: translateX(4px);
         }
 
+        .arrow-btn svg {
+          width: 16px;
+          height: 16px;
+        }
+
         .job-body {
-          padding: 30px;
+          padding: 20px;
         }
 
         .company-info {
           display: flex;
-          gap: 16px;
-          margin-bottom: 24px;
+          gap: 12px;
+          margin-bottom: 16px;
         }
 
         .company-avatar {
-          width: 60px;
-          height: 60px;
+          width: 45px;
+          height: 45px;
           background: #e5e7eb;
           border-radius: 50%;
           flex-shrink: 0;
         }
 
         .company-name {
-          font-size: 1.1rem;
+          font-size: 0.9rem;
           color: #1a1a1a;
           font-weight: 500;
-          margin: 0 0 8px 0;
+          margin: 0 0 4px 0;
         }
 
         .job-requirement {
-          font-size: 1.3rem;
+          font-size: 1rem;
           color: #1a1a1a;
           font-weight: 600;
           margin: 0;
@@ -146,15 +156,17 @@
         .job-time {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 8px;
         }
 
         .clock-icon {
           flex-shrink: 0;
+          width: 16px;
+          height: 16px;
         }
 
         .time-text {
-          font-size: 1rem;
+          font-size: 0.85rem;
           color: #0066CC;
           font-weight: 500;
         }
@@ -162,13 +174,13 @@
         .carousel-dots {
           display: flex;
           justify-content: center;
-          gap: 12px;
-          margin-bottom: 40px;
+          gap: 10px;
+          margin-bottom: 30px;
         }
 
         .dot {
-          width: 12px;
-          height: 12px;
+          width: 10px;
+          height: 10px;
           border-radius: 50%;
           background: #d1d5db;
           border: none;
@@ -179,8 +191,8 @@
 
         .dot.active {
           background: #0066CC;
-          width: 14px;
-          height: 14px;
+          width: 12px;
+          height: 12px;
         }
 
         .dot:hover {
@@ -193,10 +205,10 @@
           background: #0066CC;
           color: white;
           border: none;
-          padding: 16px 48px;
-          font-size: 1.1rem;
+          padding: 12px 36px;
+          font-size: 0.95rem;
           font-weight: 600;
-          border-radius: 12px;
+          border-radius: 10px;
           cursor: pointer;
           transition: all 0.3s ease;
           box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
@@ -221,7 +233,7 @@
           .jobs-track {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 20px;
             transform: none !important;
           }
 
@@ -237,57 +249,240 @@
 
         @media (max-width: 967px) {
           .listings-title {
-            font-size: 2.2rem;
-          }
-
-          .carousel-container {
-            padding: 0 50px;
-          }
-
-          .carousel-btn {
-            width: 40px;
-            height: 40px;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .job-listings-section {
-            padding: 60px 20px;
-          }
-
-          .listings-title {
-            font-size: 1.8rem;
-            margin-bottom: 40px;
+            font-size: 2rem;
           }
 
           .carousel-container {
             padding: 0 45px;
           }
 
-          .job-header {
-            padding: 20px 24px;
-          }
-
-          .job-category {
-            font-size: 1.1rem;
-          }
-
-          .arrow-btn {
+          .carousel-btn {
             width: 36px;
             height: 36px;
           }
 
+          .carousel-btn svg {
+            width: 18px;
+            height: 18px;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .job-listings-section {
+            padding: 50px 16px;
+          }
+
+          .listings-title {
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+          }
+
+          .carousel-container {
+            padding: 0 40px;
+            margin-bottom: 25px;
+          }
+
+          .carousel-btn {
+            width: 32px;
+            height: 32px;
+          }
+
+          .carousel-btn svg {
+            width: 16px;
+            height: 16px;
+          }
+
+          .job-header {
+            padding: 14px 16px;
+          }
+
+          .job-category {
+            font-size: 0.9rem;
+          }
+
+          .arrow-btn {
+            width: 28px;
+            height: 28px;
+          }
+
+          .arrow-btn svg {
+            width: 14px;
+            height: 14px;
+          }
+
           .job-body {
-            padding: 24px;
+            padding: 16px;
+          }
+
+          .company-info {
+            gap: 10px;
+            margin-bottom: 12px;
           }
 
           .company-avatar {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
+          }
+
+          .company-name {
+            font-size: 0.85rem;
+          }
+
+          .job-requirement {
+            font-size: 0.9rem;
+          }
+
+          .time-text {
+            font-size: 0.8rem;
+          }
+
+          .carousel-dots {
+            gap: 8px;
+            margin-bottom: 25px;
+          }
+
+          .dot {
+            width: 8px;
+            height: 8px;
+          }
+
+          .dot.active {
+            width: 10px;
+            height: 10px;
           }
 
           .show-more-btn {
-            padding: 14px 36px;
-            font-size: 1rem;
+            padding: 10px 28px;
+            font-size: 0.9rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .job-listings-section {
+            padding: 40px 14px;
+          }
+
+          .listings-title {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+          }
+
+          .carousel-container {
+            padding: 0 35px;
+          }
+
+          .carousel-btn {
+            width: 28px;
+            height: 28px;
+          }
+
+          .carousel-btn svg {
+            width: 14px;
+            height: 14px;
+          }
+
+          .job-header {
+            padding: 12px 14px;
+          }
+
+          .job-category {
+            font-size: 0.85rem;
+          }
+
+          .arrow-btn {
+            width: 26px;
+            height: 26px;
+          }
+
+          .job-body {
+            padding: 14px;
+          }
+
+          .company-avatar {
+            width: 36px;
+            height: 36px;
+          }
+
+          .company-name {
+            font-size: 0.8rem;
+          }
+
+          .job-requirement {
+            font-size: 0.85rem;
+          }
+
+          .show-more-btn {
+            padding: 10px 24px;
+            font-size: 0.85rem;
+          }
+        }
+
+        /* Extra small devices - iPhone SE */
+        @media (max-width: 360px) {
+          .job-listings-section {
+            padding: 35px 12px;
+          }
+
+          .listings-title {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+          }
+
+          .carousel-container {
+            padding: 0 32px;
+            margin-bottom: 20px;
+          }
+
+          .carousel-btn {
+            width: 26px;
+            height: 26px;
+          }
+
+          .job-card {
+            border-radius: 10px;
+          }
+
+          .job-header {
+            padding: 10px 12px;
+          }
+
+          .job-category {
+            font-size: 0.8rem;
+          }
+
+          .arrow-btn {
+            width: 24px;
+            height: 24px;
+          }
+
+          .job-body {
+            padding: 12px;
+          }
+
+          .company-avatar {
+            width: 32px;
+            height: 32px;
+          }
+
+          .company-name {
+            font-size: 0.75rem;
+          }
+
+          .job-requirement {
+            font-size: 0.8rem;
+          }
+
+          .time-text {
+            font-size: 0.75rem;
+          }
+
+          .carousel-dots {
+            margin-bottom: 20px;
+          }
+
+          .show-more-btn {
+            padding: 9px 20px;
+            font-size: 0.8rem;
+            border-radius: 8px;
           }
         }

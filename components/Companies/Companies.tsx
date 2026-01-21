@@ -7,25 +7,25 @@ import './Companies.css';
 function Companies() {
   const companies = [
     {
-      name: "XYZ company",
-      type: "Tech-innovator company",
+      name: "GitHub",
+      type: "Software Development",
       rating: "4.6",
       reviews: "30,000",
-      image: "https://via.placeholder.com/150/E8E5D8/000000?text=Owl"
+      image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
     },
     {
-      name: "XYZ company",
-      type: "Tech-innovator company",
-      rating: "4",
+      name: "Slack",
+      type: "Communication Platform",
+      rating: "4.4",
       reviews: "18,000",
-      image: "https://via.placeholder.com/150/FFFFFF/0066CC?text=Logo"
+      image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg"
     },
     {
-      name: "XYZ company",
-      type: "Tech-innovator company",
+      name: "GitLab",
+      type: "DevOps Platform",
       rating: "4.7",
       reviews: "35,000",
-      image: "https://via.placeholder.com/150/FFFFFF/4A5568?text=Logo"
+      image: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg"
     }
   ];
 
@@ -44,7 +44,7 @@ function Companies() {
   };
 
   return (
-    <section className="companies-section">
+    <section id="partners" className="companies-section">
       <h2 className="companies-title">Top companies Hiring for Remote jobs</h2>
       
       <div className="companies-grid">

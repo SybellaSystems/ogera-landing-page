@@ -1,32 +1,32 @@
 
         .companies-section {
-          padding: 80px 20px;
+          padding: 60px 20px;
           background: #ffffff;
           max-width: 1400px;
           margin: 0 auto;
         }
 
         .companies-title {
-          font-size: 2.75rem;
+          font-size: 2.25rem;
           text-align: center;
-          margin-bottom: 60px;
+          margin-bottom: 40px;
           color: #1a1a1a;
           font-weight: 600;
         }
 
         .companies-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-          gap: 30px;
-          max-width: 1200px;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          max-width: 900px;
           margin: 0 auto;
         }
 
         .company-card {
           background: #ffffff;
-          border-radius: 24px;
-          padding: 40px 30px 30px;
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+          border-radius: 16px;
+          padding: 24px 20px 20px;
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
           transition: all 0.3s ease;
           display: flex;
           flex-direction: column;
@@ -36,46 +36,46 @@
         }
 
         .company-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+          transform: translateY(-5px);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
 
         .company-logo {
-          width: 140px;
-          height: 140px;
-          border-radius: 30px;
-          background: #f5f5f5;
+          width: 80px;
+          height: 80px;
+          border-radius: 16px;
+          background: #f8f9fa;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin-bottom: 24px;
+          margin-bottom: 16px;
           overflow: hidden;
         }
 
         .company-logo img {
-          width: 80%;
-          height: 80%;
+          width: 60%;
+          height: 60%;
           object-fit: contain;
         }
 
         .company-name {
-          font-size: 1.5rem;
+          font-size: 1.1rem;
           color: #1a1a1a;
-          margin-bottom: 8px;
+          margin-bottom: 4px;
           font-weight: 600;
         }
 
         .company-type {
-          font-size: 1rem;
+          font-size: 0.85rem;
           color: #666;
-          margin-bottom: 24px;
+          margin-bottom: 16px;
           font-weight: 400;
         }
 
         .company-rating {
           display: flex;
           align-items: center;
-          gap: 20px;
+          gap: 12px;
           width: 100%;
           justify-content: center;
         }
@@ -83,23 +83,23 @@
         .rating-badge {
           background: #0066CC;
           color: white;
-          padding: 12px 20px;
-          border-radius: 12px;
+          padding: 8px 14px;
+          border-radius: 10px;
           display: flex;
           flex-direction: column;
           align-items: center;
-          min-width: 85px;
+          min-width: 60px;
         }
 
         .rating-score {
-          font-size: 1.75rem;
+          font-size: 1.25rem;
           font-weight: 700;
           line-height: 1;
         }
 
         .rating-text {
-          font-size: 0.75rem;
-          margin-top: 4px;
+          font-size: 0.65rem;
+          margin-top: 2px;
           opacity: 0.95;
         }
 
@@ -107,68 +107,163 @@
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          gap: 6px;
+          gap: 4px;
         }
 
         .reviews-count {
-          font-size: 0.95rem;
+          font-size: 0.8rem;
           color: #1a1a1a;
           font-weight: 500;
         }
 
         .stars {
           display: flex;
-          gap: 2px;
+          gap: 1px;
         }
 
         .star {
           color: #FFB800;
-          font-size: 1.1rem;
+          font-size: 0.9rem;
         }
 
         /* Responsive Design */
-        @media (max-width: 1024px) {
+        @media (max-width: 968px) {
           .companies-grid {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            max-width: 700px;
+          }
+
+          .company-card {
+            padding: 20px 16px 16px;
+          }
+
+          .company-logo {
+            width: 70px;
+            height: 70px;
           }
         }
 
         @media (max-width: 768px) {
           .companies-section {
-            padding: 60px 20px;
+            padding: 50px 20px;
           }
 
           .companies-title {
-            font-size: 2.2rem;
-            margin-bottom: 40px;
+            font-size: 2rem;
+            margin-bottom: 35px;
           }
 
           .companies-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+          }
+        }
+
+        @media (max-width: 540px) {
+          .companies-grid {
             grid-template-columns: 1fr;
-            gap: 20px;
+            max-width: 280px;
           }
 
           .company-card {
-            padding: 35px 25px 25px;
+            padding: 20px 16px 16px;
           }
         }
 
         @media (max-width: 480px) {
+          .companies-section {
+            padding: 40px 16px;
+          }
+
           .companies-title {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+          }
+
+          .companies-grid {
+            gap: 12px;
+            max-width: 260px;
+          }
+
+          .company-card {
+            padding: 16px 14px 14px;
+            border-radius: 12px;
+          }
+
+          .company-logo {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+          }
+
+          .company-name {
+            font-size: 0.95rem;
+          }
+
+          .company-type {
+            font-size: 0.75rem;
+            margin-bottom: 12px;
           }
 
           .company-rating {
-            flex-direction: column;
-            gap: 15px;
-          }
-
-          .rating-details {
-            align-items: center;
+            gap: 10px;
           }
 
           .rating-badge {
-            min-width: 100px;
+            padding: 6px 10px;
+            min-width: 50px;
+            border-radius: 8px;
+          }
+
+          .rating-score {
+            font-size: 1.1rem;
+          }
+
+          .rating-text {
+            font-size: 0.6rem;
+          }
+
+          .reviews-count {
+            font-size: 0.7rem;
+          }
+
+          .star {
+            font-size: 0.8rem;
+          }
+        }
+
+        /* Extra small devices - iPhone SE */
+        @media (max-width: 360px) {
+          .companies-section {
+            padding: 35px 12px;
+          }
+
+          .companies-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+          }
+
+          .companies-grid {
+            max-width: 240px;
+            gap: 10px;
+          }
+
+          .company-card {
+            padding: 14px 12px 12px;
+          }
+
+          .company-logo {
+            width: 50px;
+            height: 50px;
+          }
+
+          .company-name {
+            font-size: 0.9rem;
+          }
+
+          .company-type {
+            font-size: 0.7rem;
           }
         }

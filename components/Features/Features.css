@@ -53,10 +53,148 @@
 
 .features-btn {
   margin-top: 20px;
-  padding: 12px 20px;
-  background: #0042cc;
+  padding: 12px 36px;
+  background: #0066CC;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
   cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+}
+
+.features-btn:hover {
+  background: #0052a3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .features {
+    flex-direction: column;
+    padding: 40px 5%;
+    gap: 30px;
+  }
+
+  .features-left,
+  .features-right {
+    width: 100%;
+  }
+
+  .features-left h2 {
+    font-size: 2rem;
+  }
+
+  .features-left p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .features {
+    padding: 35px 16px;
+    gap: 25px;
+  }
+
+  .features-left h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .features-left p {
+    font-size: 0.95rem;
+  }
+
+  .feature-block {
+    padding: 16px;
+  }
+
+  .feature-block h4 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .feature-block p {
+    font-size: 0.9rem;
+  }
+
+  .features-btn {
+    padding: 10px 28px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .features {
+    padding: 30px 14px;
+    gap: 20px;
+  }
+
+  .features-left h2 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+
+  .features-left p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .features-right {
+    gap: 15px;
+  }
+
+  .feature-block {
+    padding: 14px;
+    border-radius: 6px;
+  }
+
+  .feature-block h4 {
+    font-size: 1rem;
+  }
+
+  .feature-block p {
+    font-size: 0.85rem;
+  }
+
+  .features-btn {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra small devices - iPhone SE */
+@media (max-width: 360px) {
+  .features {
+    padding: 25px 12px;
+  }
+
+  .features-left h2 {
+    font-size: 1.25rem;
+  }
+
+  .features-left p {
+    font-size: 0.85rem;
+  }
+
+  .feature-block {
+    padding: 12px;
+  }
+
+  .feature-block h4 {
+    font-size: 0.95rem;
+  }
+
+  .feature-block p {
+    font-size: 0.8rem;
+  }
+
+  .features-btn {
+    padding: 9px 20px;
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
 }
