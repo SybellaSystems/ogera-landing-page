@@ -40,6 +40,17 @@
   text-decoration: underline;
 }
 
+.footer-section ul li a {
+  color: #eaeaea;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #7f56d9;
+  text-decoration: underline;
+}
+
 .footer-bottom {
   margin-top: 35px;
   text-align: center;

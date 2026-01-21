@@ -1,6 +1,6 @@
 "use client";
 
-
+import Link from "next/link";
 import "./Footer.css";
 
 function Footer() {
@@ -39,7 +39,7 @@ function Footer() {
         <div className="footer-section">
           <h4>Legal</h4>
           <ul>
-            <li>Terms of Service</li>
+            <li><Link href="/terms">Terms of Service</Link></li>
             <li>Privacy Policy</li>
             <li>Cookie Policy</li>
           </ul>
