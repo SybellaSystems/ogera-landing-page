@@ -1,4 +1,4 @@
-.terms-page {
+.cookie-page {
   min-height: 100vh;
   background: linear-gradient(135deg, #f8f9ff 0%, #e6f0ff 50%, #ffffff 100%);
   padding-top: 60px;
@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.terms-page::before {
+.cookie-page::before {
   content: '';
   position: absolute;
   top: 0;
@@ -17,7 +17,7 @@
   z-index: 0;
 }
 
-.terms-container {
+.cookie-container {
   max-width: 900px;
   margin: 0 auto;
   padding: 50px 40px;
@@ -55,7 +55,7 @@
   font-weight: bold;
 }
 
-.terms-container h1 {
+.cookie-container h1 {
   font-size: 60px;
   font-weight: 700;
   background: linear-gradient(135deg, #083d77 0%, #0066CC 100%);
@@ -66,7 +66,7 @@
   text-align: center;
 }
 
-.terms-container h1::after {
+.cookie-container h1::after {
   content: '';
   display: block;
   width: 120px;
@@ -76,13 +76,13 @@
   border-radius: 10px;
 }
 
-.terms-content {
+.cookie-content {
   font-size: 18px;
   line-height: 1.8;
   color: #1a2b4a;
 }
 
-.terms-content > p {
+.cookie-content > p {
   margin-bottom: 35px;
   text-align: justify;
   font-size: 19px;
@@ -94,7 +94,7 @@
   line-height: 1.9;
 }
 
-.terms-content section {
+.cookie-content section {
   margin-bottom: 35px;
   padding: 20px;
   background: #f8f9ff;
@@ -103,13 +103,13 @@
   transition: all 0.3s ease;
 }
 
-.terms-content section:hover {
+.cookie-content section:hover {
   background: linear-gradient(135deg, #f8f9ff 0%, #e6f0ff 100%);
   box-shadow: 0 4px 15px rgba(0, 102, 204, 0.1);
   transform: translateX(5px);
 }
 
-.terms-content section h2 {
+.cookie-content section h2 {
   font-size: 26px;
   font-weight: 600;
   color: #083d77;
@@ -120,14 +120,14 @@
   gap: 10px;
 }
 
-.terms-content section h2::before {
+.cookie-content section h2::before {
   content: '•';
   color: #0066CC;
   font-size: 28px;
   font-weight: bold;
 }
 
-.terms-content section p {
+.cookie-content section p {
   margin: 0;
   text-align: justify;
   font-size: 17px;
@@ -137,61 +137,61 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .terms-page {
+  .cookie-page {
     padding-top: 30px;
     padding-bottom: 20px;
   }
 
-  .terms-page::before {
+  .cookie-page::before {
     height: 180px;
   }
 
-  .terms-container {
+  .cookie-container {
     padding: 30px 20px;
     margin: 0 15px;
   }
 
-  .terms-container h1 {
+  .cookie-container h1 {
     font-size: 42px;
     margin-bottom: 5px;
   }
 
-  .terms-container h1::after {
+  .cookie-container h1::after {
     width: 80px;
     height: 4px;
     margin: 15px auto 25px;
   }
 
-  .terms-content {
+  .cookie-content {
     font-size: 16px;
     line-height: 1.6;
   }
 
-  .terms-content > p {
+  .cookie-content > p {
     font-size: 16px;
     margin-bottom: 25px;
     padding: 15px;
   }
 
-  .terms-content section {
+  .cookie-content section {
     margin-bottom: 25px;
     padding: 15px;
   }
 
-  .terms-content section:hover {
+  .cookie-content section:hover {
     transform: translateX(3px);
   }
 
-  .terms-content section h2 {
+  .cookie-content section h2 {
     font-size: 20px;
     margin-bottom: 10px;
   }
 
-  .terms-content section h2::before {
+  .cookie-content section h2::before {
     font-size: 22px;
   }
 
-  .terms-content section p {
+  .cookie-content section p {
     font-size: 15px;
   }
 }

@@ -19,20 +19,20 @@ function Footer() {
         <div className="footer-section">
           <h4>Company</h4>
           <ul>
-            <li>About us</li>
-            <li>Careers</li>
-            <li>Contact</li>
-            <li>Press</li>
+            <li><Link href="/about">About us</Link></li>
+            <li><Link href="/careers">Careers</Link></li>
+            <li><Link href="/#contact">Contact</Link></li>
+            <li><Link href="/press">Press</Link></li>
           </ul>
         </div>
 
         <div className="footer-section">
           <h4>Support</h4>
           <ul>
-            <li>Help Center</li>
-            <li>Community</li>
-            <li>Safety & Trust</li>
-            <li>FAQ</li>
+            <li><Link href="/help-center">Help Center</Link></li>
+            <li><Link href="/community">Community</Link></li>
+            <li><Link href="/safety-trust">Safety & Trust</Link></li>
+            <li><Link href="/faq">FAQ</Link></li>
           </ul>
         </div>
 
@@ -40,15 +40,15 @@ function Footer() {
           <h4>Legal</h4>
           <ul>
             <li><Link href="/terms">Terms of Service</Link></li>
-            <li>Privacy Policy</li>
-            <li>Cookie Policy</li>
+            <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+            <li><Link href="/cookie-policy">Cookie Policy</Link></li>
           </ul>
         </div>
 
       </div>
 
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} SokoHire. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} SybellaSystem. All rights reserved.</p>
       </div>
     </footer>
   );

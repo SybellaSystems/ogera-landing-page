@@ -5,7 +5,7 @@ import { MapPinIcon, PhoneIcon, EnvelopeIcon } from '@heroicons/react/24/outline
 
 function ContactSection() {
   return (
-    <div>
+    <div id="contact">
       {/* --- Contact Information Section --- */}
       <section className="contact-info-section">
         <h2 className="contact-title">Contact us</h2>

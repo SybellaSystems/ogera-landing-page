@@ -1,12 +1,16 @@
 "use client";
 
 import Footer from "@/components/Footer/Footer";
+import Link from "next/link";
 import "./terms.css";
 
 export default function TermsPage() {
   return (
     <div className="terms-page">
       <div className="terms-container">
+        <Link href="/" className="home-link">
+          <span className="home-icon">←</span> Back to Home
+        </Link>
         <h1>Terms of Service</h1>
 
         <div className="terms-content">
