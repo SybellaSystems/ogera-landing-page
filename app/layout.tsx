@@ -4,7 +4,7 @@ import Script from "next/script";
 
 // ✅ Strong SEO Metadata for Ogera
 export const metadata: Metadata = {
-  title: "Ogera — Empowering Businesses with Smart Digital Solutions",
+  title: "Ogera",
   description:
     "Ogera helps organizations streamline operations, enhance productivity, and drive growth through intelligent, easy-to-use digital tools.",
   keywords: [
