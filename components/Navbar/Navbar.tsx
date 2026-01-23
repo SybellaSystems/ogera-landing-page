@@ -88,7 +88,7 @@ function Navbar() {
   return (
     <>
       <nav className="nav">
-        <div className="logo-container">
+        <Link href="/" className="logo-container">
           <img
             src="/ogera.png"
             alt="Ogera Logo"
@@ -98,7 +98,7 @@ function Navbar() {
             <div className="logo">Ogera</div>
             <span className="slogan">Find Jobs You Can Trust</span>
           </div>
-        </div>
+        </Link>
 
         <ul className="nav-links">
           <li>
