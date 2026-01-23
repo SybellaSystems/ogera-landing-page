@@ -12,7 +12,7 @@
 }
 
 .privacy-header-left h1 {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 700;
   color: #1a1a2e;
   margin: 0 0 12px;
@@ -20,7 +20,7 @@
 }
 
 .privacy-subtitle {
-  font-size: 16px;
+  font-size: 14px;
   color: #666;
   margin: 0 0 28px;
   line-height: 1.6;
@@ -51,7 +51,7 @@
 .privacy-search input {
   border: none;
   outline: none;
-  font-size: 15px;
+  font-size: 13px;
   color: #333;
   width: 100%;
   background: transparent;
@@ -79,7 +79,7 @@
 }
 
 .privacy-section h2 {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
   color: #5B3BA5;
   margin: 0 0 16px;
@@ -87,7 +87,7 @@
 }
 
 .privacy-section p {
-  font-size: 15px;
+  font-size: 13px;
   line-height: 1.85;
   color: #444;
   margin: 0 0 14px;
@@ -102,7 +102,7 @@
   text-align: center;
   padding: 60px 20px;
   color: #999;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 /* Responsive - Tablet */
@@ -116,11 +116,11 @@
   }
 
   .privacy-header-left h1 {
-    font-size: 32px;
+    font-size: 26px;
   }
 
   .privacy-subtitle {
-    font-size: 15px;
+    font-size: 13px;
     margin-bottom: 22px;
   }
 
@@ -133,11 +133,11 @@
   }
 
   .privacy-section h2 {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .privacy-section p {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.8;
   }
 }
@@ -153,11 +153,11 @@
   }
 
   .privacy-header-left h1 {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .privacy-subtitle {
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 18px;
   }
 
@@ -167,7 +167,7 @@
   }
 
   .privacy-search input {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .privacy-content {
@@ -179,12 +179,12 @@
   }
 
   .privacy-section h2 {
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 12px;
   }
 
   .privacy-section p {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.75;
   }
 }
@@ -196,11 +196,11 @@
   }
 
   .privacy-header-left h1 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .privacy-subtitle {
-    font-size: 13px;
+    font-size: 11px;
     margin-bottom: 16px;
   }
 
@@ -209,7 +209,7 @@
   }
 
   .privacy-search input {
-    font-size: 13px;
+    font-size: 11px;
   }
 
   .privacy-content {
@@ -221,12 +221,12 @@
   }
 
   .privacy-section h2 {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 10px;
   }
 
   .privacy-section p {
-    font-size: 13px;
+    font-size: 11px;
     line-height: 1.7;
   }
 }

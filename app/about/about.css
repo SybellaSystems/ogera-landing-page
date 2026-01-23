@@ -39,7 +39,7 @@
 }
 
 .about-hero-title {
-  font-size: 64px;
+  font-size: 48px;
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 12px 0;
@@ -48,7 +48,7 @@
 }
 
 .about-hero-subtitle {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.95);
   margin: 0;
@@ -89,7 +89,7 @@
 }
 
 .section-heading {
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 600;
   color: #5B3BA5;
   margin: 0 0 20px 0;
@@ -97,7 +97,7 @@
 }
 
 .section-text {
-  font-size: 17px;
+  font-size: 14px;
   line-height: 1.75;
   color: #2d3748;
   margin: 0;
@@ -134,7 +134,7 @@
 }
 
 .our-story-title {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 600;
   color: #ffffff;
   margin: 0 0 30px 0;
@@ -143,7 +143,7 @@
 }
 
 .our-story-text {
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.95);
   margin: 0;
@@ -159,7 +159,7 @@
 }
 
 .why-choose-title {
-  font-size: 42px;
+  font-size: 32px;
   font-weight: 600;
   color: #5B3BA5;
   margin: 0 0 50px 0;
@@ -204,14 +204,14 @@
 }
 
 .feature-title {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   color: #5B3BA5;
   margin: 0 0 16px 0;
 }
 
 .feature-description {
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.7;
   color: #4a5568;
   margin: 0;
@@ -238,11 +238,11 @@
   }
 
   .about-hero-title {
-    font-size: 42px;
+    font-size: 34px;
   }
 
   .about-hero-subtitle {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .about-main-content {
@@ -268,11 +268,11 @@
   }
 
   .section-heading {
-    font-size: 28px;
+    font-size: 22px;
   }
 
   .section-text {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .our-story-section {
@@ -284,17 +284,17 @@
   }
 
   .our-story-title {
-    font-size: 30px;
+    font-size: 24px;
     margin-bottom: 24px;
   }
 
   .our-story-text {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.75;
   }
 
   .why-choose-title {
-    font-size: 32px;
+    font-size: 26px;
     margin-bottom: 40px;
   }
 
@@ -314,11 +314,11 @@
   }
 
   .about-hero-title {
-    font-size: 36px;
+    font-size: 28px;
   }
 
   .about-hero-subtitle {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .about-main-content {
@@ -338,12 +338,12 @@
   }
 
   .section-heading {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 16px;
   }
 
   .section-text {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .our-story-container {
@@ -351,16 +351,16 @@
   }
 
   .our-story-title {
-    font-size: 26px;
+    font-size: 21px;
     margin-bottom: 20px;
   }
 
   .our-story-text {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .why-choose-title {
-    font-size: 28px;
+    font-size: 22px;
     margin-bottom: 35px;
   }
 
@@ -375,11 +375,11 @@
   }
 
   .feature-title {
-    font-size: 20px;
+    font-size: 16px;
     margin-bottom: 12px;
   }
 
   .feature-description {
-    font-size: 15px;
+    font-size: 13px;
   }
 }

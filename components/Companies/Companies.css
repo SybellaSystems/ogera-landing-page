@@ -7,7 +7,7 @@
         }
 
         .companies-title {
-          font-size: 2.25rem;
+          font-size: 1.85rem;
           text-align: center;
           margin-bottom: 40px;
           color: #1a1a1a;
@@ -59,14 +59,14 @@
         }
 
         .company-name {
-          font-size: 1.1rem;
+          font-size: 0.95rem;
           color: #1a1a1a;
           margin-bottom: 4px;
           font-weight: 600;
         }
 
         .company-type {
-          font-size: 0.85rem;
+          font-size: 0.75rem;
           color: #666;
           margin-bottom: 16px;
           font-weight: 400;
@@ -92,13 +92,13 @@
         }
 
         .rating-score {
-          font-size: 1.25rem;
+          font-size: 1.05rem;
           font-weight: 700;
           line-height: 1;
         }
 
         .rating-text {
-          font-size: 0.65rem;
+          font-size: 0.55rem;
           margin-top: 2px;
           opacity: 0.95;
         }
@@ -111,7 +111,7 @@
         }
 
         .reviews-count {
-          font-size: 0.8rem;
+          font-size: 0.7rem;
           color: #1a1a1a;
           font-weight: 500;
         }
@@ -123,7 +123,7 @@
 
         .star {
           color: #FFB800;
-          font-size: 0.9rem;
+          font-size: 0.8rem;
         }
 
         /* Responsive Design */
@@ -150,7 +150,7 @@
           }
 
           .companies-title {
-            font-size: 2rem;
+            font-size: 1.7rem;
             margin-bottom: 35px;
           }
 
@@ -177,7 +177,7 @@
           }
 
           .companies-title {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             margin-bottom: 25px;
           }
 
@@ -199,11 +199,11 @@
           }
 
           .company-name {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
           }
 
           .company-type {
-            font-size: 0.75rem;
+            font-size: 0.65rem;
             margin-bottom: 12px;
           }
 
@@ -218,19 +218,19 @@
           }
 
           .rating-score {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
           }
 
           .rating-text {
-            font-size: 0.6rem;
+            font-size: 0.5rem;
           }
 
           .reviews-count {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
           }
 
           .star {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
           }
         }
 
@@ -241,7 +241,7 @@
           }
 
           .companies-title {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-bottom: 20px;
           }
 
@@ -260,10 +260,10 @@
           }
 
           .company-name {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
           }
 
           .company-type {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
           }
         }

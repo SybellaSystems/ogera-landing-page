@@ -55,13 +55,13 @@
 }
 
 .footer-section h3 {
-  font-size: 22px;
+  font-size: 18px;
   margin-bottom: 0;
 }
 
 .footer-section h4 {
   margin-bottom: 12px;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .footer-section p {
@@ -99,7 +99,7 @@
   text-align: center;
   border-top: 1px solid #333;
   padding-top: 18px;
-  font-size: 14px;
+  font-size: 12px;
   color: #cfcfcf;
 }
 
@@ -122,7 +122,7 @@
   }
 
   .footer-section h4 {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 10px;
   }
 
@@ -132,7 +132,7 @@
 
   .footer-bottom {
     margin-top: 25px;
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
@@ -155,11 +155,11 @@
   }
 
   .footer-section h3 {
-    font-size: 20px;
+    font-size: 17px;
   }
 
   .footer-section h4 {
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 8px;
   }
 
@@ -169,7 +169,7 @@
 
   .footer-section ul li {
     margin-bottom: 6px;
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .footer-socials {
@@ -184,6 +184,6 @@
   .footer-bottom {
     margin-top: 20px;
     padding-top: 14px;
-    font-size: 12px;
+    font-size: 11px;
   }
 }

@@ -18,7 +18,7 @@
         }
 
         .section-title {
-          font-size: 2.75rem;
+          font-size: 2.25rem;
           color: #1a1a1a;
           margin-bottom: 50px;
           font-weight: 600;
@@ -48,14 +48,14 @@
         }
 
         .job-type-title {
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           color: #1a1a1a;
           margin: 0 0 10px 0;
           font-weight: 600;
         }
 
         .job-type-description {
-          font-size: 1rem;
+          font-size: 0.875rem;
           color: #666;
           line-height: 1.6;
           margin: 0;
@@ -66,7 +66,7 @@
           color: white;
           border: none;
           padding: 18px 60px;
-          font-size: 1.15rem;
+          font-size: 1rem;
           font-weight: 600;
           border-radius: 12px;
           cursor: pointer;
@@ -107,7 +107,7 @@
         }
 
         .star {
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           opacity: 0.7;
         }
 
@@ -194,7 +194,7 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1.2rem;
+          font-size: 1rem;
           color: #666;
           font-weight: 600;
         }
@@ -202,7 +202,7 @@
         /* Responsive Design */
         @media (max-width: 1200px) {
           .section-title {
-            font-size: 2.3rem;
+            font-size: 1.9rem;
           }
 
           .job-types-visual {
@@ -241,7 +241,7 @@
           }
 
           .section-title {
-            font-size: 2rem;
+            font-size: 1.7rem;
             text-align: center;
           }
 
@@ -265,7 +265,7 @@
           }
 
           .section-title {
-            font-size: 1.6rem;
+            font-size: 1.35rem;
             margin-bottom: 30px;
           }
 
@@ -284,18 +284,18 @@
           }
 
           .job-type-title {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             margin-bottom: 6px;
           }
 
           .job-type-description {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             line-height: 1.5;
           }
 
           .get-started-btn {
             padding: 14px 40px;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             border-radius: 10px;
           }
 
@@ -317,7 +317,7 @@
           }
 
           .star {
-            font-size: 1rem;
+            font-size: 0.85rem;
           }
 
           .star-group-1 {
@@ -341,7 +341,7 @@
           }
 
           .section-title {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             margin-bottom: 25px;
           }
 
@@ -360,17 +360,17 @@
           }
 
           .job-type-title {
-            font-size: 1rem;
+            font-size: 0.875rem;
             margin-bottom: 4px;
           }
 
           .job-type-description {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
           }
 
           .get-started-btn {
             padding: 12px 32px;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             width: 100%;
             max-width: 280px;
           }
@@ -407,11 +407,11 @@
           }
 
           .placeholder-img {
-            font-size: 1rem;
+            font-size: 0.875rem;
           }
 
           .star {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
           }
 
           .star-group {
@@ -430,7 +430,7 @@
           }
 
           .section-title {
-            font-size: 1.25rem;
+            font-size: 1.05rem;
             margin-bottom: 20px;
           }
 
@@ -449,16 +449,16 @@
           }
 
           .job-type-title {
-            font-size: 0.95rem;
+            font-size: 0.825rem;
           }
 
           .job-type-description {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
           }
 
           .get-started-btn {
             padding: 10px 24px;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             border-radius: 8px;
           }
 
@@ -480,11 +480,11 @@
           }
 
           .placeholder-img {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
           }
 
           .star {
-            font-size: 0.8rem;
+            font-size: 0.7rem;
           }
 
           .star-group-1 {

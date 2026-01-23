@@ -30,7 +30,7 @@
 }
 
 .search-title {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 12px;
@@ -38,7 +38,7 @@
 }
 
 .search-subtitle {
-  font-size: 18px;
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 40px;
   text-align: center;
@@ -68,7 +68,7 @@
 .search-box select {
   border: none;
   outline: none;
-  font-size: 16px;
+  font-size: 14px;
   color: #333;
   padding: 10px 15px;
   background-color: transparent;
@@ -100,7 +100,7 @@
 .search-btn {
   background-color: #7F56D9;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   padding: 12px 30px;
   border: none;
@@ -127,11 +127,11 @@
   }
 
   .search-title {
-    font-size: 32px;
+    font-size: 26px;
   }
 
   .search-subtitle {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .search-box {
@@ -170,11 +170,11 @@
   }
 
   .search-title {
-    font-size: 26px;
+    font-size: 22px;
   }
 
   .search-subtitle {
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 30px;
   }
 
@@ -184,21 +184,21 @@
 
   .search-box input,
   .search-box select {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .search-btn {
-    font-size: 14px;
+    font-size: 13px;
     padding: 12px 20px;
   }
 }
 
 @media (max-width: 480px) {
   .search-title {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .search-subtitle {
-    font-size: 13px;
+    font-size: 11px;
   }
 }

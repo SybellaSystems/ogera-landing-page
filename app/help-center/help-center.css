@@ -18,7 +18,7 @@
   color: white;
   text-decoration: none;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   transition: all 0.3s ease;
   margin-bottom: 30px;
@@ -32,12 +32,12 @@
 }
 
 .home-icon {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
 }
 
 .help-container h1 {
-  font-size: 60px;
+  font-size: 42px;
   font-weight: 700;
   background: linear-gradient(135deg, #5B3BA5 0%, #7F56D9 100%);
   -webkit-background-clip: text;
@@ -58,7 +58,7 @@
 }
 
 .help-content {
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.8;
   color: #1a2b4a;
 }
@@ -66,7 +66,7 @@
 .help-content > p {
   margin-bottom: 35px;
   text-align: justify;
-  font-size: 19px;
+  font-size: 15px;
   color: #1a2b4a;
   padding: 20px;
   background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
@@ -89,7 +89,7 @@
 }
 
 .help-content section h2 {
-  font-size: 26px;
+  font-size: 21px;
   font-weight: 600;
   color: #5B3BA5;
   margin-bottom: 12px;
@@ -104,7 +104,7 @@
 .help-content section p {
   margin: 0;
   text-align: justify;
-  font-size: 17px;
+  font-size: 14px;
   color: #1a2b4a;
   line-height: 1.8;
 }
@@ -126,7 +126,7 @@
   }
 
   .help-container h1 {
-    font-size: 42px;
+    font-size: 32px;
     margin-bottom: 5px;
   }
 
@@ -137,12 +137,12 @@
   }
 
   .help-content {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.6;
   }
 
   .help-content > p {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 25px;
     padding: 15px;
   }
@@ -157,15 +157,15 @@
   }
 
   .help-content section h2 {
-    font-size: 20px;
+    font-size: 17px;
     margin-bottom: 10px;
   }
 
   .help-content section h2::before {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   .help-content section p {
-    font-size: 15px;
+    font-size: 13px;
   }
 }
