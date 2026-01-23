@@ -98,7 +98,7 @@
 }
 
 .search-btn {
-  background-color: #007aff;
+  background-color: #7F56D9;
   color: white;
   font-size: 16px;
   font-weight: 500;
@@ -111,7 +111,7 @@
 }
 
 .search-btn:hover {
-  background-color: #005bb5;
+  background-color: #6941B0;
 }
 
 .search-box input:focus,

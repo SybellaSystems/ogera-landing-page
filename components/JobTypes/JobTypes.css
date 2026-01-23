@@ -62,7 +62,7 @@
         }
 
         .get-started-btn {
-          background: #0066CC;
+          background: #7F56D9;
           color: white;
           border: none;
           padding: 18px 60px;
@@ -71,13 +71,13 @@
           border-radius: 12px;
           cursor: pointer;
           transition: all 0.3s ease;
-          box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+          box-shadow: 0 4px 12px rgba(127, 86, 217, 0.3);
         }
 
         .get-started-btn:hover {
-          background: #0052a3;
+          background: #6941B0;
           transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+          box-shadow: 0 6px 20px rgba(127, 86, 217, 0.4);
         }
 
         .job-types-visual {
@@ -112,11 +112,11 @@
         }
 
         .star-blue {
-          color: #0066CC;
+          color: #7F56D9;
         }
 
         .star-cyan {
-          color: #00D4FF;
+          color: #B794F4;
         }
 
         .star-pink {
@@ -148,7 +148,7 @@
         .blob-1 {
           width: 450px;
           height: 450px;
-          background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+          background: linear-gradient(135deg, #7F56D9 0%, #6941B0 100%);
           top: 10%;
           left: 5%;
           border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
@@ -168,7 +168,7 @@
         .blob-3 {
           width: 320px;
           height: 320px;
-          background: linear-gradient(135deg, #6BA3D0 0%, #5A8FBD 100%);
+          background: linear-gradient(135deg, #A78BDB 0%, #9478C8 100%);
           top: 50%;
           right: -5%;
           transform: translateY(-50%);

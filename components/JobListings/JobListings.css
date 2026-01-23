@@ -84,7 +84,7 @@
         }
 
         .job-header {
-          background: #0066CC;
+          background: #7F56D9;
           color: white;
           padding: 16px 20px;
           display: flex;
@@ -167,7 +167,7 @@
 
         .time-text {
           font-size: 0.85rem;
-          color: #0066CC;
+          color: #7F56D9;
           font-weight: 500;
         }
 
@@ -190,7 +190,7 @@
         }
 
         .dot.active {
-          background: #0066CC;
+          background: #7F56D9;
           width: 12px;
           height: 12px;
         }
@@ -202,7 +202,7 @@
         .show-more-btn {
           display: block;
           margin: 0 auto;
-          background: #0066CC;
+          background: #7F56D9;
           color: white;
           border: none;
           padding: 12px 36px;
@@ -211,13 +211,13 @@
           border-radius: 10px;
           cursor: pointer;
           transition: all 0.3s ease;
-          box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+          box-shadow: 0 4px 12px rgba(127, 86, 217, 0.3);
         }
 
         .show-more-btn:hover {
-          background: #0052a3;
+          background: #6941B0;
           transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+          box-shadow: 0 6px 20px rgba(127, 86, 217, 0.4);
         }
 
         /* Responsive Design */

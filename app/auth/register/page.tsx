@@ -265,7 +265,7 @@ export default function RegisterPage() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: linear-gradient(180deg, #3399FF 0%, #0066CC 40%, #0052A3 100%);
+          background: linear-gradient(180deg, #A78BDB 0%, #7F56D9 40%, #6941B0 100%);
         }
 
         .blue-bg {
@@ -439,7 +439,7 @@ export default function RegisterPage() {
         }
 
         .back-btn:hover {
-          color: #0066CC;
+          color: #7F56D9;
         }
 
         .logo {
@@ -463,7 +463,7 @@ export default function RegisterPage() {
         .logo-text {
           font-size: 1.4rem;
           font-weight: 700;
-          color: #0066CC;
+          color: #7F56D9;
         }
 
         .logo-slogan {
@@ -491,7 +491,7 @@ export default function RegisterPage() {
         }
 
         .form-header a {
-          color: #0066CC;
+          color: #7F56D9;
           text-decoration: underline;
           font-weight: 500;
         }
@@ -534,12 +534,12 @@ export default function RegisterPage() {
         }
 
         .account-type-btn:hover {
-          border-color: #0066CC;
+          border-color: #7F56D9;
         }
 
         .account-type-btn.active {
-          border-color: #0066CC;
-          color: #0066CC;
+          border-color: #7F56D9;
+          color: #7F56D9;
           background: rgba(0, 102, 204, 0.02);
         }
 
@@ -553,7 +553,7 @@ export default function RegisterPage() {
         }
 
         .account-type-btn.active .radio-circle {
-          border-color: #0066CC;
+          border-color: #7F56D9;
         }
 
         .account-type-btn.active .radio-circle::after {
@@ -565,7 +565,7 @@ export default function RegisterPage() {
           width: 10px;
           height: 10px;
           border-radius: 50%;
-          background: #0066CC;
+          background: #7F56D9;
         }
 
         .form-group {
@@ -592,7 +592,7 @@ export default function RegisterPage() {
         }
 
         .form-group input:focus {
-          border-color: #0066CC;
+          border-color: #7F56D9;
           box-shadow: none;
         }
 
@@ -625,7 +625,7 @@ export default function RegisterPage() {
 
         .signup-btn {
           padding: 14px 48px;
-          background: #0066CC;
+          background: #7F56D9;
           color: white;
           border: none;
           border-radius: 8px;
@@ -639,7 +639,7 @@ export default function RegisterPage() {
         }
 
         .signup-btn:hover {
-          background: #0052A3;
+          background: #6941B0;
         }
 
         /* Responsive */

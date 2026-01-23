@@ -54,7 +54,7 @@
 .features-btn {
   margin-top: 20px;
   padding: 12px 36px;
-  background: #0066CC;
+  background: #7F56D9;
   color: white;
   border: none;
   border-radius: 10px;
@@ -62,13 +62,13 @@
   font-size: 0.95rem;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+  box-shadow: 0 4px 12px rgba(127, 86, 217, 0.3);
 }
 
 .features-btn:hover {
-  background: #0052a3;
+  background: #6941B0;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+  box-shadow: 0 6px 20px rgba(127, 86, 217, 0.4);
 }
 
 /* Responsive Design */

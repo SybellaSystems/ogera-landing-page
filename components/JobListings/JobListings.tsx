@@ -107,8 +107,8 @@ const goToSlide = (index: number): void => {
                     
                     <div className="job-time">
                       <svg className="clock-icon" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="12" r="10" stroke="#0066CC" strokeWidth="2"/>
-                        <path d="M12 6V12L16 14" stroke="#0066CC" strokeWidth="2" strokeLinecap="round"/>
+                        <circle cx="12" cy="12" r="10" stroke="#7F56D9" strokeWidth="2"/>
+                        <path d="M12 6V12L16 14" stroke="#7F56D9" strokeWidth="2" strokeLinecap="round"/>
                       </svg>
                       <span className="time-text">{job.time}</span>
                     </div>

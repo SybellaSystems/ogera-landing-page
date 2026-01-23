@@ -207,7 +207,7 @@ export default function LoginPage() {
         }
 
         .back-btn:hover {
-          color: #0066CC;
+          color: #7F56D9;
         }
 
         .logo {
@@ -290,7 +290,7 @@ export default function LoginPage() {
         }
 
         .form-group input:focus {
-          border-color: #0066CC;
+          border-color: #7F56D9;
           box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
         }
 
@@ -327,7 +327,7 @@ export default function LoginPage() {
         }
 
         .forgot-password a {
-          color: #0066CC;
+          color: #7F56D9;
           text-decoration: none;
           font-size: 0.9rem;
           font-weight: 500;
@@ -339,7 +339,7 @@ export default function LoginPage() {
 
         .signin-btn {
           padding: 14px 24px;
-          background: #0066CC;
+          background: #7F56D9;
           color: white;
           border: none;
           border-radius: 8px;
@@ -351,7 +351,7 @@ export default function LoginPage() {
         }
 
         .signin-btn:hover:not(:disabled) {
-          background: #0052A3;
+          background: #6941B0;
         }
 
         .signin-btn:disabled {
@@ -367,7 +367,7 @@ export default function LoginPage() {
         }
 
         .signup-link a {
-          color: #0066CC;
+          color: #7F56D9;
           text-decoration: none;
           font-weight: 600;
         }
@@ -386,7 +386,7 @@ export default function LoginPage() {
           justify-content: center;
           height: 100vh;
           border-radius: 25px 0 0 25px;
-          background: linear-gradient(180deg, #3399FF 0%, #0066CC 40%, #0052A3 100%);
+          background: linear-gradient(180deg, #A78BDB 0%, #7F56D9 40%, #6941B0 100%);
         }
 
         .purple-bg {

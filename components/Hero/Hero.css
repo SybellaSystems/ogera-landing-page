@@ -34,7 +34,7 @@
 }
 
 .title-blue {
-  color: #0066CC;
+  color: #7F56D9;
 }
 
 .title-dark {
@@ -92,7 +92,7 @@
 }
 
 .hero-cta {
-  background: #007aff;
+  background: #7F56D9;
   color: white;
   border: none;
   padding: 16px 32px;
@@ -101,13 +101,13 @@
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(127, 86, 217, 0.3);
 }
 
 .hero-cta:hover {
-  background: #005bb5;
+  background: #6941B0;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 122, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(127, 86, 217, 0.4);
 }
 
 .hero-visual {
@@ -128,31 +128,31 @@
 .plus-1 {
   top: 5%;
   left: 50%;
-  color: #00D4FF;
+  color: #B794F4;
 }
 
 .plus-2 {
   top: 20%;
   right: 10%;
-  color: #00D4FF;
+  color: #B794F4;
 }
 
 .plus-3 {
   top: 60%;
   right: 5%;
-  color: #00D4FF;
+  color: #B794F4;
 }
 
 .plus-4 {
   bottom: 20%;
   left: 20%;
-  color: #00D4FF;
+  color: #B794F4;
 }
 
 .plus-5 {
   top: 40%;
   left: 5%;
-  color: #00D4FF;
+  color: #B794F4;
 }
 
 .hero-image-wrapper {
@@ -195,7 +195,7 @@
 .badge-celebrating {
   top: 15%;
   right: 5%;
-  color: #00D4FF;
+  color: #B794F4;
 }
 
 .badge-benefits {
@@ -223,7 +223,7 @@
 .circle-blue {
   width: 280px;
   height: 280px;
-  background: linear-gradient(135deg, #5b9bd5 0%, #4a8ac7 100%);
+  background: linear-gradient(135deg, #A78BDB 0%, #9478C8 100%);
   top: 55%;
   right: 0%;
   transform: translateY(-50%);
@@ -234,7 +234,7 @@
 .circle-accent {
   width: 220px;
   height: 220px;
-  background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+  background: linear-gradient(135deg, #7F56D9 0%, #6941B0 100%);
   bottom: 10%;
   left: 15%;
   opacity: 0.5;

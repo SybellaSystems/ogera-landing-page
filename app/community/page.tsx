@@ -10,7 +10,7 @@ export default function CommunityPage() {
     <>
       <Navbar />
       <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#f8f9ff] via-[#e6f0ff] to-white relative">
-      <div className="absolute top-0 left-0 right-0 h-[250px] bg-gradient-to-br from-[#083d77] to-[#0066CC] z-0"></div>
+      <div className="absolute top-0 left-0 right-0 h-[250px] bg-gradient-to-br from-[#5B3BA5] to-[#7F56D9] z-0"></div>
       
       <main className="flex-1 pt-[60px] pb-10 px-4 relative z-10">
         <div className="community-container">

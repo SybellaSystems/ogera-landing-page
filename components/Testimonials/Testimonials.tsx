@@ -93,7 +93,7 @@ function Testimonials() {
       <style>{`
         .testimonials-section {
           padding: 60px 20px;
-          background: #0066CC;
+          background: #7F56D9;
           overflow: hidden;
         }
 
@@ -148,7 +148,7 @@ function Testimonials() {
         .divider {
           width: 100%;
           height: 1px;
-          background: linear-gradient(to right, #0066CC 0%, #E5E7EB 100%);
+          background: linear-gradient(to right, #7F56D9 0%, #E5E7EB 100%);
           margin-bottom: 20px;
         }
 
@@ -161,7 +161,7 @@ function Testimonials() {
         }
 
         .quote-blue {
-          color: #0066CC;
+          color: #7F56D9;
           font-weight: 500;
         }
 

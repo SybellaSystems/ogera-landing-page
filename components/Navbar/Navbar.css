@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background: #083d77;
+  background: #5B3BA5;
   color: white;
   position: fixed;
   top: 0;
@@ -99,7 +99,7 @@
 }
 
 .signup {
-  background: #4c7df3;
+  background: #9B7DE8;
   color: white;
 }
 
@@ -256,7 +256,7 @@
   display: block;
   width: 100%;
   padding: 14px 24px;
-  background: #083d77;
+  background: #5B3BA5;
   color: white;
   text-decoration: none;
   text-align: center;
@@ -267,7 +267,7 @@
 }
 
 .modal-signup-btn-full:hover {
-  background: #062d5a;
+  background: #4A2D8A;
 }
 
 /* Mobile Responsive */

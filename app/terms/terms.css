@@ -4,7 +4,7 @@
   padding: 50px 40px;
   background: white;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(8, 61, 119, 0.15);
+  box-shadow: 0 10px 30px rgba(91, 59, 165, 0.15);
   position: relative;
   z-index: 1;
 }
@@ -12,7 +12,7 @@
 .terms-container h1 {
   font-size: 60px;
   font-weight: 700;
-  background: linear-gradient(135deg, #083d77 0%, #0066CC 100%);
+  background: linear-gradient(135deg, #5B3BA5 0%, #7F56D9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -25,7 +25,7 @@
   display: block;
   width: 120px;
   height: 5px;
-  background: linear-gradient(90deg, #0066CC, #083d77);
+  background: linear-gradient(90deg, #7F56D9, #5B3BA5);
   margin: 20px auto 35px;
   border-radius: 10px;
 }
@@ -57,14 +57,14 @@
 
 .terms-content section:hover {
   background: linear-gradient(135deg, #f8f9ff 0%, #e6f0ff 100%);
-  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.1);
+  box-shadow: 0 4px 15px rgba(127, 86, 217, 0.1);
   transform: translateX(5px);
 }
 
 .terms-content section h2 {
   font-size: 26px;
   font-weight: 600;
-  color: #083d77;
+  color: #5B3BA5;
   margin-bottom: 12px;
   margin-top: 0;
   display: flex;

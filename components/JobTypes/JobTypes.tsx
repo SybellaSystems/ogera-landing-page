@@ -46,7 +46,7 @@ function JobTypes() {
               <div key={index} className="job-type-item">
                 <div className="check-icon">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <circle cx="12" cy="12" r="10" fill="#0066CC"/>
+                    <circle cx="12" cy="12" r="10" fill="#7F56D9"/>
                     <path d="M8 12L11 15L16 9" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>

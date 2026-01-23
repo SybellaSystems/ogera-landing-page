@@ -320,7 +320,7 @@ export default function ForgotPasswordPage() {
         return (
           <div className="success-state">
             <div className="success-icon">
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#0066CC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#7F56D9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
                 <polyline points="22 4 12 14.01 9 11.01"/>
               </svg>
@@ -425,7 +425,7 @@ export default function ForgotPasswordPage() {
         }
 
         .back-btn:hover {
-          color: #0066CC;
+          color: #7F56D9;
         }
 
         .logo {
@@ -508,7 +508,7 @@ export default function ForgotPasswordPage() {
         }
 
         .form-group input:focus {
-          border-color: #0066CC;
+          border-color: #7F56D9;
           box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
         }
 
@@ -560,7 +560,7 @@ export default function ForgotPasswordPage() {
         }
 
         .otp-input:focus {
-          border-color: #0066CC;
+          border-color: #7F56D9;
           box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
         }
 
@@ -585,12 +585,12 @@ export default function ForgotPasswordPage() {
         }
 
         .submit-btn.active {
-          background: #0066CC;
+          background: #7F56D9;
           cursor: pointer;
         }
 
         .submit-btn.active:hover:not(:disabled) {
-          background: #0052A3;
+          background: #6941B0;
         }
 
         .submit-btn:disabled {
@@ -615,7 +615,7 @@ export default function ForgotPasswordPage() {
         .resend-btn {
           background: none;
           border: none;
-          color: #0066CC;
+          color: #7F56D9;
           font-weight: 600;
           cursor: pointer;
           font-size: inherit;
@@ -634,7 +634,7 @@ export default function ForgotPasswordPage() {
         .change-email-btn {
           background: none;
           border: none;
-          color: #0066CC;
+          color: #7F56D9;
           font-size: 0.85rem;
           cursor: pointer;
           margin-top: 16px;
@@ -644,7 +644,7 @@ export default function ForgotPasswordPage() {
         }
 
         .change-email-btn:hover {
-          color: #0052A3;
+          color: #6941B0;
         }
 
         .back-to-login {
@@ -655,7 +655,7 @@ export default function ForgotPasswordPage() {
         }
 
         .back-to-login a {
-          color: #0066CC;
+          color: #7F56D9;
           text-decoration: none;
           font-weight: 600;
         }
@@ -690,7 +690,7 @@ export default function ForgotPasswordPage() {
         .signin-btn {
           display: inline-block;
           padding: 14px 32px;
-          background: #0066CC;
+          background: #7F56D9;
           color: white;
           border: none;
           border-radius: 8px;
@@ -701,7 +701,7 @@ export default function ForgotPasswordPage() {
         }
 
         .signin-btn:hover {
-          background: #0052A3;
+          background: #6941B0;
         }
 
         @media (max-width: 968px) {
