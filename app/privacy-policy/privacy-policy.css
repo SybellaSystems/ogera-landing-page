@@ -6,17 +6,9 @@
 
 /* Header */
 .privacy-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
   max-width: 900px;
   margin: 0 auto;
   padding: 60px 30px 40px;
-  gap: 40px;
-}
-
-.privacy-header-left {
-  flex: 1;
 }
 
 .privacy-header-left h1 {
@@ -121,7 +113,6 @@
 
   .privacy-header {
     padding: 40px 24px 30px;
-    gap: 24px;
   }
 
   .privacy-header-left h1 {
@@ -158,9 +149,7 @@
   }
 
   .privacy-header {
-    flex-direction: column;
     padding: 30px 20px 24px;
-    gap: 20px;
   }
 
   .privacy-header-left h1 {
@@ -204,7 +193,6 @@
 @media (max-width: 360px) {
   .privacy-header {
     padding: 24px 16px 20px;
-    gap: 16px;
   }
 
   .privacy-header-left h1 {
