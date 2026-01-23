@@ -12,9 +12,35 @@
   gap: 40px;
 }
 
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.footer-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.footer-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-slogan {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
 .footer-section h3 {
   font-size: 22px;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 .footer-section h4 {

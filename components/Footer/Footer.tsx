@@ -9,11 +9,13 @@ function Footer() {
       <div className="footer-container">
 
         <div className="footer-section">
-          <h3>OGERA</h3>
-          <p>
-            A global remote job marketplace connecting talent and companies
-            seamlessly.
-          </p>
+          <Link href="/" className="footer-brand">
+            <img src="/ogera.png" alt="Ogera Logo" className="footer-logo" />
+            <div className="footer-brand-text">
+              <h3>Ogera</h3>
+              <span className="footer-slogan">Find Jobs You Can Trust</span>
+            </div>
+          </Link>
         </div>
 
         <div className="footer-section">
