@@ -20,7 +20,7 @@ function Testimonials() {
       quoteHighlight: "The way they protect both employer and student data gives me peace of mind .\"",
       author: "Martin Nziza",
       company: "Hired by teva",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+      avatar: "https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=100&h=100&fit=crop&crop=face"
     },
     {
       icon: (
@@ -36,7 +36,7 @@ function Testimonials() {
       quoteHighlight: " gave me the freedom to grow my skills and build a solid reputation.\"",
       author: "Kamanzi Darline",
       company: "Hired by Dynamos",
-      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face"
+      avatar: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&h=100&fit=crop&crop=face"
     },
     {
       icon: (
@@ -55,7 +55,7 @@ function Testimonials() {
       quoteHighlight: " track progress, and get paid quickly. It really helps me stay on top of my schedule.\"",
       author: "Kagabo Jean",
       company: "Hired by teva",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+      avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face"
     }
   ];
 
