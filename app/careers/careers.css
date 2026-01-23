@@ -99,6 +99,83 @@
   gap: 10px;
 }
 
+/* Hero Image Styles */
+.hero-image-container {
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.15);
+}
+
+.careers-hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.careers-hero-image:hover {
+  transform: scale(1.02);
+}
+
+/* Section with Image Layout */
+.section-with-image {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.section-with-image.reverse {
+  flex-direction: row-reverse;
+}
+
+.section-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.section-image {
+  flex: 0 0 380px;
+  max-width: 380px;
+}
+
+.content-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.content-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 102, 204, 0.2);
+}
+
+.section-with-image p {
+  margin: 0;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .section-with-image,
+  .section-with-image.reverse {
+    flex-direction: column;
+  }
+  
+  .section-image {
+    flex: 1;
+    max-width: 100%;
+  }
+  
+  .section-text {
+    min-width: 100%;
+  }
+}
+
 
 
 .careers-content section p {
