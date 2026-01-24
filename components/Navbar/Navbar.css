@@ -32,14 +32,14 @@
 }
 
 .logo {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.2px;
 }
 
 .slogan {
-  font-size: 0.5rem;
+  font-size: 0.45rem;
   font-weight: 400;
   opacity: 0.7;
   letter-spacing: 0.1px;
@@ -200,7 +200,7 @@
   padding: 14px 20px;
   color: #1f2937;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 400;
   transition: background 0.2s ease;
   cursor: pointer;
@@ -242,7 +242,7 @@
 .modal-login-link {
   color: #1f2937;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 500;
   padding: 8px 16px;
   transition: opacity 0.2s ease;
@@ -260,7 +260,7 @@
   color: white;
   text-decoration: none;
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
   border-radius: 50px;
   transition: background 0.2s ease;
@@ -308,11 +308,11 @@
   }
 
   .logo {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .slogan {
-    font-size: 0.45rem;
+    font-size: 0.4rem;
   }
 
   .mobile-modal {
@@ -327,7 +327,7 @@
   .modal-nav-links a,
   .modal-nav-links button {
     padding: 12px 16px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .modal-divider {
@@ -340,12 +340,12 @@
   }
 
   .modal-login-link {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .modal-signup-btn-full {
     padding: 12px 20px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -365,11 +365,11 @@
   }
 
   .logo {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 
   .slogan {
-    font-size: 0.4rem;
+    font-size: 0.35rem;
   }
 
   .hamburger {
@@ -401,7 +401,7 @@
   .modal-nav-links a,
   .modal-nav-links button {
     padding: 11px 14px;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
 
   .modal-divider {
@@ -414,12 +414,12 @@
   }
 
   .modal-login-link {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
 
   .modal-signup-btn-full {
     padding: 11px 18px;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
 }
 

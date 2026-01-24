@@ -27,7 +27,7 @@
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 2.75rem;
   line-height: 1.15;
   margin-bottom: 24px;
   font-weight: 700;
@@ -85,7 +85,7 @@
 }
 
 .hero-subtitle {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: #666;
   line-height: 1.6;
   margin-bottom: 32px;
@@ -95,8 +95,8 @@
   background: #7F56D9;
   color: white;
   border: none;
-  padding: 16px 32px;
-  font-size: 1rem;
+  padding: 14px 28px;
+  font-size: 0.875rem;
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
@@ -120,7 +120,7 @@
 
 .plus-decoration {
   position: absolute;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 300;
   opacity: 0.6;
 }
@@ -183,7 +183,7 @@
   font-weight: 500;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   z-index: 3;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #333;
 }
 
@@ -272,7 +272,7 @@
 /* Responsive Design */
 @media (max-width: 1200px) {
   .hero-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .hero-visual {
@@ -307,7 +307,7 @@
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .hero-visual {
@@ -325,16 +325,16 @@
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 
   .hero-subtitle {
-    font-size: 0.95rem;
+    font-size: 0.825rem;
   }
 
   .hero-cta {
     padding: 14px 28px;
-    font-size: 0.95rem;
+    font-size: 0.825rem;
   }
 
   .hero-visual {
@@ -350,7 +350,7 @@
 
   .badge {
     padding: 8px 14px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
 
@@ -361,17 +361,17 @@
   }
 
   .hero-title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 
   .hero-subtitle {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin-bottom: 24px;
   }
 
   .hero-cta {
     padding: 12px 24px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     width: 100%;
     max-width: 280px;
   }
@@ -389,11 +389,11 @@
 
   .badge {
     padding: 6px 12px;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
   }
 
   .plus-decoration {
-    font-size: 1rem;
+    font-size: 0.85rem;
     opacity: 0.4;
   }
 }
@@ -409,18 +409,18 @@
   }
 
   .hero-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 16px;
   }
 
   .hero-subtitle {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     margin-bottom: 20px;
   }
 
   .hero-cta {
     padding: 10px 20px;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
 
   .hero-visual {
@@ -436,7 +436,7 @@
 
   .badge {
     padding: 5px 10px;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 
   .badge-remote {

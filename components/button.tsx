@@ -26,7 +26,7 @@ const CTAButton = styled("button")<{ backgroundcolor?: string }>`
   padding: 12px;
   border: none;
   border-radius: 25px;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
 
   &:hover:enabled {

@@ -73,15 +73,29 @@ export default function RegisterPage() {
           <svg className="wave-svg" viewBox="0 0 400 800" preserveAspectRatio="none">
             <path
               d="M350,0 Q280,150 320,300 Q360,450 300,600 Q240,750 280,800"
-              stroke="rgba(255,255,255,0.1)"
-              strokeWidth="80"
+              stroke="rgba(255,255,255,0.18)"
+              strokeWidth="90"
               fill="none"
             />
             <path
               d="M400,0 Q330,200 380,400 Q430,600 350,800"
-              stroke="rgba(255,255,255,0.08)"
-              strokeWidth="100"
+              stroke="rgba(167,139,219,0.2)"
+              strokeWidth="110"
               fill="none"
+            />
+            <path
+              d="M300,0 Q200,200 250,400 Q300,600 200,800"
+              stroke="rgba(127,86,217,0.15)"
+              strokeWidth="130"
+              fill="none"
+            />
+            <path
+              d="M0,500 Q100,450 200,500 Q300,550 400,480 L400,800 L0,800 Z"
+              fill="rgba(74,45,145,0.3)"
+            />
+            <path
+              d="M0,600 Q150,550 250,620 Q350,690 400,600 L400,800 L0,800 Z"
+              fill="rgba(91,59,165,0.25)"
             />
           </svg>
         </div>
@@ -265,7 +279,8 @@ export default function RegisterPage() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: linear-gradient(180deg, #A78BDB 0%, #7F56D9 40%, #6941B0 100%);
+          background: linear-gradient(180deg, #7F56D9 0%, #6941B0 35%, #5B3BA5 65%, #4A2D91 100%);
+          border-radius: 0 25px 25px 0;
         }
 
         .blue-bg {
@@ -346,11 +361,13 @@ export default function RegisterPage() {
         }
 
         .testimonial-card {
-          background: rgba(255, 255, 255, 0.15);
-          backdrop-filter: blur(10px);
+          background: rgba(255, 255, 255, 0.12);
+          backdrop-filter: blur(12px);
           border-radius: 16px;
           padding: 24px;
           margin-top: auto;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          box-shadow: 0 8px 32px rgba(74, 45, 145, 0.3);
         }
 
         .testimonial-text {
@@ -431,7 +448,7 @@ export default function RegisterPage() {
           align-items: center;
           background: none;
           border: none;
-          color: #666;
+          color: #7F56D9;
           cursor: pointer;
           padding: 8px 0;
           margin-bottom: 16px;
@@ -439,7 +456,7 @@ export default function RegisterPage() {
         }
 
         .back-btn:hover {
-          color: #7F56D9;
+          color: #5B3BA5;
         }
 
         .logo {
@@ -463,12 +480,12 @@ export default function RegisterPage() {
         .logo-text {
           font-size: 1.4rem;
           font-weight: 700;
-          color: #7F56D9;
+          color: #5B3BA5;
         }
 
         .logo-slogan {
           font-size: 0.7rem;
-          color: #666;
+          color: #7F56D9;
           font-weight: 400;
         }
 
@@ -480,12 +497,12 @@ export default function RegisterPage() {
         .form-header h1 {
           font-size: 1.6rem;
           font-weight: 700;
-          color: #1a1a1a;
+          color: #5B3BA5;
           margin: 0 0 8px 0;
         }
 
         .form-header p {
-          color: #666;
+          color: #6B5A8A;
           font-size: 0.9rem;
           margin: 0;
         }
@@ -504,7 +521,7 @@ export default function RegisterPage() {
 
         .section-label {
           font-size: 0.9rem;
-          color: #374151;
+          color: #4B3A6B;
           margin-bottom: 10px;
           display: block;
         }
@@ -524,12 +541,12 @@ export default function RegisterPage() {
           align-items: center;
           gap: 10px;
           padding: 14px 16px;
-          border: 2px solid #e5e7eb;
+          border: 2px solid #e0d8f0;
           border-radius: 8px;
           background: #fff;
           cursor: pointer;
           font-size: 0.9rem;
-          color: #374151;
+          color: #4B3A6B;
           transition: all 0.2s ease;
         }
 
@@ -540,14 +557,14 @@ export default function RegisterPage() {
         .account-type-btn.active {
           border-color: #7F56D9;
           color: #7F56D9;
-          background: rgba(0, 102, 204, 0.02);
+          background: rgba(127, 86, 217, 0.04);
         }
 
         .radio-circle {
           width: 18px;
           height: 18px;
           border-radius: 50%;
-          border: 2px solid #d1d5db;
+          border: 2px solid #c9bfe0;
           position: relative;
           transition: all 0.2s ease;
         }
@@ -577,12 +594,12 @@ export default function RegisterPage() {
         .form-group label {
           font-size: 0.9rem;
           font-weight: 500;
-          color: #374151;
+          color: #4B3A6B;
         }
 
         .form-group input {
           padding: 12px 14px;
-          border: 2px solid #e5e7eb;
+          border: 2px solid #e0d8f0;
           border-radius: 8px;
           font-size: 1rem;
           transition: all 0.2s ease;
@@ -593,7 +610,7 @@ export default function RegisterPage() {
 
         .form-group input:focus {
           border-color: #7F56D9;
-          box-shadow: none;
+          box-shadow: 0 0 0 3px rgba(127, 86, 217, 0.12);
         }
 
         .form-group input::placeholder {

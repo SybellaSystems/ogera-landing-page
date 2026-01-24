@@ -17,14 +17,14 @@ body {
 }
 
 .contact-title {
-  font-size: 32px;
+  font-size: 26px;
   font-weight: 500;
   color: #7F56D9; /* Primary blue color */
   margin-bottom: 5px;
 }
 
 .contact-subtitle {
-  font-size: 24px;
+  font-size: 20px;
   color: #000000;
   font-weight: 400;
   margin-bottom: 40px;
@@ -54,7 +54,7 @@ body {
 
 /* Icon Styling */
 .contact-card .icon {
-  font-size: 30px;
+  font-size: 24px;
   color: #7F56D9; /* Blue color for icons */
   margin-right: 15px;
   /* Override the emoji icon color for visual accuracy: */
@@ -68,14 +68,14 @@ body {
 }
 
 .card-header {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
   color: #333;
   margin: 0;
 }
 
 .card-content {
-  font-size: 16px;
+  font-size: 14px;
   color: #666;
   margin: 5px 0 0 0;
 }
@@ -86,7 +86,7 @@ body {
   color: white;
   padding: 20px;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .footer-links a {

@@ -113,29 +113,29 @@ export default function LoginPage() {
           <svg className="wave-svg" viewBox="0 0 400 800" preserveAspectRatio="none">
             <path
               d="M350,0 Q280,150 320,300 Q360,450 300,600 Q240,750 280,800"
-              stroke="rgba(255,255,255,0.15)"
-              strokeWidth="80"
+              stroke="rgba(255,255,255,0.18)"
+              strokeWidth="90"
               fill="none"
             />
             <path
               d="M400,0 Q330,200 380,400 Q430,600 350,800"
-              stroke="rgba(255,255,255,0.1)"
-              strokeWidth="100"
+              stroke="rgba(167,139,219,0.2)"
+              strokeWidth="110"
               fill="none"
             />
             <path
               d="M300,0 Q200,200 250,400 Q300,600 200,800"
-              stroke="rgba(255,255,255,0.08)"
-              strokeWidth="120"
+              stroke="rgba(127,86,217,0.15)"
+              strokeWidth="130"
               fill="none"
             />
             <path
               d="M0,500 Q100,450 200,500 Q300,550 400,480 L400,800 L0,800 Z"
-              fill="rgba(255,255,255,0.06)"
+              fill="rgba(74,45,145,0.3)"
             />
             <path
               d="M0,600 Q150,550 250,620 Q350,690 400,600 L400,800 L0,800 Z"
-              fill="rgba(255,255,255,0.05)"
+              fill="rgba(91,59,165,0.25)"
             />
           </svg>
           <div className="accent-circle top-circle"></div>
@@ -196,7 +196,7 @@ export default function LoginPage() {
           gap: 6px;
           background: none;
           border: none;
-          color: #666;
+          color: #7F56D9;
           font-size: 0.9rem;
           font-weight: 500;
           cursor: pointer;
@@ -207,7 +207,7 @@ export default function LoginPage() {
         }
 
         .back-btn:hover {
-          color: #7F56D9;
+          color: #5B3BA5;
         }
 
         .logo {
@@ -232,13 +232,13 @@ export default function LoginPage() {
         .logo-text {
           font-size: 1.5rem;
           font-weight: 700;
-          color: #1a1a1a;
+          color: #5B3BA5;
           line-height: 1.2;
         }
 
         .logo-slogan {
           font-size: 0.7rem;
-          color: #666;
+          color: #7F56D9;
           font-weight: 400;
         }
 
@@ -249,12 +249,12 @@ export default function LoginPage() {
         .welcome-section h1 {
           font-size: 1.75rem;
           font-weight: 700;
-          color: #1a1a1a;
+          color: #5B3BA5;
           margin: 0 0 12px 0;
         }
 
         .welcome-section p {
-          color: #666;
+          color: #6B5A8A;
           font-size: 0.95rem;
           line-height: 1.5;
           margin: 0;
@@ -275,12 +275,12 @@ export default function LoginPage() {
         .form-group label {
           font-size: 0.9rem;
           font-weight: 500;
-          color: #374151;
+          color: #4B3A6B;
         }
 
         .form-group input {
           padding: 14px 16px;
-          border: 1px solid #e5e7eb;
+          border: 1px solid #e0d8f0;
           border-radius: 8px;
           font-size: 1rem;
           transition: all 0.2s ease;
@@ -291,7 +291,7 @@ export default function LoginPage() {
 
         .form-group input:focus {
           border-color: #7F56D9;
-          box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+          box-shadow: 0 0 0 3px rgba(127, 86, 217, 0.12);
         }
 
         .form-group input::placeholder {
@@ -362,7 +362,7 @@ export default function LoginPage() {
         .signup-link {
           text-align: center;
           margin-top: 24px;
-          color: #666;
+          color: #6B5A8A;
           font-size: 0.9rem;
         }
 
@@ -386,7 +386,7 @@ export default function LoginPage() {
           justify-content: center;
           height: 100vh;
           border-radius: 25px 0 0 25px;
-          background: linear-gradient(180deg, #A78BDB 0%, #7F56D9 40%, #6941B0 100%);
+          background: linear-gradient(180deg, #7F56D9 0%, #6941B0 35%, #5B3BA5 65%, #4A2D91 100%);
         }
 
         .purple-bg {
@@ -408,19 +408,19 @@ export default function LoginPage() {
         }
 
         .top-circle {
-          width: 350px;
-          height: 350px;
-          background: radial-gradient(circle, rgba(51,153,255,0.6) 0%, rgba(0,102,204,0.3) 50%, transparent 70%);
-          top: -80px;
-          right: -80px;
+          width: 400px;
+          height: 400px;
+          background: radial-gradient(circle, rgba(127,86,217,0.7) 0%, rgba(105,65,176,0.4) 50%, transparent 70%);
+          top: -100px;
+          right: -100px;
         }
 
         .bottom-circle {
-          width: 400px;
-          height: 400px;
-          background: radial-gradient(circle, rgba(0,82,163,0.5) 0%, rgba(0,82,163,0.2) 50%, transparent 70%);
-          bottom: -100px;
-          left: -100px;
+          width: 450px;
+          height: 450px;
+          background: radial-gradient(circle, rgba(74,45,145,0.6) 0%, rgba(91,59,165,0.3) 50%, transparent 70%);
+          bottom: -120px;
+          left: -120px;
         }
 
         .info-content {
@@ -437,11 +437,13 @@ export default function LoginPage() {
         }
 
         .slide-content {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
+          background: rgba(255, 255, 255, 0.12);
+          backdrop-filter: blur(12px);
           border-radius: 20px;
           padding: 32px;
           margin-top: 80px;
+          border: 1px solid rgba(255, 255, 255, 0.15);
+          box-shadow: 0 8px 32px rgba(74, 45, 145, 0.3);
         }
 
         .slide-content h2 {

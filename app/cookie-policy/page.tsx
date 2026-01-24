@@ -1,162 +1,156 @@
 "use client";
 
+import { useState } from "react";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
 import "./cookie-policy.css";
 
 export default function CookiePolicyPage() {
+  const [showManage, setShowManage] = useState(false);
+  const [preferences, setPreferences] = useState({
+    visitor: false,
+    analytics: false,
+    advertising: false,
+  });
+
+  const togglePreference = (key: keyof typeof preferences) => {
+    setPreferences((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
+
   return (
     <>
       <Navbar />
-      <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#f8f9ff] via-[#e6f0ff] to-white relative">
-      <div className="absolute top-0 left-0 right-0 h-[250px] bg-gradient-to-br from-[#5B3BA5] to-[#7F56D9] z-0"></div>
-      
-      <main className="flex-1 pt-[60px] pb-10 px-4 relative z-10">
-        <div className="cookie-container">
-          <h1>Cookie Policy</h1>
+      <div className="cookie-page">
+        <div className="cookie-card">
+          {!showManage ? (
+            <>
+              <h1>Cookies Policy</h1>
 
-        <div className="cookie-content">
-          <p>
-            This Cookie Policy explains how Ogera uses cookies and similar tracking
-            technologies on our platform. By using Ogera, you consent to our use of cookies
-            as described in this policy. You can manage your cookie preferences through your
-            browser settings at any time.
-          </p>
+              <div className="cookie-text">
+                <p>
+                  We use our own cookies, as well as those of third parties, for individual as well as
+                  repeated sessions, in order to make the navigation of our website easy and safe for
+                  our users.
+                </p>
+                <p>
+                  In turn, we use cookies to measure and obtain statistical data about the navigation of
+                  the users. You can configure and accept the use of the cookies, and modify your
+                  consent options, at any time. You can read more information about our{" "}
+                  <Link href="/privacy-policy" className="cookie-link">Privacy Policy</Link>.
+                </p>
+                <p>
+                  We put no restrictions on what you share. However, we have some community guidelines
+                  that must be taken into consideration. If you don&apos;t, you may find your thoughts
+                  removed and/or your account disabled. Help us to keep Ogera awesome!
+                </p>
+              </div>
 
-          <section>
-            <h2>What Are Cookies?</h2>
-            <p>
-              Cookies are small text files stored on your device when you visit a website.
-              They help websites remember your preferences, login status, and browsing
-              behavior. Cookies enable us to provide a personalized and efficient user
-              experience. They can be session cookies (deleted when you close your browser)
-              or persistent cookies (remain until expiration or deletion).
-            </p>
-          </section>
+              <div className="cookie-actions">
+                <Link href="/" className="cookie-accept-btn">Accept All</Link>
+                <button className="cookie-manage-btn" onClick={() => setShowManage(true)}>
+                  Manage cookies
+                </button>
+              </div>
+            </>
+          ) : (
+            <>
+              <h1>Cookies Configuration</h1>
 
-          <section>
-            <h2>Types of Cookies We Use</h2>
-            <p>
-              We use essential cookies required for platform functionality, performance
-              cookies to analyze usage and improve our service, functional cookies to
-              remember your preferences and settings, targeting cookies for relevant content
-              and advertisements, and analytics cookies to understand user behavior. Each
-              type serves a specific purpose in enhancing your experience.
-            </p>
-          </section>
+              <p className="cookie-config-desc">
+                We use our own cookies, as well as those of third parties, for individual as well as
+                repeated sessions, in order to make the navigation of our website easy and safe for our
+                users.
+              </p>
 
-          <section>
-            <h2>Essential Cookies</h2>
-            <p>
-              These cookies are necessary for the platform to function properly. They enable
-              core features like user authentication, security, session management, and
-              navigation. Without these cookies, certain services cannot be provided. These
-              cookies do not collect information for marketing purposes and cannot be
-              disabled through our cookie settings.
-            </p>
-          </section>
+              <div className="cookie-options">
+                {/* Strictly necessary */}
+                <div className="cookie-option cookie-option-expanded">
+                  <div className="cookie-option-header">
+                    <div className="cookie-option-left">
+                      <svg className="cookie-chevron open" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                      <span className="cookie-option-title">Strictly necessary cookies</span>
+                    </div>
+                    <span className="cookie-always-active">Always active</span>
+                  </div>
+                  <p className="cookie-option-desc">
+                    Necessary cookies help make a website usable by enabling basic function
+                    like navigation and access to secure areas fo the website. The website
+                    cannot function properly without these cookies.
+                  </p>
+                </div>
 
-          <section>
-            <h2>Performance and Analytics Cookies</h2>
-            <p>
-              We use these cookies to understand how visitors interact with our platform,
-              which pages are most popular, and where users encounter errors. This helps us
-              improve platform performance and user experience. We may use Google Analytics
-              and similar tools that collect anonymous usage data. You can opt out of these
-              cookies without affecting platform functionality.
-            </p>
-          </section>
+                {/* Visitor preferences */}
+                <div className="cookie-option">
+                  <div className="cookie-option-header">
+                    <div className="cookie-option-left">
+                      <svg className="cookie-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                      <span className="cookie-option-title">Visitor preferences</span>
+                    </div>
+                    <button
+                      className={`cookie-toggle ${preferences.visitor ? "active" : ""}`}
+                      onClick={() => togglePreference("visitor")}
+                      aria-label="Toggle visitor preferences"
+                    >
+                      <span className="cookie-toggle-knob"></span>
+                    </button>
+                  </div>
+                </div>
 
-          <section>
-            <h2>Functional Cookies</h2>
-            <p>
-              These cookies remember your choices and preferences such as language settings,
-              timezone, saved searches, and display preferences. They enable personalized
-              features and improve your user experience by remembering your settings across
-              sessions. Disabling these cookies may result in less personalized functionality.
-            </p>
-          </section>
+                {/* Analytics cookies */}
+                <div className="cookie-option">
+                  <div className="cookie-option-header">
+                    <div className="cookie-option-left">
+                      <svg className="cookie-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                      <span className="cookie-option-title">Analytics cookies</span>
+                    </div>
+                    <button
+                      className={`cookie-toggle ${preferences.analytics ? "active" : ""}`}
+                      onClick={() => togglePreference("analytics")}
+                      aria-label="Toggle analytics cookies"
+                    >
+                      <span className="cookie-toggle-knob"></span>
+                    </button>
+                  </div>
+                </div>
 
-          <section>
-            <h2>Targeting and Advertising Cookies</h2>
-            <p>
-              We may use targeting cookies to deliver relevant advertisements and content
-              based on your interests and browsing behavior. These cookies help us measure
-              advertising effectiveness and provide you with more relevant job recommendations.
-              Third-party advertising partners may also use cookies subject to their own
-              privacy policies.
-            </p>
-          </section>
+                {/* Advertising cookies */}
+                <div className="cookie-option">
+                  <div className="cookie-option-header">
+                    <div className="cookie-option-left">
+                      <svg className="cookie-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                      <span className="cookie-option-title">Advertising cookies</span>
+                    </div>
+                    <button
+                      className={`cookie-toggle ${preferences.advertising ? "active" : ""}`}
+                      onClick={() => togglePreference("advertising")}
+                      aria-label="Toggle advertising cookies"
+                    >
+                      <span className="cookie-toggle-knob"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
 
-          <section>
-            <h2>Third-Party Cookies</h2>
-            <p>
-              Some cookies are placed by third-party services that appear on our pages, such
-              as analytics providers, social media widgets, and payment processors. We do not
-              control these cookies, and they are subject to the respective third party's
-              privacy policies. We recommend reviewing their policies to understand their
-              cookie practices.
-            </p>
-          </section>
-
-          <section>
-            <h2>Managing Your Cookie Preferences</h2>
-            <p>
-              You can control and manage cookies through your browser settings. Most browsers
-              allow you to refuse or accept cookies, delete existing cookies, and set
-              preferences for certain websites. Note that blocking essential cookies may
-              prevent you from accessing certain features. Visit your browser's help section
-              for specific instructions on cookie management.
-            </p>
-          </section>
-
-          <section>
-            <h2>Do Not Track Signals</h2>
-            <p>
-              Some browsers support Do Not Track (DNT) signals. Currently, there is no
-              industry standard for responding to DNT signals. We do not alter our data
-              collection practices when we receive DNT signals from your browser. We will
-              continue to monitor developments in this area and may update our practices
-              accordingly.
-            </p>
-          </section>
-
-          <section>
-            <h2>Updates to This Policy</h2>
-            <p>
-              We may update this Cookie Policy periodically to reflect changes in technology,
-              legislation, or our business practices. We will notify you of significant
-              changes through our platform or via email. Continued use of Ogera after updates
-              constitutes acceptance of the revised policy. Last updated: January 2026.
-            </p>
-          </section>
-
-          <section>
-            <h2>Contact Us</h2>
-            <p>
-              If you have questions about our use of cookies or this Cookie Policy, please
-              contact us at privacy@ogera.com. For general inquiries, reach us at
-              support@ogera.com. We are committed to transparency and will address your
-              concerns regarding cookies and tracking technologies.
-            </p>
-          </section>
+              <div className="cookie-actions">
+                <Link href="/" className="cookie-accept-btn">Accept All</Link>
+                <button className="cookie-manage-btn" onClick={() => setShowManage(false)}>
+                  Save Settings
+                </button>
+              </div>
+            </>
+          )}
         </div>
       </div>
-      </main>
-
-      <footer className="main-footer">
-        <div className="footer-links">
-          <Link href="/terms">Terms and Conditions</Link>
-          <span>|</span>
-          <Link href="/privacy-policy">Privacy policy</Link>
-          <span>|</span>
-          <Link href="/#contact">Contact Us</Link>
-        </div>
-      </footer>
-
       <Footer />
-    </div>
     </>
   );
 }
