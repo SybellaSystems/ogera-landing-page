@@ -1,8 +1,15 @@
 import "./globals.css";
 import { Metadata } from "next";
 import Script from "next/script";
+import { Inter } from "next/font/google";
 
-// ✅ Strong SEO Metadata for Ogera
+// Use Next.js font optimization
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
+
+// Strong SEO Metadata for Ogera
 export const metadata: Metadata = {
   title: "Ogera",
   description:
@@ -71,7 +78,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
@@ -83,7 +94,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         {/* ✅ Structured Data (Organization Schema) */}
-        <Script id="structured-data" type="application/ld+json" strategy="beforeInteractive">
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+        >
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
@@ -100,26 +115,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               telephone: "+250700000000",
               contactType: "Customer Support",
               areaServed: "Worldwide",
-              availableLanguage: ["English", "French", "Swahili", "Kinyarwanda"],
+              availableLanguage: [
+                "English",
+                "French",
+                "Swahili",
+                "Kinyarwanda",
+              ],
             },
           })}
         </Script>
-
-        {/* ✅ Font Optimization */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
       </head>
 
-      <body className="antialiased bg-white text-gray-900">
+      <body className={`${inter.className} antialiased bg-white text-gray-900`}>
         {children}
 
         {/* ✅ Google Analytics (replace ID) */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -127,7 +139,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXX', { page_path: window.location.pathname });
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', { page_path: window.location.pathname });
           `}
         </Script>
       </body>
