@@ -9,7 +9,13 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-section">
           <Link href="/" className="footer-brand">
-            <Image src="/ogera.png" alt="Ogera Logo" className="footer-logo" />
+            <Image
+              src="/ogera.png"
+              width={36}
+              height={36}
+              alt="Ogera Logo"
+              className="footer-logo"
+            />
             <div className="footer-brand-text">
               <h3>Ogera</h3>
               <span className="footer-slogan">Find Jobs You Can Trust</span>
