@@ -25,7 +25,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: 
+  background:
     radial-gradient(circle at 20% 50%, rgba(155, 125, 232, 0.2) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(127, 86, 217, 0.15) 0%, transparent 50%);
   pointer-events: none;
@@ -34,46 +34,6 @@
 .careers-hero-content {
   position: relative;
   z-index: 1;
-<<<<<<< Updated upstream
-}
-
-.home-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, #5B3BA5 0%, #7F56D9 100%);
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  margin-bottom: 30px;
-  box-shadow: 0 2px 8px rgba(127, 86, 217, 0.2);
-}
-
-.home-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(127, 86, 217, 0.3);
-  background: linear-gradient(135deg, #7F56D9 0%, #5B3BA5 100%);
-}
-
-.home-icon {
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.careers-container h1 {
-  font-size: 42px;
-  font-weight: 700;
-  background: linear-gradient(135deg, #5B3BA5 0%, #7F56D9 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 10px;
-=======
->>>>>>> Stashed changes
   text-align: center;
   padding: 0 20px;
   max-width: 800px;
@@ -88,41 +48,6 @@
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-<<<<<<< Updated upstream
-.careers-content {
-  font-size: 15px;
-  line-height: 1.8;
-  color: #1a2b4a;
-}
-
-.careers-content > p {
-  margin-bottom: 35px;
-  text-align: justify;
-  font-size: 15px;
-  color: #1a2b4a;
-  padding: 20px;
-  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
-  border-radius: 8px;
-  line-height: 1.9;
-}
-
-.careers-content section {
-  margin-bottom: 35px;
-  padding: 20px;
-  background: #f8f9ff;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-}
-
-.careers-content section:hover {
-  background: linear-gradient(135deg, #f8f9ff 0%, #e6f0ff 100%);
-  box-shadow: 0 4px 15px rgba(127, 86, 217, 0.1);
-  transform: translateX(5px);
-}
-
-.careers-content section h2 {
-  font-size: 21px;
-=======
 .careers-hero-subtitle {
   font-size: 20px;
   font-weight: 400;
@@ -144,7 +69,6 @@
 /* Section Title */
 .section-title {
   font-size: 42px;
->>>>>>> Stashed changes
   font-weight: 600;
   color: #5B3BA5;
   margin: 0 0 20px 0;
@@ -401,16 +325,8 @@
   letter-spacing: -0.3px;
 }
 
-<<<<<<< Updated upstream
-.careers-content section p {
-  margin: 0;
-  text-align: justify;
-  font-size: 14px;
-  color: #1a2b4a;
-=======
 .apply-description {
   font-size: 18px;
->>>>>>> Stashed changes
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.95);
   margin: 0 0 35px 0;
@@ -486,40 +402,14 @@
     height: 240px;
   }
 
-<<<<<<< Updated upstream
-  .careers-page::before {
-    height: 180px;
-  }
-
-  .careers-container {
-    padding: 30px 20px;
-    margin: 0 15px;
-  }
-
-  .careers-container h1 {
-    font-size: 32px;
-    margin-bottom: 5px;
-=======
   .careers-hero-title {
     font-size: 42px;
->>>>>>> Stashed changes
   }
 
   .careers-hero-subtitle {
     font-size: 18px;
   }
 
-<<<<<<< Updated upstream
-  .careers-content {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .careers-content > p {
-    font-size: 14px;
-    margin-bottom: 25px;
-    padding: 15px;
-=======
   .careers-main-content {
     padding: 50px 16px;
   }
@@ -539,7 +429,6 @@
   .benefits-detailed-section,
   .apply-section {
     margin-bottom: 70px;
->>>>>>> Stashed changes
   }
 
   .benefits-grid {
@@ -551,19 +440,6 @@
     padding: 32px 28px;
   }
 
-<<<<<<< Updated upstream
-  .careers-content section h2 {
-    font-size: 17px;
-    margin-bottom: 10px;
-  }
-
-  .careers-content section h2::before {
-    font-size: 18px;
-  }
-
-  .careers-content section p {
-    font-size: 13px;
-=======
   .benefit-icon {
     width: 48px;
     height: 48px;
@@ -776,6 +652,5 @@
   .diversity-text {
     padding: 28px 22px;
     font-size: 15px;
->>>>>>> Stashed changes
   }
 }
