@@ -29,7 +29,6 @@ export default function ContactPage() {
 
           <div className="contact-hero-inner">
             <div className="contact-hero-copy">
-              <p className="contact-hero-kicker">Get in touch</p>
               <h1 className="contact-hero-title">Contact Us</h1>
               <p className="contact-hero-subtitle">
                 Is it for customer support, a partnership opportunity, or a
