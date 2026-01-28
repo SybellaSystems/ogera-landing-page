@@ -5,6 +5,18 @@ import "./Footer.css";
 import Image from "next/image";
 function Footer() {
   return (
+    <>
+      <div className="footer-top-bar">
+        <div className="footer-top-inner">
+          <div className="footer-top-links">
+            <Link href="/terms">Terms and Conditions</Link>
+            <span>|</span>
+            <Link href="/privacy-policy">Privacy policy</Link>
+            <span>|</span>
+            <Link href="/contact">Contact Us</Link>
+          </div>
+        </div>
+      </div>
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
@@ -142,9 +154,10 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} SybellaSystem. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} SybellaSystem. All rights reserved。</p>
       </div>
     </footer>
+    </>
   );
 }
 

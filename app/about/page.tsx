@@ -2,7 +2,6 @@
 
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import Link from "next/link";
 import Image from "next/image";
 import "./about.css";
 
@@ -129,16 +128,6 @@ export default function AboutPage() {
             </div>
           </section>
         </main>
-
-        <footer className="main-footer">
-          <div className="footer-links">
-            <Link href="/terms">Terms and Conditions</Link>
-            <span>|</span>
-            <Link href="/privacy-policy">Privacy policy</Link>
-            <span>|</span>
-            <Link href="/#contact">Contact Us</Link>
-          </div>
-        </footer>
 
         <Footer />
       </div>

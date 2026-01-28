@@ -80,30 +80,6 @@ body {
   margin: 5px 0 0 0;
 }
 
-/* --- Footer Section --- */
-.main-footer {
-  background-color: #4A2D8A; /* Darker blue for the footer */
-  color: white;
-  padding: 20px;
-  text-align: center;
-  font-size: 12px;
-}
-
-.footer-links a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  transition: opacity 0.2s;
-}
-
-.footer-links a:hover {
-  opacity: 0.8;
-}
-
-.footer-links span {
-  color: rgba(255, 255, 255, 0.5); /* Lighter pipe color */
-}
-
 /* --- Media Query for Responsiveness --- */
 @media (max-width: 768px) {
   .contact-cards-container {

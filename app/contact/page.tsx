@@ -158,15 +158,6 @@ export default function ContactPage() {
             </div>
           </section>
 
-          <footer className="main-footer">
-            <div className="footer-links">
-              <Link href="/terms">Terms and Conditions</Link>
-              <span>|</span>
-              <Link href="/privacy-policy">Privacy policy</Link>
-              <span>|</span>
-              <Link href="/contact">Contact Us</Link>
-            </div>
-          </footer>
         </main>
 
         <Footer />

@@ -1,3 +1,39 @@
+.footer-top-bar {
+  background: linear-gradient(90deg, #5b3ba5 0%, #7f56d9 50%, #9b7de8 100%);
+  color: #f9f9ff;
+  padding: 10px 5%;
+}
+
+.footer-top-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-top-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 13px;
+}
+
+.footer-top-links a {
+  color: #f9f9ff;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+.footer-top-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.footer-top-links span {
+  opacity: 0.5;
+}
+
 .footer {
   background: #1a1025;
   color: #eaeaea;
