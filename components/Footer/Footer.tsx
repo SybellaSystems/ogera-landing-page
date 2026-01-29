@@ -47,9 +47,6 @@ function Footer() {
             <li>
               <Link href="/contact">Contact</Link>
             </li>
-            <li>
-              <Link href="/press">Press</Link>
-            </li>
           </ul>
         </div>
 
@@ -60,13 +57,7 @@ function Footer() {
               <Link href="/help-center">Help Center</Link>
             </li>
             <li>
-              <Link href="/community">Community</Link>
-            </li>
-            <li>
               <Link href="/safety-trust">Safety & Trust</Link>
-            </li>
-            <li>
-              <Link href="/faq">FAQ</Link>
             </li>
           </ul>
         </div>
