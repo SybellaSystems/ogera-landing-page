@@ -1,200 +1,262 @@
-.features {
+/* How It Works Section */
+.how-it-works {
+  padding: 70px 20px;
+  background: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.how-it-works-header {
   display: flex;
   justify-content: space-between;
-  padding: 50px 5%;
-  align-items: flex-start;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 0 20px;
 }
 
-.features-left {
-  width: 45%;
+.how-it-works-header h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a2b4a;
+  margin: 0;
 }
 
-.features-left h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-.features-left p {
-  font-size: 0.95rem;
-  color: #4a4a4a;
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-.features-right {
-  width: 45%;
+.tab-buttons {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.feature-block {
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
+  border: 1px solid #e0e5f0;
+  border-radius: 50px;
+  overflow: hidden;
   background: white;
 }
 
-.feature-block h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 10px;
-}
-
-.feature-block p {
-  font-size: 0.875rem;
-  color: #666;
-  line-height: 1.5;
-}
-
-.features-btn {
-  margin-top: 20px;
-  padding: 12px 36px;
-  background: #7F56D9;
-  color: white;
+.tab-btn {
+  padding: 12px 24px;
   border: none;
-  border-radius: 10px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a2b4a;
   cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(127, 86, 217, 0.3);
 }
 
-.features-btn:hover {
-  background: #6941B0;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(127, 86, 217, 0.4);
+.tab-btn:hover {
+  background: #f8f9ff;
+}
+
+.tab-btn.active {
+  background: #1a2b4a;
+  color: white;
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 0 20px;
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.step-image {
+  width: 100%;
+  height: 240px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #f0e6ff 0%, #e8dff5 100%);
+}
+
+.step-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.step-card:hover .step-image img {
+  transform: scale(1.05);
+}
+
+.step-image.with-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(127, 86, 217, 0.3) 0%, rgba(91, 59, 165, 0.2) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.step-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a2b4a;
+  margin: 0;
+  padding-left: 4px;
 }
 
 /* Responsive Design */
 @media (max-width: 968px) {
-  .features {
+  .how-it-works {
+    padding: 60px 16px;
+  }
+
+  .how-it-works-header {
     flex-direction: column;
-    padding: 40px 5%;
-    gap: 30px;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0;
   }
 
-  .features-left,
-  .features-right {
-    width: 100%;
+  .how-it-works-header h2 {
+    font-size: 24px;
   }
 
-  .features-left h2 {
-    font-size: 1.7rem;
+  .tab-buttons {
+    width: auto;
   }
 
-  .features-left p {
-    font-size: 0.875rem;
+  .tab-btn {
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .steps-container {
+    padding: 0;
+    gap: 20px;
+  }
+
+  .step-image {
+    height: 200px;
+  }
+
+  .step-card h3 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: 50px 16px;
+  }
+
+  .how-it-works-header {
+    margin-bottom: 32px;
+  }
+
+  .steps-container {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 24px;
+  }
+
+  .step-image {
+    height: 220px;
+    border-radius: 14px;
+  }
+
+  .step-card h3 {
+    font-size: 17px;
+    text-align: center;
+    padding: 0;
   }
 }
 
 @media (max-width: 640px) {
-  .features {
-    padding: 35px 16px;
-    gap: 25px;
+  .how-it-works {
+    padding: 40px 14px;
   }
 
-  .features-left h2 {
-    font-size: 1.35rem;
-    margin-bottom: 15px;
+  .how-it-works-header h2 {
+    font-size: 22px;
   }
 
-  .features-left p {
-    font-size: 0.825rem;
+  .tab-btn {
+    padding: 10px 14px;
+    font-size: 12px;
+    white-space: nowrap;
   }
 
-  .feature-block {
-    padding: 16px;
+  .steps-container {
+    gap: 20px;
   }
 
-  .feature-block h4 {
-    font-size: 0.95rem;
-    margin-bottom: 8px;
+  .step-image {
+    height: 200px;
   }
 
-  .feature-block p {
-    font-size: 0.8rem;
-  }
-
-  .features-btn {
-    padding: 10px 28px;
-    font-size: 0.8rem;
+  .step-card h3 {
+    font-size: 16px;
   }
 }
 
 @media (max-width: 480px) {
-  .features {
-    padding: 30px 14px;
-    gap: 20px;
+  .how-it-works {
+    padding: 35px 12px;
   }
 
-  .features-left h2 {
-    font-size: 1.2rem;
-    margin-bottom: 12px;
+  .how-it-works-header {
+    gap: 16px;
+    margin-bottom: 28px;
   }
 
-  .features-left p {
-    font-size: 0.8rem;
-    line-height: 1.5;
+  .how-it-works-header h2 {
+    font-size: 20px;
   }
 
-  .features-right {
-    gap: 15px;
+  .tab-btn {
+    padding: 9px 12px;
+    font-size: 11px;
   }
 
-  .feature-block {
-    padding: 14px;
-    border-radius: 6px;
+  .steps-container {
+    gap: 18px;
+    max-width: 100%;
   }
 
-  .feature-block h4 {
-    font-size: 0.875rem;
+  .step-image {
+    height: 180px;
+    border-radius: 12px;
   }
 
-  .feature-block p {
-    font-size: 0.75rem;
-  }
-
-  .features-btn {
-    padding: 10px 24px;
-    font-size: 0.75rem;
+  .step-card h3 {
+    font-size: 15px;
   }
 }
 
-/* Extra small devices - iPhone SE */
 @media (max-width: 360px) {
-  .features {
-    padding: 25px 12px;
+  .how-it-works {
+    padding: 30px 10px;
   }
 
-  .features-left h2 {
-    font-size: 1.05rem;
+  .how-it-works-header h2 {
+    font-size: 18px;
   }
 
-  .features-left p {
-    font-size: 0.75rem;
+  .tab-btn {
+    padding: 8px 10px;
+    font-size: 10px;
   }
 
-  .feature-block {
-    padding: 12px;
+  .steps-container {
+    gap: 16px;
   }
 
-  .feature-block h4 {
-    font-size: 0.825rem;
+  .step-image {
+    height: 160px;
+    border-radius: 10px;
   }
 
-  .feature-block p {
-    font-size: 0.7rem;
-  }
-
-  .features-btn {
-    padding: 9px 20px;
-    font-size: 0.7rem;
-    border-radius: 8px;
+  .step-card h3 {
+    font-size: 14px;
   }
 }

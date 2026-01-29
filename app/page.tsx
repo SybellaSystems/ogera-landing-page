@@ -7,7 +7,7 @@ import JobTypes from "../components/JobTypes/JobTypes";
 import Features from "../components/Features/Features";
 import Testimonials from "../components/Testimonials/Testimonials";
 import Footer from "../components/Footer/Footer";
-import ContactSection from "../components/Contact/Contact";
+import FAQSection from "../components/FAQSection/FAQSection";
 
 function Home() {
   return (
@@ -20,7 +20,7 @@ function Home() {
       <JobTypes />
       <Features />
       <Testimonials />
-        <ContactSection />
+      <FAQSection />
       <Footer />
     </>
   );

@@ -1,47 +1,72 @@
 "use client";
 
-
+import { useState } from "react";
 import "./Features.css";
 
 function Features() {
-  const features = [
+  const [activeTab, setActiveTab] = useState<"hiring" | "finding">("finding");
+
+  const hiringSteps = [
     {
-      title: "Minimal fee",
-      text: "Pay minimal service fees for every job you get hired for."
+      image: "",
+      title: "Post a job for free",
+      gradient: true
     },
     {
-      title: "Genuine jobs",
-      text: "We verify every posted job for legitimacy to keep you safe."
+      image: "",
+      title: "Get proposals and hire"
     },
     {
-      title: "Global Hiring",
-      text: "Get hired by companies around the world without relocation."
+      image: "",
+      title: "Pay when work is done"
     }
   ];
 
-  const scrollToSearch = () => {
-    const searchSection = document.getElementById('search-section');
-    if (searchSection) {
-      searchSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const findingSteps = [
+    {
+      image: "",
+      title: "Create your free profile",
+      gradient: true
+    },
+    {
+      image: "",
+      title: "Browse and apply to jobs"
+    },
+    {
+      image: "",
+      title: "Get hired and get paid"
     }
-  };
+  ];
+
+  const currentSteps = activeTab === "hiring" ? hiringSteps : findingSteps;
 
   return (
-    <section id="trustscore" className="features">
-      <div className="features-left">
-        <h2>Find your dream job, in your career path</h2>
-        <p>
-          Using our remote platform, you can search and apply to legitimate
-          jobs at global companies while keeping your search organized.
-        </p>
-        <button className="features-btn" onClick={scrollToSearch}>Get started</button>
+    <section className="how-it-works">
+      <div className="how-it-works-header">
+        <h2>How it works</h2>
+        <div className="tab-buttons">
+          <button
+            className={`tab-btn ${activeTab === "hiring" ? "active" : ""}`}
+            onClick={() => setActiveTab("hiring")}
+          >
+            For hiring
+          </button>
+          <button
+            className={`tab-btn ${activeTab === "finding" ? "active" : ""}`}
+            onClick={() => setActiveTab("finding")}
+          >
+            For finding work
+          </button>
+        </div>
       </div>
 
-      <div className="features-right">
-        {features.map((f, i) => (
-          <div key={i} className="feature-block">
-            <h4>{f.title}</h4>
-            <p>{f.text}</p>
+      <div className="steps-container">
+        {currentSteps.map((step, index) => (
+          <div key={index} className="step-card">
+            <div className={`step-image ${step.gradient ? "with-gradient" : ""}`}>
+              <img src={step.image} alt={step.title} />
+            </div>
+            <h3>{step.title}</h3>
           </div>
         ))}
       </div>

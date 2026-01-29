@@ -1,7 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/* Disabled dark mode variant */
+/* @custom-variant dark (&:is(.dark *)); */
 
 :root {
   --background: oklch(1 0 0);
@@ -81,24 +82,27 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Force light mode - disable dark mode auto-switching */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+  background-color: #ffffff !important;
 }
 
 body {
-  background: var(--background);
+  background: #ffffff !important;
   color: var(--foreground);
   font-family: 'Lateef', Arial, Helvetica, sans-serif;
 }
 
+/* Dark mode disabled - commented out
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -132,12 +136,14 @@ body {
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
+*/
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background-color: #ffffff !important;
   }
 }
