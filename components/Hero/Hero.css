@@ -5,20 +5,47 @@
 }
 
 .hero-section {
-  min-height: 90vh;
+  height: 100vh;
+  max-height: 100vh;
   background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
-  padding: 100px 20px 40px;
+  padding: 80px 20px 20px;
   overflow: hidden;
   position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Particle Container */
+.particle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0;
+  animation: fadeInParticles 0.8s ease-out 0.2s forwards;
+}
+
+@keyframes fadeInParticles {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.7;
+  }
 }
 
 .hero-container {
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 40px;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content {
@@ -39,6 +66,28 @@
 
 .title-dark {
   color: #1a2b4a;
+}
+
+/* Typing Animation */
+.typing-text {
+  color: #7F56D9;
+}
+
+.typing-cursor {
+  display: inline-block;
+  color: #7F56D9;
+  font-weight: 400;
+  animation: blink 0.8s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
 }
 
 /* Text Reveal Animation */
@@ -112,7 +161,7 @@
 
 .hero-visual {
   position: relative;
-  height: 500px;
+  height: clamp(300px, 50vh, 450px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -276,29 +325,35 @@
   }
 
   .hero-visual {
-    height: 450px;
+    height: clamp(280px, 45vh, 400px);
   }
 
   .circle-gray {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
   }
 
   .circle-blue {
-    width: 240px;
-    height: 240px;
+    width: 220px;
+    height: 220px;
   }
 
   .circle-accent {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
   }
 }
 
 @media (max-width: 968px) {
+  .hero-section {
+    height: auto;
+    min-height: 100vh;
+    padding: 90px 20px 30px;
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 30px;
   }
 
   .hero-content {
@@ -311,17 +366,30 @@
   }
 
   .hero-visual {
-    height: 400px;
+    height: clamp(250px, 40vh, 350px);
   }
 
   .hero-cta {
     margin: 0 auto;
   }
+
+  .particle-container {
+    animation: fadeInParticlesMobile 0.8s ease-out 0.2s forwards;
+  }
+}
+
+@keyframes fadeInParticlesMobile {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
 }
 
 @media (max-width: 640px) {
   .hero-section {
-    padding: 90px 16px 40px;
+    padding: 80px 16px 20px;
   }
 
   .hero-title {
@@ -330,43 +398,61 @@
 
   .hero-subtitle {
     font-size: 0.825rem;
+    margin-bottom: 20px;
   }
 
   .hero-cta {
-    padding: 14px 28px;
+    padding: 12px 24px;
     font-size: 0.825rem;
   }
 
   .hero-visual {
-    height: 320px;
+    height: clamp(200px, 35vh, 280px);
   }
 
   .circle-gray,
   .circle-blue,
   .circle-accent {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
   }
 
   .badge {
     padding: 8px 14px;
     font-size: 0.7rem;
   }
+
+  .particle-container {
+    animation: fadeInParticlesSmall 0.8s ease-out 0.2s forwards;
+  }
+}
+
+@keyframes fadeInParticlesSmall {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.4;
+  }
 }
 
 @media (max-width: 480px) {
   .hero-section {
-    min-height: auto;
-    padding: 80px 16px 30px;
+    padding: 75px 16px 15px;
+  }
+
+  .hero-container {
+    gap: 20px;
   }
 
   .hero-title {
     font-size: 1.5rem;
+    margin-bottom: 16px;
   }
 
   .hero-subtitle {
     font-size: 0.8rem;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
 
   .hero-cta {
@@ -377,14 +463,14 @@
   }
 
   .hero-visual {
-    height: 260px;
+    height: clamp(180px, 30vh, 240px);
   }
 
   .circle-gray,
   .circle-blue,
   .circle-accent {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
 
   .badge {
@@ -396,26 +482,39 @@
     font-size: 0.85rem;
     opacity: 0.4;
   }
+
+  .particle-container {
+    animation: fadeInParticlesTiny 0.8s ease-out 0.2s forwards;
+  }
+}
+
+@keyframes fadeInParticlesTiny {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.3;
+  }
 }
 
 /* Extra small devices - iPhone SE (320px) */
 @media (max-width: 360px) {
   .hero-section {
-    padding: 75px 12px 24px;
+    padding: 70px 12px 10px;
   }
 
   .hero-container {
-    gap: 24px;
+    gap: 15px;
   }
 
   .hero-title {
-    font-size: 1.3rem;
-    margin-bottom: 16px;
+    font-size: 1.25rem;
+    margin-bottom: 12px;
   }
 
   .hero-subtitle {
-    font-size: 0.75rem;
-    margin-bottom: 20px;
+    font-size: 0.7rem;
+    margin-bottom: 12px;
   }
 
   .hero-cta {
@@ -424,19 +523,19 @@
   }
 
   .hero-visual {
-    height: 220px;
+    height: clamp(150px, 28vh, 200px);
   }
 
   .circle-gray,
   .circle-blue,
   .circle-accent {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
 
   .badge {
-    padding: 5px 10px;
-    font-size: 0.6rem;
+    padding: 4px 8px;
+    font-size: 0.55rem;
   }
 
   .badge-remote {
@@ -458,9 +557,22 @@
     display: none;
   }
 
+  .particle-container {
+    animation: fadeInParticlesXS 0.8s ease-out 0.2s forwards;
+  }
+
   .hero-frame {
     width: 90%;
     height: 85%;
     border-radius: 12px;
+  }
+}
+
+@keyframes fadeInParticlesXS {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.25;
   }
 }

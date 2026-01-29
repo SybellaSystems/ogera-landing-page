@@ -1,10 +1,41 @@
 "use client";
 
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Hero.css';
+import ParticleCanvas from './ParticleCanvas';
 
 function Hero() {
+  const [displayText, setDisplayText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const fullText = 'companies';
+
+  useEffect(() => {
+    const typeSpeed = isDeleting ? 80 : 120;
+    const pauseTime = isDeleting ? 500 : 2000;
+
+    if (!isDeleting && displayText === fullText) {
+      // Pause before starting to delete
+      const timeout = setTimeout(() => setIsDeleting(true), pauseTime);
+      return () => clearTimeout(timeout);
+    }
+
+    if (isDeleting && displayText === '') {
+      // Pause before starting to type again
+      const timeout = setTimeout(() => setIsDeleting(false), pauseTime);
+      return () => clearTimeout(timeout);
+    }
+
+    const timeout = setTimeout(() => {
+      if (isDeleting) {
+        setDisplayText(fullText.substring(0, displayText.length - 1));
+      } else {
+        setDisplayText(fullText.substring(0, displayText.length + 1));
+      }
+    }, typeSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, fullText]);
+
   const scrollToSearch = () => {
     const searchSection = document.getElementById('search-section');
     if (searchSection) {
@@ -14,6 +45,15 @@ function Hero() {
 
   return (
     <section id="home" className="hero-section">
+      {/* Particle Background */}
+      <div className="particle-container">
+        <ParticleCanvas
+          particleCount={250}
+          maxDistance={100}
+          speed={0.4}
+        />
+      </div>
+
       <div className="hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
@@ -23,7 +63,10 @@ function Hero() {
             <br />
             <span className="title-blue animate-line line-3">with the most</span>
             <br />
-            <span className="title-blue animate-line line-4">trusted companies</span>
+            <span className="title-blue animate-line line-4">
+              trusted <span className="typing-text">{displayText}</span>
+              <span className="typing-cursor">|</span>
+            </span>
           </h1>
 
           <p className="hero-subtitle">
