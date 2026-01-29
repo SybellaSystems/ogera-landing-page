@@ -1,0 +1,119 @@
+.custom-select {
+  position: relative;
+  min-width: 150px;
+  border-left: 1px solid #dddddd;
+}
+
+.custom-select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  cursor: pointer;
+  gap: 10px;
+  color: #7F56D9;
+  font-size: 14px;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.custom-select-trigger .placeholder {
+  color: #7F56D9;
+}
+
+.custom-select-trigger .has-value {
+  color: #7F56D9;
+}
+
+.custom-select-arrow {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.custom-select-arrow.open {
+  transform: rotate(180deg);
+}
+
+.custom-select-options {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.custom-select-option {
+  padding: 12px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.15s ease;
+}
+
+.custom-select-option:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.custom-select-option:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.custom-select-option:hover {
+  background-color: #7F56D9;
+  color: white;
+}
+
+.custom-select-option.selected {
+  background-color: #7F56D9;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .custom-select {
+    border-left: none;
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .custom-select-trigger {
+    font-size: 13px;
+  }
+
+  .custom-select-options {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .custom-select-option {
+    font-size: 13px;
+    background: transparent;
+  }
+
+  .custom-select-option:hover {
+    background-color: rgba(127, 86, 217, 0.9);
+  }
+
+  .custom-select-option.selected {
+    background-color: rgba(127, 86, 217, 0.9);
+  }
+}
+
+@media (max-width: 640px) {
+  .custom-select-trigger {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .custom-select-option {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+}

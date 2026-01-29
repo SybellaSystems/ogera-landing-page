@@ -1,7 +1,22 @@
 "use client";
 
-
 import "./SearchBar.css";
+import CustomSelect from "./CustomSelect";
+
+const experienceOptions = [
+  { value: "0", label: "0 years" },
+  { value: "1", label: "1 year" },
+  { value: "2", label: "2 years" },
+  { value: "3", label: "3 years" },
+  { value: "4", label: "4 years" },
+];
+
+const jobTypeOptions = [
+  { value: "freelance", label: "Freelance" },
+  { value: "parttime", label: "Part-time" },
+  { value: "internship", label: "Internship" },
+  { value: "ogerawin", label: "Ogerawin" },
+];
 
 function SearchBar() {
   return (
@@ -13,21 +28,14 @@ function SearchBar() {
 
       <div className="search-box">
         <input type="text" placeholder="Enter skills" />
-        <select>
-          <option>Select experiences</option>
-          <option value="0">0 years</option>
-          <option value="1">1 year</option>
-          <option value="2">2 years</option>
-          <option value="3">3 years</option>
-          <option value="4">4 years</option>
-        </select>
-        <select>
-          <option>Select Jobtype</option>
-          <option value="freelance">Freelance</option>
-          <option value="parttime">Part-time</option>
-          <option value="internship">Internship</option>
-          <option value="ogerawin">Ogerawin</option>
-        </select>
+        <CustomSelect
+          options={experienceOptions}
+          placeholder="Select experiences"
+        />
+        <CustomSelect
+          options={jobTypeOptions}
+          placeholder="Select Jobtype"
+        />
 
         <button className="search-btn">Search</button>
       </div>

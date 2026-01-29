@@ -93,14 +93,28 @@
   color: inherit;
 }
 
-.login {
+.nav-actions button.login {
   background: transparent;
   color: white;
+  transition: all 0.3s ease;
+  border: 2px solid white !important;
+  border-radius: 20px;
+}
+
+.nav-actions button.login:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
 }
 
 .signup {
   background: #9B7DE8;
   color: white;
+  transition: all 0.3s ease;
+}
+
+.signup:hover {
+  background: #8A6AD6;
+  transform: scale(1.02);
 }
 
 /* Hamburger Menu */
