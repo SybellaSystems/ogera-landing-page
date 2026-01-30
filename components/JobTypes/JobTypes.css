@@ -81,122 +81,47 @@
         }
 
         .job-types-visual {
-          position: relative;
-          height: 600px;
           display: flex;
           align-items: center;
           justify-content: center;
         }
 
-        .star-group {
-          position: absolute;
+        .circles-wrapper {
           display: flex;
-          flex-direction: column;
-          gap: 8px;
-          z-index: 2;
-        }
-
-        .star-group-1 {
-          top: 15%;
-          left: 10%;
-        }
-
-        .star-group-2 {
-          bottom: 15%;
-          right: 15%;
-        }
-
-        .star {
-          font-size: 1.25rem;
-          opacity: 0.7;
-        }
-
-        .star-blue {
-          color: #7F56D9;
-        }
-
-        .star-cyan {
-          color: #B794F4;
-        }
-
-        .star-pink {
-          color: #FF69B4;
-        }
-
-        .star-green {
-          color: #4ADE80;
-        }
-
-        .star-red {
-          color: #EF4444;
-        }
-
-        .blob-container {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          display: flex;
+          flex-direction: row;
           align-items: center;
           justify-content: center;
         }
 
-        .blob {
-          position: absolute;
+        .circle {
+          width: 180px;
+          height: 180px;
           border-radius: 50%;
-        }
-
-        .blob-1 {
-          width: 450px;
-          height: 450px;
-          background: linear-gradient(135deg, #7F56D9 0%, #6941B0 100%);
-          top: 10%;
-          left: 5%;
-          border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
-          z-index: 1;
-        }
-
-        .blob-2 {
-          width: 380px;
-          height: 380px;
-          background: linear-gradient(135deg, #E8E9EC 0%, #C5C7CF 100%);
-          bottom: 5%;
-          right: 10%;
-          border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%;
-          z-index: 1;
-        }
-
-        .blob-3 {
-          width: 320px;
-          height: 320px;
-          background: linear-gradient(135deg, #A78BDB 0%, #9478C8 100%);
-          top: 50%;
-          right: -5%;
-          transform: translateY(-50%);
-          border-radius: 50% 50% 30% 70% / 30% 50% 50% 70%;
-          z-index: 1;
-        }
-
-        .image-frame {
-          position: relative;
-          width: 500px;
-          height: 400px;
-          border-radius: 30px;
-          overflow: hidden;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-          z-index: 2;
-          background: white;
-        }
-
-        .placeholder-img {
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1rem;
-          color: #666;
-          font-weight: 600;
+        }
+
+        .circle span {
+          font-size: 4.5rem;
+          font-weight: 700;
+          color: white;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .circle-purple {
+          background: linear-gradient(135deg, #A78BDB 0%, #9478C8 100%);
+          z-index: 1;
+        }
+
+        .circle-gray {
+          background: linear-gradient(135deg, #d0d5dd 0%, #b8bfc9 100%);
+          z-index: 2;
+        }
+
+        .circle-accent {
+          background: linear-gradient(135deg, #7F56D9 0%, #6941B0 100%);
+          z-index: 3;
         }
 
         /* Responsive Design */
@@ -205,28 +130,13 @@
             font-size: 1.9rem;
           }
 
-          .job-types-visual {
-            height: 500px;
+          .circle {
+            width: 160px;
+            height: 160px;
           }
 
-          .blob-1 {
-            width: 400px;
-            height: 400px;
-          }
-
-          .blob-2 {
-            width: 330px;
-            height: 330px;
-          }
-
-          .blob-3 {
-            width: 280px;
-            height: 280px;
-          }
-
-          .image-frame {
-            width: 450px;
-            height: 350px;
+          .circle span {
+            font-size: 4rem;
           }
         }
 
@@ -250,8 +160,13 @@
             margin: 0 auto;
           }
 
-          .job-types-visual {
-            height: 450px;
+          .circle {
+            width: 140px;
+            height: 140px;
+          }
+
+          .circle span {
+            font-size: 3.5rem;
           }
         }
 
@@ -299,35 +214,13 @@
             border-radius: 10px;
           }
 
-          .job-types-visual {
-            height: 300px;
+          .circle {
+            width: 100px;
+            height: 100px;
           }
 
-          .blob-1,
-          .blob-2,
-          .blob-3 {
-            width: 200px;
-            height: 200px;
-          }
-
-          .image-frame {
-            width: 280px;
-            height: 220px;
-            border-radius: 20px;
-          }
-
-          .star {
-            font-size: 0.85rem;
-          }
-
-          .star-group-1 {
-            top: 10%;
-            left: 5%;
-          }
-
-          .star-group-2 {
-            bottom: 10%;
-            right: 10%;
+          .circle span {
+            font-size: 2.5rem;
           }
         }
 
@@ -375,47 +268,13 @@
             max-width: 280px;
           }
 
-          .job-types-visual {
-            height: 250px;
+          .circle {
+            width: 80px;
+            height: 80px;
           }
 
-          .blob-1,
-          .blob-2,
-          .blob-3 {
-            width: 160px;
-            height: 160px;
-          }
-
-          .blob-1 {
-            top: 5%;
-            left: 0%;
-          }
-
-          .blob-2 {
-            bottom: 0%;
-            right: 5%;
-          }
-
-          .blob-3 {
-            right: -10%;
-          }
-
-          .image-frame {
-            width: 240px;
-            height: 180px;
-            border-radius: 16px;
-          }
-
-          .placeholder-img {
-            font-size: 0.875rem;
-          }
-
-          .star {
-            font-size: 0.8rem;
-          }
-
-          .star-group {
-            gap: 5px;
+          .circle span {
+            font-size: 2rem;
           }
         }
 
@@ -462,38 +321,12 @@
             border-radius: 8px;
           }
 
-          .job-types-visual {
-            height: 200px;
+          .circle {
+            width: 65px;
+            height: 65px;
           }
 
-          .blob-1,
-          .blob-2,
-          .blob-3 {
-            width: 130px;
-            height: 130px;
-          }
-
-          .image-frame {
-            width: 200px;
-            height: 150px;
-            border-radius: 12px;
-          }
-
-          .placeholder-img {
-            font-size: 0.8rem;
-          }
-
-          .star {
-            font-size: 0.7rem;
-          }
-
-          .star-group-1 {
-            top: 5%;
-            left: 0%;
-          }
-
-          .star-group-2 {
-            bottom: 5%;
-            right: 5%;
+          .circle span {
+            font-size: 1.5rem;
           }
         }

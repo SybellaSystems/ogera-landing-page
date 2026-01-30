@@ -1,8 +1,5 @@
 "use client";
 
-
-import { useState } from 'react';
-
 import './JobTypes.css';
 
 function JobTypes() {
@@ -63,30 +60,55 @@ function JobTypes() {
 
         {/* Right Visual */}
         <div className="job-types-visual">
-          {/* Decorative Stars */}
-          <div className="star-group star-group-1">
-            <span className="star star-blue">★</span>
-            <span className="star star-cyan">★</span>
-            <span className="star star-pink">★</span>
-          </div>
-          
-          <div className="star-group star-group-2">
-            <span className="star star-blue">★</span>
-            <span className="star star-green">★</span>
-            <span className="star star-red">★</span>
-          </div>
-
-          {/* Blob shapes */}
-          <div className="blob-container">
-            <div className="blob blob-1"></div>
-            <div className="blob blob-2"></div>
-            <div className="blob blob-3"></div>
-            
-            {/* Image Container */}
-            <div className="image-frame">
-              <div className="placeholder-img">
-                <span>.....</span>
-              </div>
+          <div style={{
+            position: 'relative',
+            width: '420px',
+            height: '180px'
+          }}>
+            <div style={{
+              position: 'absolute',
+              left: '0',
+              top: '0',
+              width: '180px',
+              height: '180px',
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, #A78BDB 0%, #9478C8 100%)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 1
+            }}>
+              <span style={{ fontSize: '4.5rem', fontWeight: 700, color: 'white', textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>J</span>
+            </div>
+            <div style={{
+              position: 'absolute',
+              left: '120px',
+              top: '0',
+              width: '180px',
+              height: '180px',
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, #d0d5dd 0%, #b8bfc9 100%)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 2
+            }}>
+              <span style={{ fontSize: '4.5rem', fontWeight: 700, color: 'white', textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>O</span>
+            </div>
+            <div style={{
+              position: 'absolute',
+              left: '240px',
+              top: '0',
+              width: '180px',
+              height: '180px',
+              borderRadius: '50%',
+              background: 'linear-gradient(135deg, #7F56D9 0%, #6941B0 100%)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 3
+            }}>
+              <span style={{ fontSize: '4.5rem', fontWeight: 700, color: 'white', textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>B</span>
             </div>
           </div>
         </div>

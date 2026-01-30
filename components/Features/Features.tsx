@@ -64,7 +64,7 @@ function Features() {
         {currentSteps.map((step, index) => (
           <div key={index} className="step-card">
             <div className={`step-image ${step.gradient ? "with-gradient" : ""}`}>
-              <img src={step.image} alt={step.title} />
+              {step.image && <img src={step.image} alt={step.title} />}
             </div>
             <h3>{step.title}</h3>
           </div>
