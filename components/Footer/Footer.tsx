@@ -42,9 +42,6 @@ function Footer() {
               <Link href="/about">About us</Link>
             </li>
             <li>
-              <Link href="/careers">Careers</Link>
-            </li>
-            <li>
               <Link href="/contact">Contact</Link>
             </li>
           </ul>
