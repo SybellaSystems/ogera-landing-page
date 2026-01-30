@@ -63,12 +63,8 @@ function Navbar() {
         </ul>
 
         <div className="nav-actions desktop-actions">
-          <button className="login">
-            <a href="/auth/login">Login</a>
-          </button>
-          <button className="signup">
-            <a href="/auth/register">Signup</a>
-          </button>
+          <a href="http://45.83.40.83:5173/auth/login" className="login">Login</a>
+          <a href="http://45.83.40.83:5173/auth/register" className="signup">Signup</a>
         </div>
 
         <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
@@ -105,8 +101,8 @@ function Navbar() {
 
         {/* Auth Actions */}
         <div className="modal-auth">
-          <a href="/auth/login" className="modal-login-link">Log In</a>
-          <a href="/auth/register" className="modal-signup-btn-full">Sign Up</a>
+          <a href="http://45.83.40.83:5173/auth/login" className="modal-login-link">Log In</a>
+          <a href="http://45.83.40.83:5173/auth/register" className="modal-signup-btn-full">Sign Up</a>
         </div>
       </div>
     </>

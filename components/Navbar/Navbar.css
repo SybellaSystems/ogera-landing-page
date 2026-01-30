@@ -80,39 +80,40 @@
   border-radius: 1px;
 }
 
-.nav-actions button {
-  margin-left: 15px;
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-actions a {
   padding: 8px 20px;
   border-radius: 20px;
-  border: none;
   cursor: pointer;
-}
-
-.nav-actions button a {
   text-decoration: none;
-  color: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-.nav-actions button.login {
+.nav-actions .login {
   background: transparent;
   color: white;
-  transition: all 0.3s ease;
-  border: 2px solid white !important;
-  border-radius: 20px;
+  border: 2px solid white;
 }
 
-.nav-actions button.login:hover {
+.nav-actions .login:hover {
   background: rgba(255, 255, 255, 0.2);
   transform: scale(1.05);
 }
 
-.signup {
+.nav-actions .signup {
   background: #9B7DE8;
   color: white;
-  transition: all 0.3s ease;
+  border: none;
 }
 
-.signup:hover {
+.nav-actions .signup:hover {
   background: #8A6AD6;
   transform: scale(1.02);
 }
