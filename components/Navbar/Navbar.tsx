@@ -55,9 +55,6 @@ function Navbar() {
             <Link href="/scholarship" className={pathname === "/scholarship" ? "active" : ""}>Scholarship Gateway</Link>
           </li>
           <li>
-            <Link href="/leaderboard" className={pathname === "/leaderboard" ? "active" : ""}>Leaderboard</Link>
-          </li>
-          <li>
             <Link href="/trustscore" className={pathname === "/trustscore" ? "active" : ""}>About TrustScore</Link>
           </li>
         </ul>
@@ -88,9 +85,6 @@ function Navbar() {
           </li>
           <li>
             <Link href="/scholarship" onClick={closeMenu} className={pathname === "/scholarship" ? "active" : ""}>Scholarship Gateway</Link>
-          </li>
-          <li>
-            <Link href="/leaderboard" onClick={closeMenu} className={pathname === "/leaderboard" ? "active" : ""}>Leaderboard</Link>
           </li>
           <li>
             <Link href="/trustscore" onClick={closeMenu} className={pathname === "/trustscore" ? "active" : ""}>About TrustScore</Link>

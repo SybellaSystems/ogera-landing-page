@@ -1,88 +1,890 @@
-.coming-soon-page {
-  min-height: calc(100vh - 160px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 120px 20px 80px;
-  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+/* Scholarship Page */
+.scholarship-page {
+  min-height: 100vh;
+  background: #f8f9ff;
 }
 
-.coming-soon-container {
+/* Hero Section */
+.scholarship-hero {
+  background: linear-gradient(135deg, #7F56D9 0%, #5B3BA5 100%);
+  padding: 110px 20px 60px;
   text-align: center;
-  max-width: 500px;
 }
 
-.coming-soon-icon {
-  margin-bottom: 24px;
+.hero-content {
+  max-width: 750px;
+  margin: 0 auto;
 }
 
-.coming-soon-icon svg {
-  width: 80px;
-  height: 80px;
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 18px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 16px;
 }
 
-.coming-soon-page h1 {
-  font-size: 2.5rem;
+.scholarship-hero h1 {
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 12px;
+  color: white;
+  margin: 0 0 12px 0;
+  line-height: 1.2;
 }
 
-.coming-soon-subtitle {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #7F56D9;
-  margin-bottom: 20px;
-}
-
-.coming-soon-description {
-  font-size: 1rem;
-  color: #666;
+.scholarship-hero p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.6;
+  margin: 0 0 30px 0;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
   margin-bottom: 32px;
 }
 
-.back-home-btn {
-  display: inline-block;
-  background: #7F56D9;
-  color: white;
-  padding: 14px 32px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
+.section-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 10px 0;
 }
 
-.back-home-btn:hover {
+.section-header p {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Scholarships Section */
+.scholarships-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.scholarships-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Scholarship Card */
+.scholarship-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.scholarship-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.category-badge {
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.category-badge.technology {
+  background: rgba(127, 86, 217, 0.1);
+  color: #7F56D9;
+}
+
+.category-badge.stem {
+  background: rgba(236, 72, 153, 0.1);
+  color: #EC4899;
+}
+
+.category-badge.business {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22C55E;
+}
+
+.category-badge.marketing {
+  background: rgba(249, 115, 22, 0.1);
+  color: #F97316;
+}
+
+.category-badge.employment {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3B82F6;
+}
+
+.deadline {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.scholarship-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 6px 0;
+  line-height: 1.35;
+}
+
+.provider {
+  font-size: 0.85rem;
+  color: #7F56D9;
+  margin: 0 0 12px 0;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 14px 0;
+  flex-grow: 1;
+}
+
+.amount-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #7F56D9 0%, #5B3BA5 100%);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  width: fit-content;
+}
+
+.amount-badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+.eligibility {
+  margin-bottom: 14px;
+}
+
+.eligibility h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+}
+
+.eligibility ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.eligibility li {
+  font-size: 0.85rem;
+  color: #666;
+  padding: 3px 0;
+  padding-left: 14px;
+  position: relative;
+}
+
+.eligibility li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #7F56D9;
+  font-weight: bold;
+}
+
+.apply-btn {
+  width: 100%;
+  padding: 12px;
+  background: #7F56D9;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.apply-btn:hover {
   background: #6941B0;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(127, 86, 217, 0.3);
 }
 
-@media (max-width: 640px) {
-  .coming-soon-page {
-    padding: 100px 16px 60px;
+/* How to Apply Section */
+.how-to-apply {
+  padding: 50px 20px;
+  background: white;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.step-card {
+  text-align: center;
+  padding: 20px 16px;
+}
+
+.step-number {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #7F56D9;
+  margin-bottom: 14px;
+  opacity: 0.3;
+}
+
+.step-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 8px 0;
+}
+
+.step-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Info Section */
+.scholarship-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.info-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.info-card.highlight {
+  background: linear-gradient(135deg, #7F56D9 0%, #5B3BA5 100%);
+}
+
+.info-card.highlight h3,
+.info-card.highlight p {
+  color: white;
+}
+
+.info-card.highlight .info-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.info-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(127, 86, 217, 0.1);
+  color: #7F56D9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+
+.info-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.info-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 10px 0;
+}
+
+.info-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.info-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.info-link:hover {
+  opacity: 0.9;
+}
+
+/* CTA Section */
+.scholarship-cta {
+  text-align: center;
+  padding: 60px 20px 70px;
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f2f8 100%);
+}
+
+.scholarship-cta h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+}
+
+.scholarship-cta p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 28px 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cta-primary {
+  background: #7F56D9;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-primary:hover {
+  background: #6941B0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(127, 86, 217, 0.3);
+}
+
+.cta-secondary {
+  background: white;
+  color: #7F56D9;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 2px solid #7F56D9;
+  transition: all 0.3s ease;
+}
+
+.cta-secondary:hover {
+  background: rgba(127, 86, 217, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .scholarships-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .coming-soon-icon svg {
-    width: 60px;
-    height: 60px;
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .scholarship-hero {
+    padding: 100px 20px 50px;
   }
 
-  .coming-soon-page h1 {
+  .scholarship-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-stats {
+    gap: 32px;
+  }
+
+  .scholarship-info {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .scholarship-hero {
+    padding: 95px 16px 45px;
+  }
+
+  .scholarship-hero h1 {
     font-size: 1.75rem;
   }
 
-  .coming-soon-subtitle {
-    font-size: 1.25rem;
-  }
-
-  .coming-soon-description {
+  .scholarship-hero p {
     font-size: 0.9rem;
   }
 
-  .back-home-btn {
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .section-header p {
+    font-size: 0.9rem;
+  }
+
+  .scholarships-section {
+    padding: 45px 16px;
+  }
+
+  .scholarships-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .scholarship-card {
+    padding: 22px;
+  }
+
+  .scholarship-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+
+  .step-card {
+    padding: 18px 14px;
+  }
+
+  .step-number {
+    font-size: 1.75rem;
+  }
+
+  .step-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .step-card p {
+    font-size: 0.85rem;
+  }
+
+  .how-to-apply {
+    padding: 40px 16px;
+  }
+
+  .scholarship-info {
+    padding: 40px 16px;
+  }
+
+  .info-card {
+    padding: 24px;
+  }
+
+  .info-card h3 {
+    font-size: 1rem;
+  }
+
+  .info-card p {
+    font-size: 0.85rem;
+  }
+
+  .scholarship-cta {
+    padding: 45px 16px 55px;
+  }
+
+  .scholarship-cta h2 {
+    font-size: 1.5rem;
+  }
+
+  .scholarship-cta p {
+    font-size: 0.95rem;
+  }
+
+  .cta-primary,
+  .cta-secondary {
     padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scholarship-hero {
+    padding: 90px 14px 40px;
+  }
+
+  .hero-badge {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+
+  .scholarship-hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .scholarship-hero p {
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+  }
+
+  .hero-stats {
+    gap: 24px;
+  }
+
+  .stat-number {
+    font-size: 1.35rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.35rem;
+  }
+
+  .section-header p {
+    font-size: 0.85rem;
+  }
+
+  .scholarships-section {
+    padding: 38px 14px;
+  }
+
+  .scholarship-card {
+    padding: 20px;
+  }
+
+  .scholarship-card h3 {
+    font-size: 1rem;
+  }
+
+  .provider {
+    font-size: 0.8rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .amount-badge {
+    font-size: 0.85rem;
+    padding: 7px 14px;
+  }
+
+  .eligibility h4 {
+    font-size: 0.8rem;
+  }
+
+  .eligibility li {
+    font-size: 0.8rem;
+  }
+
+  .apply-btn {
+    padding: 11px;
     font-size: 0.9rem;
+  }
+
+  .how-to-apply {
+    padding: 35px 14px;
+  }
+
+  .step-number {
+    font-size: 1.5rem;
+  }
+
+  .step-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .step-card p {
+    font-size: 0.8rem;
+  }
+
+  .scholarship-info {
+    padding: 35px 14px;
+  }
+
+  .info-card {
+    padding: 22px;
+  }
+
+  .info-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .info-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .info-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .info-card p {
+    font-size: 0.8rem;
+  }
+
+  .info-link {
+    font-size: 0.85rem;
+  }
+
+  .scholarship-cta {
+    padding: 40px 14px 50px;
+  }
+
+  .scholarship-cta h2 {
+    font-size: 1.35rem;
+  }
+
+  .scholarship-cta p {
+    font-size: 0.9rem;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    padding: 11px 26px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .scholarship-hero {
+    padding: 85px 12px 35px;
+  }
+
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 5px 12px;
+  }
+
+  .scholarship-hero h1 {
+    font-size: 1.35rem;
+  }
+
+  .scholarship-hero p {
+    font-size: 0.8rem;
+  }
+
+  .hero-stats {
+    gap: 20px;
+  }
+
+  .stat-number {
+    font-size: 1.2rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .section-header p {
+    font-size: 0.8rem;
+  }
+
+  .scholarships-section {
+    padding: 32px 12px;
+  }
+
+  .scholarship-card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .category-badge {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+
+  .deadline {
+    font-size: 0.75rem;
+  }
+
+  .scholarship-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .provider {
+    font-size: 0.75rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .amount-badge {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .eligibility h4 {
+    font-size: 0.75rem;
+  }
+
+  .eligibility li {
+    font-size: 0.75rem;
+  }
+
+  .apply-btn {
+    padding: 10px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  .how-to-apply {
+    padding: 30px 12px;
+  }
+
+  .step-number {
+    font-size: 1.35rem;
+  }
+
+  .step-card h3 {
+    font-size: 0.85rem;
+  }
+
+  .step-card p {
+    font-size: 0.75rem;
+  }
+
+  .scholarship-info {
+    padding: 30px 12px;
+  }
+
+  .info-card {
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .info-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+
+  .info-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .info-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .info-card p {
+    font-size: 0.75rem;
+  }
+
+  .info-link {
+    font-size: 0.8rem;
+  }
+
+  .scholarship-cta {
+    padding: 35px 12px 45px;
+  }
+
+  .scholarship-cta h2 {
+    font-size: 1.2rem;
+  }
+
+  .scholarship-cta p {
+    font-size: 0.85rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
   }
 }

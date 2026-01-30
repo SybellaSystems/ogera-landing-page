@@ -30,7 +30,7 @@ function JobTypes() {
   ];
 
   return (
-    <section id="leaderboard" className="job-types-section">
+    <section id="job-types" className="job-types-section">
       <div className="job-types-container">
         {/* Left Content */}
         <div className="job-types-content">
