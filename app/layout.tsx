@@ -1,11 +1,11 @@
 import "./globals.css";
 import { Metadata } from "next";
 import Script from "next/script";
-import { Inter } from "next/font/google";
+import { Nunito } from "next/font/google";
 
-// Use Next.js font optimization
-const inter = Inter({
+const nunito = Nunito({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -126,7 +126,7 @@ export default function RootLayout({
         </Script>
       </head>
 
-      <body className={`${inter.className} antialiased bg-white text-gray-900`}>
+      <body className={`${nunito.className} antialiased bg-white text-gray-900`}>
         {children}
 
         {/* ✅ Google Analytics (replace ID) */}

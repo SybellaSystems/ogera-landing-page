@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import "./Navbar.css";
 
-function Navbar() {
+function Navbar({ solid = false }: { solid?: boolean }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
   const toggleMenu = () => {
@@ -16,6 +17,15 @@ function Navbar() {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  // Scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -31,17 +41,13 @@ function Navbar() {
 
   return (
     <>
-      <nav className="nav">
+      <nav className={`nav${isScrolled || solid ? " nav-scrolled" : ""}`}>
         <Link href="/" className="logo-container">
           <img
-            src="/ogera.png"
+            src="/ogera_logo-removebg-preview.png"
             alt="Ogera Logo"
             className="logo-image"
           />
-          <div className="logo-text">
-            <div className="logo">Ogera</div>
-            <span className="slogan">Find Jobs You Can Trust</span>
-          </div>
         </Link>
 
         <ul className="nav-links">

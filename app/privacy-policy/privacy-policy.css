@@ -1,6 +1,9 @@
 .privacy-page {
   min-height: 100vh;
-  background: white;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(127,86,217,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(105,65,198,0.06) 0%, transparent 45%),
+    #f0ecf8;
   padding-top: 80px;
 }
 
@@ -14,14 +17,14 @@
 .privacy-header-left h1 {
   font-size: 32px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: #2d2252;
   margin: 0 0 12px;
   line-height: 1.2;
 }
 
 .privacy-subtitle {
   font-size: 14px;
-  color: #666;
+  color: #6b6580;
   margin: 0 0 28px;
   line-height: 1.6;
   max-width: 380px;
@@ -32,7 +35,10 @@
   align-items: center;
   gap: 10px;
   padding: 12px 16px;
-  border: 1px solid #e0e0e0;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(127, 86, 217, 0.15);
   border-radius: 8px;
   max-width: 320px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -40,11 +46,11 @@
 
 .privacy-search:focus-within {
   border-color: #7F56D9;
-  box-shadow: 0 0 0 3px rgba(127, 86, 217, 0.08);
+  box-shadow: 0 0 0 3px rgba(127, 86, 217, 0.1);
 }
 
 .privacy-search svg {
-  color: #999;
+  color: #8a7bab;
   flex-shrink: 0;
 }
 
@@ -52,13 +58,13 @@
   border: none;
   outline: none;
   font-size: 13px;
-  color: #333;
+  color: #2d2252;
   width: 100%;
   background: transparent;
 }
 
 .privacy-search input::placeholder {
-  color: #bbb;
+  color: #b0a3c8;
 }
 
 /* Content */
@@ -66,12 +72,12 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 20px 30px 80px;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid rgba(127, 86, 217, 0.1);
 }
 
 .privacy-section {
   padding: 36px 0;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid rgba(127, 86, 217, 0.08);
 }
 
 .privacy-section:last-child {
@@ -89,7 +95,7 @@
 .privacy-section p {
   font-size: 13px;
   line-height: 1.85;
-  color: #444;
+  color: #6b6580;
   margin: 0 0 14px;
 }
 
@@ -101,7 +107,7 @@
 .privacy-no-results {
   text-align: center;
   padding: 60px 20px;
-  color: #999;
+  color: #8a7bab;
   font-size: 13px;
 }
 

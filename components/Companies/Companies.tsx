@@ -106,33 +106,35 @@ function Companies() {
       <p className="companies-subtitle">Trusted employers with verified reviews and successful hires</p>
 
       <div className="companies-carousel">
-        {companies.map((company, idx) => (
-          <div key={idx} className="company-card">
-            <div className="company-logo">
-              {company.image ? (
-                <img src={company.image} alt={company.name} />
-              ) : (
-                <div className="logo-placeholder">{company.name.charAt(0)}</div>
-              )}
-            </div>
-
-            <div className="company-info">
-              <h3 className="company-name">{company.name}</h3>
-              <p className="company-type">{company.type}</p>
-            </div>
-
-            <div className="company-stats">
-              <div className="rating-badge">
-                <span className="rating-score">{company.rating}</span>
-                <span className="rating-star">★</span>
+        <div className="companies-track">
+          {[...companies, ...companies].map((company, idx) => (
+            <div key={idx} className="company-card">
+              <div className="company-logo">
+                {company.image ? (
+                  <img src={company.image} alt={company.name} />
+                ) : (
+                  <div className="logo-placeholder">{company.name.charAt(0)}</div>
+                )}
               </div>
-              <div className="stats-row">
-                <span className="reviews-count">{company.reviews} reviews</span>
-                <span className="hired-count">{company.hired} hired</span>
+
+              <div className="company-info">
+                <h3 className="company-name">{company.name}</h3>
+                <p className="company-type">{company.type}</p>
+              </div>
+
+              <div className="company-stats">
+                <div className="rating-badge">
+                  <span className="rating-score">{company.rating}</span>
+                  <span className="rating-star">★</span>
+                </div>
+                <div className="stats-row">
+                  <span className="reviews-count">{company.reviews} reviews</span>
+                  <span className="hired-count">{company.hired} hired</span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,6 +1,9 @@
 .terms-page {
   min-height: 100vh;
-  background: #f5f3fa;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(127,86,217,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(105,65,198,0.06) 0%, transparent 45%),
+    #f0ecf8;
   display: flex;
   flex-direction: column;
 }
@@ -10,16 +13,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 20px 40px;
+  padding: 100px 20px 50px;
 }
 
+/* Card — Glassmorphism */
 .terms-card {
   display: flex;
   max-width: 1000px;
   width: 100%;
-  background: white;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(127, 86, 217, 0.12);
+  box-shadow:
+    0 20px 60px rgba(91, 59, 165, 0.08),
+    0 4px 16px rgba(127, 86, 217, 0.05);
   overflow: hidden;
 }
 
@@ -28,7 +37,8 @@
   width: 280px;
   min-width: 280px;
   padding: 40px 24px;
-  border-right: 1px solid #f0f0f0;
+  border-right: 1px solid rgba(127, 86, 217, 0.1);
+  background: rgba(255, 255, 255, 0.45);
 }
 
 .terms-sidebar ul {
@@ -52,11 +62,11 @@
 }
 
 .terms-sidebar ul li a:hover {
-  background: #f5f0ff;
+  background: rgba(127, 86, 217, 0.08);
 }
 
 .terms-sidebar ul li.active a {
-  background: #f0eaff;
+  background: rgba(127, 86, 217, 0.12);
 }
 
 .terms-sidebar ul li.active .section-number {
@@ -81,12 +91,13 @@
   font-size: 11px;
   font-weight: 600;
   flex-shrink: 0;
+  transition: all 0.2s ease;
 }
 
 .section-title {
   font-size: 12px;
   font-weight: 500;
-  color: #7a6b9a;
+  color: #6b6580;
   line-height: 1.3;
   transition: color 0.2s ease, font-weight 0.2s ease;
 }
@@ -100,13 +111,13 @@
 .terms-body h1 {
   font-size: 28px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: #2d2252;
   margin: 0 0 4px;
 }
 
 .terms-updated {
   font-size: 12px;
-  color: #888;
+  color: #8a7bab;
   margin: 0 0 30px;
 }
 
@@ -132,20 +143,20 @@
 .terms-body section h2 {
   font-size: 15px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: #2d2252;
   margin: 0 0 8px;
 }
 
 .terms-body section hr {
   border: none;
-  border-top: 1px solid #e8e8e8;
+  border-top: 1px solid rgba(127, 86, 217, 0.12);
   margin: 0 0 14px;
 }
 
 .terms-body section p {
   font-size: 13px;
   line-height: 1.7;
-  color: #444;
+  color: #6b6580;
   margin: 0 0 12px;
 }
 
@@ -160,13 +171,17 @@
   justify-content: space-between;
   max-width: 1000px;
   width: 100%;
-  background: white;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   padding: 16px 30px;
   border-radius: 0 0 16px 16px;
   margin-top: -16px;
-  border-top: 1px solid #f0f0f0;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  border-radius: 0 0 16px 16px;
+  border: 1px solid rgba(127, 86, 217, 0.12);
+  border-top: 1px solid rgba(127, 86, 217, 0.08);
+  box-shadow:
+    0 10px 40px rgba(91, 59, 165, 0.06),
+    0 4px 12px rgba(127, 86, 217, 0.04);
 }
 
 .terms-email {
@@ -210,8 +225,8 @@
   top: 16px;
   left: 16px;
   z-index: 20;
-  background: #f0eaff;
-  border: none;
+  background: rgba(127, 86, 217, 0.1);
+  border: 1px solid rgba(127, 86, 217, 0.15);
   border-radius: 8px;
   padding: 10px;
   cursor: pointer;
@@ -219,7 +234,7 @@
 }
 
 .sidebar-toggle:hover {
-  background: #e0d4ff;
+  background: rgba(127, 86, 217, 0.18);
 }
 
 .terms-hamburger {
@@ -253,7 +268,7 @@
 /* Responsive - Tablet */
 @media (max-width: 768px) {
   .terms-main {
-    padding: 70px 16px 30px;
+    padding: 85px 16px 30px;
   }
 
   .terms-card {
@@ -277,10 +292,12 @@
     min-width: unset;
     padding: 56px 20px 24px;
     border-right: none;
-    border-bottom: 1px solid #f0f0f0;
-    background: white;
+    border-bottom: 1px solid rgba(127, 86, 217, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 12px 12px 0 0;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 24px rgba(91, 59, 165, 0.1);
   }
 
   .terms-sidebar.sidebar-open {
@@ -329,7 +346,7 @@
 /* Responsive - Mobile */
 @media (max-width: 480px) {
   .terms-main {
-    padding: 65px 12px 24px;
+    padding: 78px 12px 24px;
   }
 
   .terms-sidebar {
@@ -380,7 +397,7 @@
 /* Responsive - iPhone SE / Small Mobile */
 @media (max-width: 360px) {
   .terms-main {
-    padding: 60px 8px 20px;
+    padding: 72px 8px 20px;
   }
 
   .terms-card {

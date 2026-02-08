@@ -1,6 +1,9 @@
 .cookie-page {
   min-height: 100vh;
-  background: #f8f9fc;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(127,86,217,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(105,65,198,0.06) 0%, transparent 45%),
+    #f0ecf8;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,23 +13,28 @@
 .cookie-card {
   max-width: 560px;
   width: 100%;
-  background: white;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: 16px;
   padding: 40px 36px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(127, 86, 217, 0.12);
+  box-shadow:
+    0 20px 60px rgba(91, 59, 165, 0.08),
+    0 4px 16px rgba(127, 86, 217, 0.05);
 }
 
 .cookie-card h1 {
   font-size: 20px;
   font-weight: 700;
-  color: #1a1a2e;
+  color: #2d2252;
   margin: 0 0 24px;
 }
 
 .cookie-text p {
   font-size: 12px;
   line-height: 1.75;
-  color: #555;
+  color: #6b6580;
   margin: 0 0 16px;
 }
 
@@ -50,29 +58,32 @@
   gap: 24px;
   margin-top: 32px;
   padding-top: 24px;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid rgba(127, 86, 217, 0.1);
 }
 
 .cookie-accept-btn {
   display: inline-block;
   padding: 12px 28px;
-  background: #1a1a2e;
+  background: #7F56D9;
   color: white;
   text-decoration: none;
   border-radius: 8px;
   font-size: 12px;
   font-weight: 600;
-  transition: background 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(127, 86, 217, 0.3);
 }
 
 .cookie-accept-btn:hover {
-  background: #2d2d44;
+  background: #6941B0;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(127, 86, 217, 0.4);
 }
 
 .cookie-manage-btn {
   background: none;
   border: none;
-  color: #555;
+  color: #6b6580;
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
@@ -90,7 +101,7 @@
 .cookie-config-desc {
   font-size: 12px;
   line-height: 1.7;
-  color: #555;
+  color: #6b6580;
   margin: 0 0 24px;
 }
 
@@ -101,7 +112,7 @@
 }
 
 .cookie-option {
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid rgba(127, 86, 217, 0.08);
   padding: 16px 0;
 }
 
@@ -122,7 +133,7 @@
 }
 
 .cookie-chevron {
-  color: #999;
+  color: #8a7bab;
   transition: transform 0.2s ease;
 }
 
@@ -133,7 +144,7 @@
 .cookie-option-title {
   font-size: 12px;
   font-weight: 600;
-  color: #1a1a2e;
+  color: #2d2252;
 }
 
 .cookie-always-active {
@@ -147,7 +158,7 @@
 .cookie-option-desc {
   font-size: 11px;
   line-height: 1.7;
-  color: #777;
+  color: #6b6580;
   margin: 10px 0 0 24px;
 }
 
@@ -156,7 +167,7 @@
   position: relative;
   width: 40px;
   height: 22px;
-  background: #ddd;
+  background: #c4b5e0;
   border: none;
   border-radius: 11px;
   cursor: pointer;

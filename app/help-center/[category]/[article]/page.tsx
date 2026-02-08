@@ -1255,7 +1255,7 @@ export default function HelpArticlePage() {
   if (!articleData) {
     return (
       <>
-        <Navbar />
+        <Navbar solid />
         <div className="article-page">
           <div className="article-container">
             <div className="article-not-found">
@@ -1279,7 +1279,7 @@ export default function HelpArticlePage() {
 
   return (
     <>
-      <Navbar />
+      <Navbar solid />
       <div className="article-page">
         {/* Breadcrumb */}
         <div className="article-breadcrumb">

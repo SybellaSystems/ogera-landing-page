@@ -3,7 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background: #5B3BA5;
+  background: transparent;
+  border-bottom: 1px solid transparent;
   color: white;
   position: fixed;
   top: 0;
@@ -11,6 +12,12 @@
   width: 100%;
   z-index: 1000;
   box-sizing: border-box;
+  transition: background 0.35s ease, border-bottom 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+.nav.nav-scrolled {
+  background: #5b3ba5;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .logo-container {
@@ -21,28 +28,9 @@
 }
 
 .logo-image {
-  width: 30px;
-  height: 30px;
+  width: 110px;
+  height: auto;
   object-fit: contain;
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.logo {
-  font-size: 0.95rem;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -0.2px;
-}
-
-.slogan {
-  font-size: 0.45rem;
-  font-weight: 400;
-  opacity: 0.7;
-  letter-spacing: 0.1px;
 }
 
 .nav-links {
@@ -313,21 +301,8 @@
     padding: 12px 16px;
   }
 
-  .logo-container {
-    gap: 6px;
-  }
-
   .logo-image {
-    width: 26px;
-    height: 26px;
-  }
-
-  .logo {
-    font-size: 0.9rem;
-  }
-
-  .slogan {
-    font-size: 0.4rem;
+    width: 95px;
   }
 
   .mobile-modal {
@@ -370,21 +345,8 @@
     padding: 10px 12px;
   }
 
-  .logo-container {
-    gap: 5px;
-  }
-
   .logo-image {
-    width: 24px;
-    height: 24px;
-  }
-
-  .logo {
-    font-size: 0.8rem;
-  }
-
-  .slogan {
-    font-size: 0.35rem;
+    width: 85px;
   }
 
   .hamburger {

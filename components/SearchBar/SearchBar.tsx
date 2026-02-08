@@ -20,8 +20,8 @@ const jobTypeOptions = [
 
 function SearchBar() {
   return (
-    <section id="search-section" className="search-container" style={{ backgroundImage: 'url(/dream.jpeg)' }}>
-      <div className="search-overlay"></div>
+    <section id="search-section" className="search-container">
+
       <div className="search-content">
         <h2 className="search-title">Find your dream Jobs now</h2>
         <p className="search-subtitle">1000+ jobs for you to explore</p>

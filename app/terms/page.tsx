@@ -378,7 +378,7 @@ export default function TermsPage() {
 
   return (
     <>
-      <Navbar />
+      <Navbar solid />
       <div className="terms-page">
         <main className="terms-main">
           <div className="terms-card">

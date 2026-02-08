@@ -20,7 +20,7 @@ export default function CookiePolicyPage() {
 
   return (
     <>
-      <Navbar />
+      <Navbar solid />
       <div className="cookie-page">
         <div className="cookie-card">
           {!showManage ? (

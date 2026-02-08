@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import './Hero.css';
-import ParticleCanvas from './ParticleCanvas';
+import GridCanvas from './GridCanvas';
 
 function Hero() {
   const [displayText, setDisplayText] = useState('');
@@ -14,13 +14,11 @@ function Hero() {
     const pauseTime = isDeleting ? 500 : 2000;
 
     if (!isDeleting && displayText === fullText) {
-      // Pause before starting to delete
       const timeout = setTimeout(() => setIsDeleting(true), pauseTime);
       return () => clearTimeout(timeout);
     }
 
     if (isDeleting && displayText === '') {
-      // Pause before starting to type again
       const timeout = setTimeout(() => setIsDeleting(false), pauseTime);
       return () => clearTimeout(timeout);
     }
@@ -45,21 +43,13 @@ function Hero() {
 
   return (
     <section id="home" className="hero-section">
-      {/* Particle Background */}
-      <div className="particle-container">
-        <ParticleCanvas
-          particleCount={250}
-          maxDistance={100}
-          speed={0.4}
-        />
-      </div>
-
+      <GridCanvas />
       <div className="hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
             <span className="title-blue animate-line line-1">Find your dream</span>
             <br />
-            <span className="title-dark animate-line line-2">Remote Jobs</span>
+            <span className="title-light animate-line line-2">Remote Jobs</span>
             <br />
             <span className="title-blue animate-line line-3">with the most</span>
             <br />
@@ -69,35 +59,36 @@ function Hero() {
             </span>
           </h1>
 
-          <p className="hero-subtitle">
-            Stress less . browse and apply to expert verfied,
-            <br />
-            Scam-free jobs near you and aboard
-          </p>
-
-          <button className="hero-cta" onClick={scrollToSearch}>
-            Start your remote job search now
-          </button>
+          <div className="hero-actions">
+            <button className="hero-cta" onClick={scrollToSearch}>
+              Start your remote job search now
+            </button>
+          </div>
         </div>
 
         <div className="hero-visual">
-          <span className="plus-decoration plus-1">+</span>
-          <span className="plus-decoration plus-2">+</span>
-          <span className="plus-decoration plus-3">+</span>
-          <span className="plus-decoration plus-4">+</span>
-          <span className="plus-decoration plus-5">+</span>
-
-          <div className="hero-image-wrapper">
-            <div className="hero-frame"></div>
-
-            <div className="badge badge-remote">100% Remote job</div>
-            <div className="badge badge-celebrating">celebrating</div>
-            <div className="badge badge-benefits">Great Benefits</div>
-
-            <div className="circle-decoration circle-gray"></div>
-            <div className="circle-decoration circle-blue"></div>
-            <div className="circle-decoration circle-accent"></div>
+          <div className="hero-sphere-wrapper">
+            <div className="hero-sphere"></div>
+            <div className="hero-sphere-ring"></div>
           </div>
+        </div>
+      </div>
+
+      {/* Scrolling Marquee */}
+      <div className="hero-marquee">
+        <div className="marquee-track">
+          <span className="marquee-item">✦ Remote Jobs</span>
+          <span className="marquee-item">✦ Verified Companies</span>
+          <span className="marquee-item">✦ Scam-Free Jobs</span>
+          <span className="marquee-item">✦ Global Opportunities</span>
+          <span className="marquee-item">✦ Career Growth</span>
+          <span className="marquee-item">✦ Trusted Platform</span>
+          <span className="marquee-item">✦ Remote Jobs</span>
+          <span className="marquee-item">✦ Verified Companies</span>
+          <span className="marquee-item">✦ Scam-Free Jobs</span>
+          <span className="marquee-item">✦ Global Opportunities</span>
+          <span className="marquee-item">✦ Career Growth</span>
+          <span className="marquee-item">✦ Trusted Platform</span>
         </div>
       </div>
     </section>

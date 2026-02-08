@@ -1,5 +1,7 @@
 "use client";
 
+import { useState, useRef, useCallback } from "react";
+import Link from "next/link";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import "./trustscore.css";
@@ -126,13 +128,31 @@ const faqs = [
 ];
 
 export default function TrustScorePage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
+    if (!gridRef.current) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 24;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 24;
+    gridRef.current.style.transform = `translate(${x}px, ${y}px)`;
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    if (!gridRef.current) return;
+    gridRef.current.style.transform = "translate(0px, 0px)";
+  }, []);
+
   return (
     <>
       <Navbar />
       <main className="trustscore-page">
         {/* Hero Section */}
-        <section className="trustscore-hero">
+        <section className="trustscore-hero" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
+          <div className="trustscore-hero-grid" ref={gridRef} />
           <div className="hero-content">
+            <h1>Building Trust in Every Hire</h1>
             <p>
               TrustScore is our proprietary verification system designed to create a safer
               job marketplace. It helps job seekers identify reliable employers and rewards
@@ -223,21 +243,44 @@ export default function TrustScorePage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="faq-section">
+        <section className="ts-faq-section">
           <div className="section-header">
             <h2>Frequently Asked Questions</h2>
             <p>Get answers to common questions about TrustScore</p>
           </div>
 
-          <div className="faq-list">
+          <div className="ts-faq-container">
             {faqs.map((faq, index) => (
-              <div key={index} className="faq-item">
-                <h3>{faq.question}</h3>
-                <p>{faq.answer}</p>
+              <div key={index} className={`ts-faq-item${openFaq === index ? " open" : ""}`}>
+                <button
+                  className="ts-faq-question"
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  aria-expanded={openFaq === index}
+                >
+                  <span>{faq.question}</span>
+                  <svg
+                    className="ts-faq-icon"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </button>
+                <div className="ts-faq-answer">
+                  <p>{faq.answer}</p>
+                </div>
               </div>
             ))}
           </div>
         </section>
+
       </main>
       <Footer />
     </>

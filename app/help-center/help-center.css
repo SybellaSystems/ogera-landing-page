@@ -1,7 +1,10 @@
 /* Help Center Page */
 .help-page {
   min-height: 100vh;
-  background: #f8f9ff;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(127,86,217,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(105,65,198,0.06) 0%, transparent 45%),
+    #f0ecf8;
   padding-top: 60px;
 }
 
@@ -9,7 +12,7 @@
 .help-hero {
   position: relative;
   padding: 60px 20px 50px;
-  background: linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, transparent 100%);
   overflow: hidden;
 }
 
@@ -24,7 +27,7 @@
 .help-hero h1 {
   font-size: 36px;
   font-weight: 600;
-  color: #1a2b4a;
+  color: #2d2252;
   margin-bottom: 30px;
 }
 
@@ -32,11 +35,13 @@
 .help-search-box {
   display: flex;
   align-items: center;
-  background: white;
-  border: 1px solid #e0e5f0;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(127, 86, 217, 0.15);
   border-radius: 30px;
   padding: 12px 24px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(91, 59, 165, 0.08);
   transition: all 0.3s ease;
 }
 
@@ -46,7 +51,7 @@
 }
 
 .help-search-box .search-icon {
-  color: #9ca3af;
+  color: #8a7bab;
   flex-shrink: 0;
   margin-right: 12px;
 }
@@ -56,12 +61,12 @@
   border: none;
   outline: none;
   font-size: 15px;
-  color: #1a2b4a;
+  color: #2d2252;
   background: transparent;
 }
 
 .help-search-box input::placeholder {
-  color: #9ca3af;
+  color: #b0a3c8;
 }
 
 /* Search Wrapper */
@@ -85,7 +90,7 @@
   border: none;
   cursor: pointer;
   padding: 4px;
-  color: #9ca3af;
+  color: #8a7bab;
   transition: color 0.2s ease;
   flex-shrink: 0;
 }
@@ -100,11 +105,13 @@
   top: 100%;
   left: 0;
   right: 0;
-  background: white;
-  border: 1px solid #e0e5f0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(127, 86, 217, 0.15);
   border-top: none;
   border-radius: 0 0 20px 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 30px rgba(91, 59, 165, 0.12);
   z-index: 100;
   max-height: 400px;
   overflow-y: auto;
@@ -115,14 +122,14 @@
 }
 
 .search-results-section:not(:last-child) {
-  border-bottom: 1px solid #f0f2f5;
+  border-bottom: 1px solid rgba(127, 86, 217, 0.08);
 }
 
 .search-results-label {
   padding: 8px 20px;
   font-size: 11px;
   font-weight: 600;
-  color: #9ca3af;
+  color: #8a7bab;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -141,7 +148,7 @@
 }
 
 .search-result-item:hover {
-  background: #f8f9ff;
+  background: rgba(127, 86, 217, 0.06);
 }
 
 .search-result-item .result-icon {
@@ -151,7 +158,7 @@
 
 .search-result-item span {
   font-size: 14px;
-  color: #1a2b4a;
+  color: #2d2252;
 }
 
 .result-text {
@@ -162,12 +169,12 @@
 
 .result-title {
   font-size: 14px;
-  color: #1a2b4a;
+  color: #2d2252;
 }
 
 .result-category {
   font-size: 12px;
-  color: #9ca3af;
+  color: #8a7bab;
 }
 
 /* No Results */
@@ -177,7 +184,7 @@
   align-items: center;
   gap: 12px;
   padding: 30px 20px;
-  color: #9ca3af;
+  color: #8a7bab;
 }
 
 .search-no-results svg {
@@ -204,10 +211,13 @@
 }
 
 .person-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(127, 86, 217, 0.12);
   border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 8px 30px rgba(91, 59, 165, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -226,7 +236,7 @@
   justify-content: center;
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
   border-radius: 50%;
 }
 
@@ -238,7 +248,7 @@
 .person-lines {
   width: 60px;
   height: 8px;
-  background: linear-gradient(90deg, #e0e5f0 0%, #e0e5f0 30%, transparent 30%, transparent 40%, #e0e5f0 40%, #e0e5f0 70%, transparent 70%, transparent 80%, #e0e5f0 80%);
+  background: linear-gradient(90deg, rgba(127,86,217,0.15) 0%, rgba(127,86,217,0.15) 30%, transparent 30%, transparent 40%, rgba(127,86,217,0.15) 40%, rgba(127,86,217,0.15) 70%, transparent 70%, transparent 80%, rgba(127,86,217,0.15) 80%);
   border-radius: 4px;
 }
 
@@ -293,16 +303,13 @@
 .section-header h2 {
   font-size: 18px;
   font-weight: 600;
-  color: #1a2b4a;
+  color: #2d2252;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.dropdown-arrow {
-  font-size: 10px;
-  color: #9ca3af;
-}
+/* dropdown-arrow removed — no longer used */
 
 .all-answers {
   font-size: 14px;
@@ -323,8 +330,10 @@
 }
 
 .question-item {
-  background: white;
-  border: 1px solid #e0e5f0;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(127, 86, 217, 0.12);
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -351,7 +360,7 @@
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  color: #1a2b4a;
+  color: #2d2252;
   text-align: left;
   transition: all 0.2s ease;
 }
@@ -364,14 +373,14 @@
   color: #7F56D9;
 }
 
-.question-arrow {
+.question-icon {
   flex-shrink: 0;
-  color: #9ca3af;
-  transition: transform 0.3s ease;
+  color: #8a7bab;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.question-arrow.rotated {
-  transform: rotate(180deg);
+.question-icon.rotated {
+  transform: rotate(45deg);
   color: #7F56D9;
 }
 
@@ -384,7 +393,7 @@
   margin: 0;
   font-size: 14px;
   line-height: 1.7;
-  color: #4b5563;
+  color: #6b6580;
 }
 
 @keyframes slideDown {
@@ -403,16 +412,15 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 50px 20px 80px;
-  background: #f8f9ff;
 }
 
 .help-categories > h2 {
   font-size: 22px;
   font-weight: 600;
-  color: #1a2b4a;
+  color: #2d2252;
   margin-bottom: 32px;
   padding-bottom: 16px;
-  border-bottom: 2px solid #e0e5f0;
+  border-bottom: 2px solid rgba(91, 59, 165, 0.18);
 }
 
 .categories-grid {
@@ -422,17 +430,20 @@
 }
 
 .category-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 16px;
   padding: 28px;
-  border: 1px solid #e0e5f0;
+  border: 1px solid rgba(127, 86, 217, 0.18);
   transition: all 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 4px 20px rgba(91, 59, 165, 0.08);
 }
 
 .category-card:hover {
-  box-shadow: 0 12px 40px rgba(127, 86, 217, 0.12);
-  border-color: rgba(127, 86, 217, 0.2);
+  box-shadow: 0 12px 40px rgba(127, 86, 217, 0.15);
+  border-color: rgba(127, 86, 217, 0.3);
   transform: translateY(-5px);
 }
 
@@ -442,7 +453,7 @@
   gap: 14px;
   margin-bottom: 20px;
   padding-bottom: 16px;
-  border-bottom: 1px solid #f0f2f5;
+  border-bottom: 1px solid rgba(127, 86, 217, 0.08);
 }
 
 .category-icon {
@@ -469,7 +480,7 @@
 .category-header h3 {
   font-size: 17px;
   font-weight: 600;
-  color: #1a2b4a;
+  color: #2d2252;
   margin: 0;
   line-height: 1.3;
 }
@@ -521,6 +532,80 @@
   transform: translateX(4px);
 }
 
+/* Lottie Hero Animation */
+.help-hero-lottie {
+  max-width: 380px;
+  margin: 20px auto 0;
+  position: relative;
+  z-index: 5;
+}
+
+/* Section Header with Lottie */
+.section-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-lottie {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+/* Still Need Help Section */
+.still-need-help {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 20px 80px;
+}
+
+.still-need-help-lottie {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+.still-need-help-content {
+  max-width: 400px;
+}
+
+.still-need-help-content h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2d2252;
+  margin: 0 0 12px;
+}
+
+.still-need-help-content p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #6b6580;
+  margin: 0 0 24px;
+}
+
+.contact-support-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #7F56D9;
+  color: white;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(127, 86, 217, 0.3);
+}
+
+.contact-support-btn:hover {
+  background: #6941C6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(127, 86, 217, 0.4);
+}
+
 /* Responsive Design */
 @media (max-width: 968px) {
   .categories-grid {
@@ -533,6 +618,18 @@
 
   .help-hero h1 {
     font-size: 32px;
+  }
+
+  .help-hero-lottie {
+    max-width: 300px;
+  }
+
+  .still-need-help {
+    gap: 30px;
+  }
+
+  .still-need-help-lottie {
+    width: 180px;
   }
 
   .help-illustrations {
@@ -730,6 +827,30 @@
   .cloud {
     display: none;
   }
+
+  .help-hero-lottie {
+    max-width: 260px;
+  }
+
+  .still-need-help {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 40px 20px 60px;
+  }
+
+  .still-need-help-lottie {
+    width: 160px;
+  }
+
+  .still-need-help-content {
+    max-width: 100%;
+  }
+
+  .section-lottie {
+    width: 34px;
+    height: 34px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -854,7 +975,7 @@
     font-size: 15px;
   }
 
-  .dropdown-arrow {
+  .dropdown-arrow-unused {
     font-size: 8px;
   }
 
@@ -872,7 +993,7 @@
     gap: 10px;
   }
 
-  .question-arrow {
+  .question-icon {
     width: 14px;
     height: 14px;
   }
@@ -941,6 +1062,38 @@
 
   .category-links a {
     font-size: 13px;
+  }
+
+  .help-hero-lottie {
+    max-width: 220px;
+    margin-top: 10px;
+  }
+
+  .still-need-help {
+    padding: 30px 16px 50px;
+    gap: 16px;
+  }
+
+  .still-need-help-lottie {
+    width: 140px;
+  }
+
+  .still-need-help-content h2 {
+    font-size: 20px;
+  }
+
+  .still-need-help-content p {
+    font-size: 13px;
+  }
+
+  .contact-support-btn {
+    padding: 10px 24px;
+    font-size: 13px;
+  }
+
+  .section-lottie {
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -1058,7 +1211,7 @@
     font-size: 11px;
   }
 
-  .question-arrow {
+  .question-icon {
     width: 12px;
     height: 12px;
   }
@@ -1126,5 +1279,36 @@
 
   .category-links a {
     font-size: 12px;
+  }
+
+  .help-hero-lottie {
+    max-width: 180px;
+  }
+
+  .still-need-help {
+    padding: 24px 12px 40px;
+  }
+
+  .still-need-help-lottie {
+    width: 120px;
+  }
+
+  .still-need-help-content h2 {
+    font-size: 18px;
+  }
+
+  .still-need-help-content p {
+    font-size: 12px;
+  }
+
+  .contact-support-btn {
+    padding: 10px 20px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  .section-lottie {
+    width: 26px;
+    height: 26px;
   }
 }

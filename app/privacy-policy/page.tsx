@@ -210,7 +210,7 @@ const sections: Section[] = [
           you to block or delete cookies, though this may impact platform functionality. We
           respect &quot;Do Not Track&quot; browser signals where technically feasible. For more detailed
           information about the specific cookies we use and their purposes, please refer to our
-          separate Cookie Policy page.
+         separate Cookie Policy page.
         </p>
       </>
     ),
@@ -394,7 +394,7 @@ export default function PrivacyPolicyPage() {
 
   return (
     <>
-      <Navbar />
+      <Navbar solid />
       <div className="privacy-page">
         {/* Header */}
         <header className="privacy-header">

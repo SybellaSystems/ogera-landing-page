@@ -1,41 +1,26 @@
 .footer-top-bar {
-  background: linear-gradient(90deg, #5b3ba5 0%, #7f56d9 50%, #9b7de8 100%);
+  background: linear-gradient(180deg, #5b3ba5 0%, #7f56d9 40%, #7f56d9 60%, #5b3ba5 100%);
   color: #f9f9ff;
-  padding: 10px 5%;
+  padding: 16px 5%;
+  text-align: center;
 }
 
 .footer-top-inner {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
 }
 
-.footer-top-links {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  font-size: 13px;
-}
-
-.footer-top-links a {
-  color: #f9f9ff;
-  text-decoration: none;
-  opacity: 0.9;
-  transition: opacity 0.2s ease;
-}
-
-.footer-top-links a:hover {
-  opacity: 1;
-  text-decoration: underline;
-}
-
-.footer-top-links span {
-  opacity: 0.5;
+.footer-top-message {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  opacity: 0.92;
+  line-height: 1.5;
 }
 
 .footer {
-  background: #1a1025;
+  background: linear-gradient(180deg, #2d1b4e 0%, #1a1025 15%, #1a1025 100%);
   color: #eaeaea;
   padding: 40px 5% 25px;
   margin-bottom: 0px;
@@ -59,19 +44,9 @@
 }
 
 .footer-logo {
-  width: 36px;
-  height: 36px;
+  width: 140px;
+  height: auto;
   object-fit: contain;
-}
-
-.footer-brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-slogan {
-  font-size: 0.7rem;
-  opacity: 0.7;
 }
 
 .footer-socials {

@@ -1,0 +1,120 @@
+/* ===== Africa Map Wrapper ===== */
+.africa-map-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.africa-map-container {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.africa-map-container .map {
+  width: 100% !important;
+}
+
+.africa-map-container svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 20px rgba(127, 86, 217, 0.12));
+}
+
+/* ===== Legend ===== */
+.map-legend {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #6b6580;
+  font-weight: 500;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-active {
+  background: #7F56D9;
+}
+
+.legend-coming {
+  background: #e0d6f0;
+}
+
+/* ===== Selected Country Info ===== */
+.map-selected-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(127, 86, 217, 0.08);
+  border: 1px solid rgba(127, 86, 217, 0.15);
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #2d2252;
+}
+
+/* ===== Responsive: 768px ===== */
+@media (max-width: 768px) {
+  .africa-map-container {
+    max-width: 340px;
+  }
+
+  .map-legend {
+    gap: 18px;
+  }
+
+  .legend-item {
+    font-size: 0.75rem;
+  }
+}
+
+/* ===== Responsive: 480px ===== */
+@media (max-width: 480px) {
+  .africa-map-container {
+    max-width: 280px;
+  }
+
+  .map-legend {
+    gap: 14px;
+  }
+
+  .legend-item {
+    font-size: 0.72rem;
+    gap: 6px;
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .map-selected-info {
+    font-size: 0.78rem;
+    padding: 6px 14px;
+  }
+}
+
+/* ===== Responsive: 360px ===== */
+@media (max-width: 360px) {
+  .africa-map-container {
+    max-width: 240px;
+  }
+
+  .legend-item {
+    font-size: 0.68rem;
+  }
+}

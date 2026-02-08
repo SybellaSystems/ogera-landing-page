@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./FAQSection.css";
 
 interface FAQItem {
@@ -45,21 +45,42 @@ const faqData: FAQItem[] = [
 
 function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true);
+      },
+      { threshold: 0.1 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="faq" className="faq-section">
-      <h2 className="faq-title">Frequently Asked Questions</h2>
-      <p className="faq-subtitle">Find answers to common questions about Ogera</p>
+    <section
+      id="faq"
+      className={`faq-section${isVisible ? " faq-visible" : ""}`}
+      ref={sectionRef}
+    >
+      <div className="faq-header">
+        <span className="faq-badge">FAQ</span>
+        <h2 className="faq-title">Frequently Asked Questions</h2>
+        <p className="faq-subtitle">Find answers to common questions about Ogera</p>
+      </div>
 
       <div className="faq-container">
         {faqData.map((item, index) => (
           <div
             key={index}
-            className={`faq-item ${openIndex === index ? "open" : ""}`}
+            className={`faq-item${openIndex === index ? " open" : ""}${isVisible ? " faq-item-enter" : ""}`}
+            style={{ animationDelay: `${index * 0.06}s` }}
           >
             <button
               className="faq-question"
@@ -68,7 +89,7 @@ function FAQSection() {
             >
               <span>{item.question}</span>
               <svg
-                className="faq-chevron"
+                className="faq-icon"
                 width="20"
                 height="20"
                 viewBox="0 0 24 24"
@@ -78,7 +99,8 @@ function FAQSection() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <polyline points="6 9 12 15 18 9" />
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
               </svg>
             </button>
             <div className="faq-answer">

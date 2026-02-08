@@ -8,13 +8,9 @@ function Footer() {
     <>
       <div className="footer-top-bar">
         <div className="footer-top-inner">
-          <div className="footer-top-links">
-            <Link href="/terms">Terms and Conditions</Link>
-            <span>|</span>
-            <Link href="/privacy-policy">Privacy policy</Link>
-            <span>|</span>
-            <Link href="/contact">Contact Us</Link>
-          </div>
+          <p className="footer-top-message">
+            Welcome new partners &amp; job seekers — discover trusted opportunities and grow with Ogera
+          </p>
         </div>
       </div>
     <footer className="footer">
@@ -22,16 +18,12 @@ function Footer() {
         <div className="footer-section">
           <Link href="/" className="footer-brand">
             <Image
-              src="/ogera.png"
-              width={36}
-              height={36}
+              src="/ogera_logo-removebg-preview.png"
+              width={140}
+              height={60}
               alt="Ogera Logo"
               className="footer-logo"
             />
-            <div className="footer-brand-text">
-              <h3>Ogera</h3>
-              <span className="footer-slogan">Find Jobs You Can Trust</span>
-            </div>
           </Link>
         </div>
 
