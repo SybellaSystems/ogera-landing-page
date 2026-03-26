@@ -18,7 +18,7 @@ function ContactSection() {
 
           <div className="card-details">
             <p className="card-header">Find us</p>
-            <p className="card-content">Kigali, Rwanda</p>
+            <p className="card-content">Rulindo, Rwanda</p>
           </div>
         </div>
 
@@ -29,7 +29,7 @@ function ContactSection() {
           </span>
           <div className="card-details">
             <p className="card-header">Call us</p>
-            <p className="card-content">+250 783 123 456</p>
+            <p className="card-content">+250 723 776 020</p>
           </div>
         </div>
 
@@ -40,7 +40,7 @@ function ContactSection() {
           </span>
           <div className="card-details">
             <p className="card-header">Mail us</p>
-            <p className="card-content">ma@example.com</p>
+            <p className="card-content">ogera@sybellasystems.co.rw</p>
           </div>
         </div>
       </div>

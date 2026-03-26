@@ -1,129 +1,117 @@
 "use client";
 
 import { useState, useRef, useCallback } from "react";
-import Link from "next/link";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import "./trustscore.css";
 
-const trustFactors = [
+const trustDimensions = [
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-        <circle cx="9" cy="7" r="4"/>
-        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        <circle cx="12" cy="12" r="10" />
+        <path d="M8 12l2 2 4-4" />
       </svg>
     ),
-    title: "Identity Verification",
-    description: "Verified government ID, business registration, and contact information.",
-    weight: "25%",
+    title: "Intelligence",
+    description: "Measures cognitive abilities like reasoning, problem-solving, and adaptability.",
+    weight: "40%",
   },
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+        <path d="M8 20h8" />
+        <path d="M12 16v4" />
       </svg>
     ),
-    title: "Reviews & Feedback",
-    description: "Ratings from previous hires and completed job transactions.",
-    weight: "30%",
+    title: "Experience",
+    description: "Reflects applied knowledge, resilience, and real-world contributions.",
+    weight: "35%",
   },
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-        <path d="M8 21h8"/>
-        <path d="M12 17v4"/>
+        <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <circle cx="12" cy="12" r="3" />
       </svg>
     ),
-    title: "Platform Activity",
-    description: "Response rate, hiring history, and engagement on the platform.",
-    weight: "20%",
-  },
-  {
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-      </svg>
-    ),
-    title: "Payment History",
-    description: "Timely payments to workers and no disputes or chargebacks.",
+    title: "Interaction",
+    description: "Captures communication skills, social intelligence, and collaboration.",
     weight: "25%",
   },
 ];
 
-const scoreRanges = [
+const scoreDescriptions = [
   {
-    range: "90-100",
-    label: "Excellent",
+    range: "85-100",
+    label: "Exceptional",
     color: "#22C55E",
-    description: "Highly trusted employer with verified credentials and excellent track record.",
+    description: "Outstanding ability across all dimensions, trusted for leadership and innovation.",
   },
   {
-    range: "75-89",
-    label: "Good",
+    range: "70-84",
+    label: "Competent",
     color: "#84CC16",
-    description: "Reliable employer with positive feedback and consistent platform activity.",
+    description: "Reliable and skilled with strong application of knowledge and good communication.",
   },
   {
-    range: "50-74",
-    label: "Fair",
+    range: "55-69",
+    label: "Developing",
     color: "#F59E0B",
-    description: "Moderate trust level - some verifications pending or limited history.",
+    description: "Shows potential; requires further growth in experience and interaction.",
   },
   {
-    range: "Below 50",
-    label: "Low",
+    range: "Below 55",
+    label: "Emerging",
     color: "#EF4444",
-    description: "Exercise caution - unverified or has negative feedback from workers.",
+    description: "Limited demonstrated capability; needs significant development and engagement.",
   },
 ];
 
 const benefits = [
   {
-    title: "For Job Seekers",
+    title: "For Individuals",
     items: [
-      "Know who you're working for before accepting a job",
-      "Avoid scams and fraudulent employers",
-      "Make informed decisions based on real data",
-      "See employer payment history and reliability",
-      "Access verified contact information",
+      "Receive a holistic assessment of your capabilities",
+      "Identify areas for growth and development",
+      "Build credibility with transparent metrics",
+      "Track your progress over time",
+      "Enhance your professional profile",
     ],
   },
   {
-    title: "For Employers",
+    title: "For Organizations",
     items: [
-      "Build credibility and attract top talent",
-      "Stand out from unverified competitors",
-      "Increase response rates from job seekers",
-      "Showcase your positive track record",
-      "Access premium features with higher scores",
+      "Evaluate candidates comprehensively",
+      "Identify high-potential talent",
+      "Promote growth and development",
+      "Encourage trust and transparency",
+      "Make data-driven decisions",
     ],
   },
 ];
 
 const faqs = [
   {
-    question: "How is TrustScore calculated?",
-    answer: "TrustScore is calculated using multiple factors including identity verification (25%), reviews and feedback (30%), platform activity (20%), and payment history (25%). The score updates in real-time as new data becomes available.",
+    question: "How is the TrustScore calculated?",
+    answer: "It's computed using three primary factors: Intelligence (40%), Experience (35%), and Interaction (25%). The score updates dynamically with new data.",
   },
   {
     question: "Can I improve my TrustScore?",
-    answer: "Yes! You can improve your TrustScore by completing identity verification, maintaining positive interactions with workers, making timely payments, and staying active on the platform. Consistent positive behavior leads to a higher score over time.",
+    answer: "Yes! By enhancing your skills, gaining practical experience, and engaging positively with others, you can increase your score over time.",
   },
   {
-    question: "How often is TrustScore updated?",
-    answer: "TrustScore updates in real-time as new information becomes available. Major factors like reviews and payment history are reflected immediately, while verification status updates once the process is complete.",
+    question: "What does my TrustScore mean?",
+    answer: "It reflects your overall ability, reliability, and social competence, helping others understand your potential and track record.",
   },
   {
-    question: "Is TrustScore visible to everyone?",
-    answer: "Yes, TrustScore is publicly visible to help job seekers make informed decisions. However, the detailed breakdown is only visible to the account owner to maintain privacy while ensuring transparency.",
+    question: "Is TrustScore confidential?",
+    answer: "The overall score is visible publicly, but detailed breakdowns are private and accessible only to you.",
   },
   {
-    question: "What happens if I have a low TrustScore?",
-    answer: "A low TrustScore may affect your visibility to job seekers and limit access to certain features. We recommend completing verification steps and addressing any negative feedback to improve your score.",
+    question: "What if I have a low TrustScore?",
+    answer: "Focus on improving your skills, gaining experience, and engaging positively to boost your trustworthiness and score.",
   },
 ];
 
@@ -152,11 +140,9 @@ export default function TrustScorePage() {
         <section className="trustscore-hero" onMouseMove={handleMouseMove} onMouseLeave={handleMouseLeave}>
           <div className="trustscore-hero-grid" ref={gridRef} />
           <div className="hero-content">
-            <h1>Building Trust in Every Hire</h1>
+            <h1>Building Trust in Every Capability</h1>
             <p>
-              TrustScore is our proprietary verification system designed to create a safer
-              job marketplace. It helps job seekers identify reliable employers and rewards
-              businesses that maintain high standards of trust and transparency.
+              The TrustScore™ System provides a comprehensive, data-driven assessment of human potential. It evaluates Intelligence, Experience, and Interaction to offer a unified view of trustworthiness and growth.
             </p>
             <div className="hero-score-demo">
               <div className="score-circle">
@@ -165,13 +151,13 @@ export default function TrustScorePage() {
                   <circle className="score-progress" cx="50" cy="50" r="45"/>
                 </svg>
                 <div className="score-value">
-                  <span className="score-number">92</span>
-                  <span className="score-label">Excellent</span>
+                  <span className="score-number">78</span>
+                  <span className="score-label">Competent</span>
                 </div>
               </div>
               <div className="score-info">
                 <h3>Example TrustScore</h3>
-                <p>A score of 92 indicates a highly trusted employer with verified credentials.</p>
+                <p>A score of 78 indicates a reliable individual with strong capabilities and good communication.</p>
               </div>
             </div>
           </div>
@@ -181,16 +167,16 @@ export default function TrustScorePage() {
         <section className="how-it-works">
           <div className="section-header">
             <h2>How TrustScore Works</h2>
-            <p>Our comprehensive scoring system evaluates multiple factors to ensure accuracy</p>
+            <p>Evaluating human capability across three core dimensions: Intelligence, Experience, and Interaction.</p>
           </div>
 
           <div className="factors-grid">
-            {trustFactors.map((factor, index) => (
+            {trustDimensions.map((dim, index) => (
               <div key={index} className="factor-card">
-                <div className="factor-icon">{factor.icon}</div>
-                <div className="factor-weight">{factor.weight}</div>
-                <h3>{factor.title}</h3>
-                <p>{factor.description}</p>
+                <div className="factor-icon">{dim.icon}</div>
+                <div className="factor-weight">{dim.weight}</div>
+                <h3>{dim.title}</h3>
+                <p>{dim.description}</p>
               </div>
             ))}
           </div>
@@ -200,17 +186,17 @@ export default function TrustScorePage() {
         <section className="score-ranges">
           <div className="section-header">
             <h2>Understanding Score Ranges</h2>
-            <p>Know what each TrustScore range means for your job search</p>
+            <p>Interpret what each TrustScore range signifies about human capability and trustworthiness.</p>
           </div>
 
           <div className="ranges-container">
-            {scoreRanges.map((range, index) => (
+            {scoreDescriptions.map((desc, index) => (
               <div key={index} className="range-card">
-                <div className="range-header" style={{ borderColor: range.color }}>
-                  <span className="range-value" style={{ color: range.color }}>{range.range}</span>
-                  <span className="range-label" style={{ backgroundColor: range.color }}>{range.label}</span>
+                <div className="range-header" style={{ borderColor: desc.color }}>
+                  <span className="range-value" style={{ color: desc.color }}>{desc.range}</span>
+                  <span className="range-label" style={{ backgroundColor: desc.color }}>{desc.label}</span>
                 </div>
-                <p>{range.description}</p>
+                <p>{desc.description}</p>
               </div>
             ))}
           </div>
@@ -219,8 +205,8 @@ export default function TrustScorePage() {
         {/* Benefits Section */}
         <section className="benefits-section">
           <div className="section-header">
-            <h2>Benefits of TrustScore</h2>
-            <p>How TrustScore creates value for everyone in the marketplace</p>
+            <h2>Benefits of the TrustScore System</h2>
+            <p>Creating value for individuals and organizations through transparent, holistic evaluation.</p>
           </div>
 
           <div className="benefits-grid">
@@ -231,7 +217,7 @@ export default function TrustScorePage() {
                   {benefit.items.map((item, idx) => (
                     <li key={idx}>
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7F56D9" strokeWidth="2">
-                        <path d="M20 6L9 17l-5-5"/>
+                        <path d="M20 6L9 17l-5-5" />
                       </svg>
                       {item}
                     </li>
@@ -244,43 +230,42 @@ export default function TrustScorePage() {
 
         {/* FAQ Section */}
         <section className="ts-faq-section">
-          <div className="section-header">
-            <h2>Frequently Asked Questions</h2>
-            <p>Get answers to common questions about TrustScore</p>
-          </div>
+  <div className="section-header">
+    <h2>Frequently Asked Questions</h2>
+    <p>Learn more about the TrustScore™ System and how it measures human capability.</p>
+  </div>
 
-          <div className="ts-faq-container">
-            {faqs.map((faq, index) => (
-              <div key={index} className={`ts-faq-item${openFaq === index ? " open" : ""}`}>
-                <button
-                  className="ts-faq-question"
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  aria-expanded={openFaq === index}
-                >
-                  <span>{faq.question}</span>
-                  <svg
-                    className="ts-faq-icon"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </button>
-                <div className="ts-faq-answer">
-                  <p>{faq.answer}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
+  <div className="ts-faq-container">
+    {faqs.map((faq, index) => (
+      <div key={index} className={`ts-faq-item${openFaq === index ? " open" : ""}`}>
+        <button
+          className="ts-faq-question"
+          onClick={() => setOpenFaq(openFaq === index ? null : index)}
+          aria-expanded={openFaq === index}
+        >
+          <span>{faq.question}</span>
+          <svg
+            className="ts-faq-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+        <div className="ts-faq-answer">
+          <p>{faq.answer}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
       </main>
       <Footer />
     </>
