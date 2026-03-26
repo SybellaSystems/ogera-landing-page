@@ -441,10 +441,10 @@
   stroke: #6941C6;
 }
 
-/* FAQ Section - Professional, Readable Page Style */
+//* FAQ Section - Premium, Clean, Readable Page Style */
 .ts-faq-section {
   padding: 80px 20px;
-  background-color: #f4f4f9; /* Light, neutral background for professionalism */
+  background-color: #f4f4f9; /* Light neutral background for a calm, professional vibe */
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   display: flex;
   justify-content: center;
@@ -454,10 +454,10 @@
 .ts-faq-container {
   max-width: 900px;
   width: 100%;
-  background: #fff; /* Clean white background for readability */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 40px 30px;
+  background: #ffffff; /* Clean white background for clarity */
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Soft, elevated shadow for depth */
+  padding: 50px 40px;
   line-height: 1.75;
   font-size: 1.05rem;
   color: #333;
@@ -465,48 +465,49 @@
 }
 
 .ts-faq-container:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
 }
 
-/* Style each FAQ item to look like a section in a professional article */
+/* Style each FAQ item with a focus on clarity and separation */
 .ts-faq-item {
-  margin-bottom: 24px;
-  border-bottom: 1px solid #e0e0e0; /* Light separator for clarity */
-  padding-bottom: 16px;
-  transition: background-color 0.2s ease;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0; /* Light separator for separation */
+  padding-bottom: 20px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .ts-faq-item:last-child {
   border-bottom: none;
 }
 
-/* Questions: large, readable, and interactive */
+/* Question header as a large, inviting clickable area */
 .ts-faq-question {
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  padding: 16px;
-  border-radius: 8px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  padding: 20px 24px;
+  border-radius: 12px;
+  background-color: transparent;
+  transition: background-color 0.2s, color 0.2s, font-weight 0.2s;
 }
 
 .ts-faq-question:hover {
-  background-color: #f0f0f0;
-  color: #6941C6; /* A soft purple accent for hover */
+  background-color: #f0f0f0; /* Subtle hover effect for interactivity */
+  color: #6941C6; /* Slight color accent to indicate hover */
 }
 
-/* When open, style question to show active state */
+/* Active/open state styling for questions */
 .ts-faq-item.open .ts-faq-question {
-  background-color: #e8e0f7;
+  background-color: #e8e0f7; /* Highlight active question with a soft color */
   color: #6941C6;
   font-weight: 700;
 }
 
-/* Icon for toggle arrow, rotate on open */
+/* Toggle arrow icon with smooth rotation */
 .ts-faq-icon {
   transition: transform 0.3s ease, stroke 0.3s ease;
   stroke: #7F56D9;
@@ -517,24 +518,55 @@
   stroke: #6941C6;
 }
 
-/* Answers: readable paragraph with smooth expand */
+/* Answer section styled for clarity and elegance */
 .ts-faq-answer {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.3s ease;
-  padding: 0 16px;
+  padding: 0 24px;
   font-size: 1rem;
   color: #555;
   line-height: 1.75;
-  margin-top: 12px;
-  border-left: 4px solid #7F56D9;
-  border-radius: 4px;
-  background-color: #fafafa;
+  margin-top: 16px;
+  border-left: 4px solid #7F56D9; /* Accent line matching the theme */
+  border-radius: 8px;
+  background-color: #fafafa; /* Light background for answers */
 }
 
+/* Expanded answer style when open */
 .ts-faq-item.open .ts-faq-answer {
-  max-height: 600px; /* sufficiently large for content */
-  padding: 16px;
+  max-height: 800px; /* Large enough for all content */
+  padding: 16px 24px;
+}
+
+/* Optional: Add a subtle hover effect for answer containers for better UX */
+.ts-faq-answer:hover {
+  background-color: #f9f9f9;
+}
+
+/* Responsiveness for mobile devices */
+@media(max-width: 1024px) {
+  .ts-faq-container {
+    padding: 40px 20px;
+  }
+  .ts-faq-question {
+    font-size: 1.05rem;
+    padding: 16px 20px;
+  }
+  .ts-faq-answer {
+    font-size: 0.95rem;
+    padding: 12px 20px;
+  }
+}
+@media(max-width: 768px) {
+  .ts-faq-question {
+    font-size: 1rem;
+    padding: 14px 18px;
+  }
+  .ts-faq-answer {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
 }
 
 /* Responsive adjustments for better mobile experience */
