@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Ogera - Empowering Businesses with Smart Digital Solutions",
+        alt: "Ogera - Build now. Graduate proud.",
       },
     ],
   },
@@ -58,9 +58,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@ogera",
     creator: "@ogera",
-    title: "Ogera — Empowering Businesses with Smart Digital Solutions",
+    title: "Ogera — Build now. Graduate proud.",
     description:
-      "Ogera provides modern digital solutions to help businesses work smarter and achieve more.",
+      "Ogera is a student's job platform.",
     images: ["/images/twitter-image.jpg"],
   },
   alternates: {

@@ -4,6 +4,16 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
+  padding: 1rem;
+  background: #f8f9fb; /* subtle light background */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(43, 108, 176, 0.08); /* soft blue shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.africa-map-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(43, 108, 176, 0.12);
 }
 
 .africa-map-container {
@@ -19,7 +29,14 @@
 .africa-map-container svg {
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 4px 20px rgba(127, 86, 217, 0.12));
+  filter: drop-shadow(0 4px 20px rgba(43, 108, 176, 0.12));
+  transition: transform 0.2s ease;
+}
+
+.africa-map-container svg path:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  opacity: 0.9;
 }
 
 /* ===== Legend ===== */
@@ -27,6 +44,7 @@
   display: flex;
   gap: 24px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .legend-item {
@@ -34,7 +52,7 @@
   align-items: center;
   gap: 8px;
   font-size: 0.8rem;
-  color: #6b6580;
+  color: #4a4a6a; /* darker text for readability */
   font-weight: 500;
 }
 
@@ -46,11 +64,11 @@
 }
 
 .legend-active {
-  background: #7F56D9;
+  background: #2b6cb0; /* brand blue */
 }
 
 .legend-coming {
-  background: #e0d6f0;
+  background: #cbd5e1; /* softer light blue */
 }
 
 /* ===== Selected Country Info ===== */
@@ -59,12 +77,13 @@
   align-items: center;
   gap: 8px;
   padding: 8px 18px;
-  background: rgba(127, 86, 217, 0.08);
-  border: 1px solid rgba(127, 86, 217, 0.15);
+  background: rgba(43, 108, 176, 0.08); /* subtle brand blue bg */
+  border: 1px solid rgba(43, 108, 176, 0.2);
   border-radius: 50px;
   font-size: 0.82rem;
   font-weight: 600;
-  color: #2d2252;
+  color: #1e3a5f; /* dark blue text */
+  transition: background 0.3s ease, border 0.3s ease;
 }
 
 /* ===== Responsive: 768px ===== */

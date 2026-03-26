@@ -9,16 +9,16 @@ export default function AfricaMap() {
       <div className="africa-map-container">
         <Africa
           type="select-single"
-          mapColor="#7F56D9"
-          strokeColor="rgba(255,255,255,0.35)"
-          strokeWidth={0.5}
-          hoverColor="#9B7FCC"
-          selectColor="#5B3BA5"
+          mapColor="#2b6cb0"                  // Brand primary blue
+          strokeColor="rgba(255,255,255,0.3)" // Soft white borders
+          strokeWidth={0.8}                   // Visible borders
+          hoverColor="#5a90d1"                // Brighter hover
+          selectColor="#1e4a7d"               // Darker blue for selection
           hints
-          hintTextColor="#2d2252"
-          hintBackgroundColor="rgba(255,255,255,0.95)"
-          hintBorderRadius={8}
-          hintPadding="8px 14px"
+          hintTextColor="#ffffff"              // White hint text
+          hintBackgroundColor="rgba(43,108,176,0.95)" // Semi-transparent brand
+          hintBorderRadius={10}                // Rounded hint box
+          hintPadding="10px 16px"              // Comfortable padding
           disableClick
         />
       </div>
