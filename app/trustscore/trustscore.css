@@ -441,20 +441,22 @@
   stroke: #6941C6;
 }
 
-/* FAQ Section - Reflow as a readable article/page */
+/* FAQ Section - Professional, Readable Page Style */
 .ts-faq-section {
   padding: 80px 20px;
-  background: transparent;
-  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9; /* Light, neutral background for professionalism */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-/* Container for the FAQ content - clean article style with padding and spacing */
 .ts-faq-container {
   max-width: 900px;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.95);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  width: 100%;
+  background: #fff; /* Clean white background for readability */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 40px 30px;
   line-height: 1.75;
   font-size: 1.05rem;
@@ -463,14 +465,14 @@
 }
 
 .ts-faq-container:hover {
-  box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
 }
 
-/* Each FAQ item styled for readability and interaction */
+/* Style each FAQ item to look like a section in a professional article */
 .ts-faq-item {
   margin-bottom: 24px;
-  border-bottom: 1px solid rgba(127, 86, 217, 0.2);
+  border-bottom: 1px solid #e0e0e0; /* Light separator for clarity */
   padding-bottom: 16px;
   transition: background-color 0.2s ease;
 }
@@ -479,32 +481,32 @@
   border-bottom: none;
 }
 
-/* Question styling - prominent and clickable for toggle with a smooth hover effect */
+/* Questions: large, readable, and interactive */
 .ts-faq-question {
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  font-size: 1.1rem;
   font-weight: 600;
-  font-size: 1.05rem;
-  padding: 12px 16px;
-  transition: background-color 0.2s ease;
+  padding: 16px;
   border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .ts-faq-question:hover {
-  background-color: rgba(127, 86, 217, 0.05);
-  color: #6941C6;
+  background-color: #f0f0f0;
+  color: #6941C6; /* A soft purple accent for hover */
 }
 
-/* Open state styling for question to indicate active toggle */
+/* When open, style question to show active state */
 .ts-faq-item.open .ts-faq-question {
-  background-color: rgba(127, 86, 217, 0.07);
+  background-color: #e8e0f7;
   color: #6941C6;
   font-weight: 700;
 }
 
-/* Icon rotation for toggle indicator */
+/* Icon for toggle arrow, rotate on open */
 .ts-faq-icon {
   transition: transform 0.3s ease, stroke 0.3s ease;
   stroke: #7F56D9;
@@ -515,7 +517,7 @@
   stroke: #6941C6;
 }
 
-/* Answer text styled for easy reading, with smooth expand animation */
+/* Answers: readable paragraph with smooth expand */
 .ts-faq-answer {
   max-height: 0;
   overflow: hidden;
@@ -524,13 +526,14 @@
   font-size: 1rem;
   color: #555;
   line-height: 1.75;
-  margin-top: 8px;
-  border-left: 4px solid rgba(127, 86, 217, 0.2);
+  margin-top: 12px;
+  border-left: 4px solid #7F56D9;
   border-radius: 4px;
+  background-color: #fafafa;
 }
 
 .ts-faq-item.open .ts-faq-answer {
-  max-height: 600px;
+  max-height: 600px; /* sufficiently large for content */
   padding: 16px;
 }
 
@@ -599,7 +602,7 @@
   }
   .ts-faq-question {
     font-size: 1rem;
-    padding: 10px 12px;
+    padding: 12px;
   }
   .ts-faq-answer {
     font-size: 0.95rem;
@@ -644,7 +647,7 @@
     padding: 24px 16px;
   }
   .ts-faq-question {
-    padding: 8px 10px;
+    padding: 10px;
     font-size: 0.95rem;
   }
   .ts-faq-answer {
