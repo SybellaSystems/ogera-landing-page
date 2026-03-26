@@ -205,29 +205,64 @@
   margin: 0;
 }
 
-/* How It Works */
+/* How It Works - Enhanced Centered Layout */
 .how-it-works {
-  padding: 60px 20px;
-  max-width: 1200px;
+  padding: 80px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Override previous .section-header for this section to match new specs */
+.how-it-works .section-header {
+  max-width: 800px;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.how-it-works .section-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d2252;
+  margin-bottom: 16px;
+}
+
+.how-it-works .section-header p {
+  font-size: 1.1rem;
+  color: #6b6580;
+  line-height: 1.6;
+  max-width: 700px;
   margin: 0 auto;
 }
 
+/* Grid of trust factors, centered and spacious */
 .factors-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
+/* Style each factor card for a cleaner, modern look with shadow and hover effects */
 .factor-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   border-radius: 20px;
   padding: 30px;
-  text-align: center;
   border: 1px solid rgba(127, 86, 217, 0.2);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 200px;
   position: relative;
 }
 
@@ -238,16 +273,16 @@
 }
 
 .factor-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 16px;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 16px;
   background: linear-gradient(135deg, #7F56D9, #5B3BA5);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
@@ -270,14 +305,14 @@
 }
 
 .factor-card h3 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #2d2252;
   margin-bottom: 10px;
 }
 
 .factor-card p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #555;
   line-height: 1.6;
 }
@@ -406,69 +441,73 @@
   stroke: #6941C6;
 }
 
-/* FAQ Accordion */
+/* FAQ Section - Reflow as a readable article/page */
 .ts-faq-section {
-  padding: 60px 20px;
+  padding: 80px 20px;
   background: transparent;
+  font-family: 'Arial', sans-serif;
 }
 
+/* Container for the FAQ content - clean article style with padding and spacing */
 .ts-faq-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(16px);
+  background: rgba(255,255,255,0.95);
   border-radius: 20px;
-  border: 1px solid rgba(127,86,217,0.15);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  padding: 40px 30px;
+  line-height: 1.75;
+  font-size: 1.05rem;
+  color: #333;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+.ts-faq-container:hover {
+  box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+/* Each FAQ item styled for readability and interaction */
 .ts-faq-item {
-  border-bottom: 1px solid rgba(127,86,217,0.1);
-  transition: background 0.2s ease;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(127, 86, 217, 0.2);
+  padding-bottom: 16px;
+  transition: background-color 0.2s ease;
 }
 
 .ts-faq-item:last-child {
   border-bottom: none;
 }
 
+/* Question styling - prominent and clickable for toggle with a smooth hover effect */
 .ts-faq-question {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 24px;
-  background: transparent;
-  border: none;
   cursor: pointer;
-  font-size: 1rem;
   font-weight: 600;
-  color: #2d2252;
-  transition: background 0.3s ease, color 0.3s ease, padding-left 0.3s ease;
-  font-family: 'Arial', sans-serif;
+  font-size: 1.05rem;
+  padding: 12px 16px;
+  transition: background-color 0.2s ease;
+  border-radius: 8px;
 }
 
 .ts-faq-question:hover {
-  background: rgba(127, 86, 217, 0.05);
+  background-color: rgba(127, 86, 217, 0.05);
   color: #6941C6;
 }
 
+/* Open state styling for question to indicate active toggle */
 .ts-faq-item.open .ts-faq-question {
-  background: rgba(127, 86, 217, 0.07);
-  padding-left: 28px;
-  font-weight: 700;
+  background-color: rgba(127, 86, 217, 0.07);
   color: #6941C6;
+  font-weight: 700;
 }
 
-.ts-faq-question span {
-  flex: 1;
-  padding-right: 16px;
-}
-
+/* Icon rotation for toggle indicator */
 .ts-faq-icon {
-  transition: transform 0.3s ease, color 0.3s ease;
-  flex-shrink: 0;
-  stroke: #9b8ed7;
+  transition: transform 0.3s ease, stroke 0.3s ease;
+  stroke: #7F56D9;
 }
 
 .ts-faq-item.open .ts-faq-icon {
@@ -476,20 +515,23 @@
   stroke: #6941C6;
 }
 
-/* Answer styles with slide effect */
+/* Answer text styled for easy reading, with smooth expand animation */
 .ts-faq-answer {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease, padding 0.3s ease;
-  padding: 0 24px;
-  border-left: 3px solid rgba(127,86,217,0.2);
-  font-size: 0.92rem;
+  padding: 0 16px;
+  font-size: 1rem;
   color: #555;
+  line-height: 1.75;
+  margin-top: 8px;
+  border-left: 4px solid rgba(127, 86, 217, 0.2);
+  border-radius: 4px;
 }
 
 .ts-faq-item.open .ts-faq-answer {
-  max-height: 300px;
-  padding: 16px 24px;
+  max-height: 600px;
+  padding: 16px;
 }
 
 /* Responsive adjustments for better mobile experience */
@@ -499,6 +541,12 @@
   }
   .ranges-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .how-it-works .section-header h2 {
+    font-size: 2rem;
+  }
+  .how-it-works .section-header p {
+    font-size: 1rem;
   }
 }
 @media(max-width: 768px) {
@@ -518,6 +566,43 @@
   }
   .benefits-grid {
     grid-template-columns: 1fr;
+  }
+  .how-it-works {
+    padding: 60px 20px;
+  }
+  .how-it-works .section-header h2 {
+    font-size: 1.8rem;
+  }
+  .how-it-works .section-header p {
+    font-size: 0.95rem;
+  }
+  .factors-grid {
+    gap: 20px;
+  }
+  .factor-card {
+    padding: 24px;
+    min-height: 180px;
+  }
+  .factor-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
+  }
+  .factor-card h3 {
+    font-size: 1rem;
+  }
+  .factor-card p {
+    font-size: 0.9rem;
+  }
+  .ts-faq-container {
+    padding: 30px 20px;
+  }
+  .ts-faq-question {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+  .ts-faq-answer {
+    font-size: 0.95rem;
   }
 }
 @media(max-width: 480px) {
@@ -541,5 +626,32 @@
   .hero-score-demo {
     padding: 16px;
   }
-  /* Reduce padding/margins for other components as needed */
+  .how-it-works .section-header h2 {
+    font-size: 1.5rem;
+  }
+  .how-it-works .section-header p {
+    font-size: 0.9rem;
+  }
+  .factors-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .factor-card {
+    padding: 20px;
+    min-height: auto;
+  }
+  .ts-faq-container {
+    padding: 24px 16px;
+  }
+  .ts-faq-question {
+    padding: 8px 10px;
+    font-size: 0.95rem;
+  }
+  .ts-faq-answer {
+    font-size: 0.9rem;
+    padding: 0 12px;
+  }
+  .ts-faq-item.open .ts-faq-answer {
+    padding: 12px;
+  }
 }
