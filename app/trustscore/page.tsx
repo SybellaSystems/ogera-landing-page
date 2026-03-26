@@ -229,43 +229,43 @@ export default function TrustScorePage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="trustscore-faq-section">
-          <div className="section-header">
-            <h2>Frequently Asked Questions</h2>
-            <p>Learn more about the TrustScore™ System and how it measures human capability.</p>
-          </div>
+        <section className="ts-faq-section">
+  <div className="section-header">
+    <h2>Frequently Asked Questions</h2>
+    <p>Learn more about the TrustScore™ System and how it measures human capability.</p>
+  </div>
 
-          <div className="trustscore-faq-container">
-            {faqs.map((faq, index) => (
-              <div key={index} className={`trustscore-faq-item${openFaq === index ? " open" : ""}`}>
-                <button
-                  className="trustscore-faq-question"
-                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                  aria-expanded={openFaq === index}
-                >
-                  <span>{faq.question}</span>
-                  <svg
-                    className="trustscore-faq-icon"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <line x1="12" y1="5" x2="12" y2="19" />
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                  </svg>
-                </button>
-                <div className="trustscore-faq-answer">
-                  <p>{faq.answer}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+  <div className="ts-faq-container">
+    {faqs.map((faq, index) => (
+      <div key={index} className={`ts-faq-item${openFaq === index ? " open" : ""}`}>
+        <button
+          className="ts-faq-question"
+          onClick={() => setOpenFaq(openFaq === index ? null : index)}
+          aria-expanded={openFaq === index}
+        >
+          <span>{faq.question}</span>
+          <svg
+            className="ts-faq-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+        <div className="ts-faq-answer">
+          <p>{faq.answer}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
       </main>
       <Footer />
     </>
