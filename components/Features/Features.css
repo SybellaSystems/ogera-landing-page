@@ -1,6 +1,6 @@
 /* ===== Full-Width Wrapper ===== */
 .how-it-works-wrapper {
-  background: linear-gradient(180deg, #f3effb 0%, #efe9f7 30%, #ebe5f3 60%, #ddd0ec 100%);
+  background: linear-gradient(180deg, #f7f5fc 0%, #f1ebf8 30%, #ede5f4 60%, #e2d4ef 100%);
   max-width: 1200px;
   margin: 60px auto 0;
   border-radius: 24px 24px 0 0;
@@ -31,7 +31,7 @@
 /* ===== Tab Buttons (Enhanced) ===== */
 .tab-buttons {
   display: flex;
-  border: 2px solid #e0d8f0;
+  border: 2px solid #dcd2eb;
   border-radius: 50px;
   overflow: hidden;
   background: white;
@@ -51,14 +51,14 @@
 }
 
 .tab-btn:hover {
-  background: rgba(127, 86, 217, 0.06);
+  background: rgba(127, 86, 217, 0.08);
   color: #7F56D9;
 }
 
 .tab-btn.active {
   background: #7F56D9;
   color: white;
-  box-shadow: 0 2px 10px rgba(127, 86, 217, 0.3);
+  box-shadow: 0 2px 10px rgba(127, 86, 217, 0.25);
 }
 
 /* ===== Steps Grid ===== */
@@ -74,17 +74,16 @@
 .step-card {
   display: flex;
   flex-direction: column;
-  background: #fff;
-  border: 1px solid #eeecf2;
+  background: #ffffff;
+  border: 1px solid #ece6f4;
   border-radius: 24px;
   overflow: hidden;
   transition: all 0.25s ease;
-  opacity: 1;
 }
 
 .step-card:hover {
-  border-color: #d4c8f0;
-  box-shadow: 0 8px 28px rgba(127, 86, 217, 0.1);
+  border-color: #d6c8f2;
+  box-shadow: 0 8px 28px rgba(127, 86, 217, 0.15);
   transform: translateY(-3px);
 }
 
@@ -133,7 +132,7 @@
 
 .step-text p {
   font-size: 0.82rem;
-  color: #8a8599;
+  color: #6b6480;
   line-height: 1.55;
   margin: 0;
   max-height: 0;
@@ -178,252 +177,66 @@
   background: #6941C6;
 }
 
-/* ===== Responsive: Tablet (968px) ===== */
+/* ===== Responsive Adjustments ===== */
 @media (max-width: 968px) {
-  .how-it-works {
-    padding: 60px 16px 70px;
-  }
-
-  .how-it-works-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 0;
-  }
-
-  .how-it-works-header h2 {
-    font-size: 1.5rem;
-  }
-
-  .tab-btn {
-    padding: 11px 20px;
-    font-size: 0.82rem;
-  }
-
-  .steps-container {
-    padding: 0;
-    gap: 18px;
-  }
-
-  .step-visual {
-    height: 170px;
-  }
-
-  .step-text {
-    padding: 16px;
-  }
-
-  .step-text h3 {
-    font-size: 0.95rem;
-  }
-
-  .step-text p {
-    font-size: 0.78rem;
-  }
-
-  .step-hover-btn {
-    font-size: 0.74rem;
-    padding: 7px 16px;
-    margin-top: 12px;
-  }
+  .how-it-works { padding: 60px 16px 70px; }
+  .how-it-works-header { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0; }
+  .how-it-works-header h2 { font-size: 1.5rem; }
+  .tab-btn { padding: 11px 20px; font-size: 0.82rem; }
+  .steps-container { padding: 0; gap: 18px; }
+  .step-visual { height: 170px; }
+  .step-text { padding: 16px; }
+  .step-text h3 { font-size: 0.95rem; }
+  .step-text p { font-size: 0.78rem; }
+  .step-hover-btn { font-size: 0.74rem; padding: 7px 16px; margin-top: 12px; }
 }
 
-/* ===== Responsive: Small Tablet (768px) ===== */
 @media (max-width: 768px) {
-  .how-it-works {
-    padding: 50px 16px 60px;
-  }
-
-  .how-it-works-header {
-    margin-bottom: 28px;
-  }
-
-  .steps-container {
-    grid-template-columns: 1fr;
-    max-width: 420px;
-    margin: 0 auto;
-    gap: 16px;
-  }
-
-  .step-card {
-    flex-direction: row;
-    border-radius: 20px;
-  }
-
-  .step-visual {
-    width: 140px;
-    height: auto;
-    min-height: 130px;
-    flex-shrink: 0;
-    border-radius: 20px 0 0 20px;
-  }
-
-  .step-text {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .step-text h3 {
-    font-size: 0.95rem;
-  }
-
-  .step-hover-btn {
-    font-size: 0.72rem;
-    padding: 6px 14px;
-    margin-top: 10px;
-  }
+  .how-it-works { padding: 50px 16px 60px; }
+  .how-it-works-header { margin-bottom: 28px; }
+  .steps-container { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; gap: 16px; }
+  .step-card { flex-direction: row; border-radius: 20px; }
+  .step-visual { width: 140px; height: auto; min-height: 130px; flex-shrink: 0; border-radius: 20px 0 0 20px; }
+  .step-text { padding: 16px; display: flex; flex-direction: column; justify-content: center; }
+  .step-text h3 { font-size: 0.95rem; }
+  .step-hover-btn { font-size: 0.72rem; padding: 6px 14px; margin-top: 10px; }
 }
 
-/* ===== Responsive: Mobile (640px) ===== */
 @media (max-width: 640px) {
-  .how-it-works {
-    padding: 40px 14px 50px;
-  }
-
-  .how-it-works-header h2 {
-    font-size: 1.35rem;
-  }
-
-  .tab-btn {
-    padding: 10px 16px;
-    font-size: 0.78rem;
-    white-space: nowrap;
-  }
-
-  .steps-container {
-    max-width: 100%;
-    gap: 12px;
-  }
-
-  .step-visual {
-    width: 120px;
-    min-height: 110px;
-  }
-
-  .step-text {
-    padding: 14px;
-  }
-
-  .step-text h3 {
-    font-size: 0.88rem;
-    margin-bottom: 4px;
-  }
-
-  .step-text p {
-    font-size: 0.75rem;
-  }
-
-  .step-hover-btn {
-    font-size: 0.68rem;
-    padding: 5px 12px;
-    margin-top: 8px;
-    gap: 4px;
-  }
-
+  .how-it-works { padding: 40px 14px 50px; }
+  .how-it-works-header h2 { font-size: 1.35rem; }
+  .tab-btn { padding: 10px 16px; font-size: 0.78rem; white-space: nowrap; }
+  .steps-container { max-width: 100%; gap: 12px; }
+  .step-visual { width: 120px; min-height: 110px; }
+  .step-text { padding: 14px; }
+  .step-text h3 { font-size: 0.88rem; margin-bottom: 4px; }
+  .step-text p { font-size: 0.75rem; }
+  .step-hover-btn { font-size: 0.68rem; padding: 5px 12px; margin-top: 8px; gap: 4px; }
 }
 
-/* ===== Responsive: Small Mobile (480px) ===== */
 @media (max-width: 480px) {
-  .how-it-works {
-    padding: 35px 12px 45px;
-  }
-
-  .how-it-works-header {
-    gap: 14px;
-    margin-bottom: 24px;
-  }
-
-  .how-it-works-header h2 {
-    font-size: 1.2rem;
-  }
-
-  .tab-btn {
-    padding: 9px 14px;
-    font-size: 0.73rem;
-  }
-
-  .step-visual {
-    width: 100px;
-    min-height: 100px;
-  }
-
-  .step-text {
-    padding: 12px;
-  }
-
-  .step-text h3 {
-    font-size: 0.82rem;
-  }
-
-  .step-text p {
-    font-size: 0.7rem;
-  }
-
-  .step-hover-btn {
-    font-size: 0.65rem;
-    padding: 5px 10px;
-    margin-top: 7px;
-    border-radius: 6px;
-  }
-
-  .step-card {
-    border-radius: 18px;
-  }
-
-  .step-visual {
-    border-radius: 18px 0 0 18px;
-  }
-
+  .how-it-works { padding: 35px 12px 45px; }
+  .how-it-works-header { gap: 14px; margin-bottom: 24px; }
+  .how-it-works-header h2 { font-size: 1.2rem; }
+  .tab-btn { padding: 9px 14px; font-size: 0.73rem; }
+  .step-visual { width: 100px; min-height: 100px; }
+  .step-text { padding: 12px; }
+  .step-text h3 { font-size: 0.82rem; }
+  .step-text p { font-size: 0.7rem; }
+  .step-hover-btn { font-size: 0.65rem; padding: 5px 10px; margin-top: 7px; border-radius: 6px; }
+  .step-card { border-radius: 18px; }
+  .step-visual { border-radius: 18px 0 0 18px; }
 }
 
-/* ===== Responsive: iPhone SE (360px) ===== */
 @media (max-width: 360px) {
-  .how-it-works {
-    padding: 30px 10px 40px;
-  }
-
-  .how-it-works-header h2 {
-    font-size: 1.1rem;
-  }
-
-  .tab-btn {
-    padding: 8px 11px;
-    font-size: 0.68rem;
-  }
-
-  .step-visual {
-    width: 85px;
-    min-height: 90px;
-  }
-
-  .step-text {
-    padding: 10px;
-  }
-
-  .step-text h3 {
-    font-size: 0.78rem;
-  }
-
-  .step-text p {
-    font-size: 0.65rem;
-    line-height: 1.45;
-  }
-
-  .step-hover-btn {
-    font-size: 0.6rem;
-    padding: 4px 9px;
-    margin-top: 6px;
-    border-radius: 5px;
-  }
-
-  .step-card {
-    border-radius: 16px;
-  }
-
-  .step-visual {
-    border-radius: 16px 0 0 16px;
-  }
-
+  .how-it-works { padding: 30px 10px 40px; }
+  .how-it-works-header h2 { font-size: 1.1rem; }
+  .tab-btn { padding: 8px 11px; font-size: 0.68rem; }
+  .step-visual { width: 85px; min-height: 90px; }
+  .step-text { padding: 10px; }
+  .step-text h3 { font-size: 0.78rem; }
+  .step-text p { font-size: 0.65rem; line-height: 1.45; }
+  .step-hover-btn { font-size: 0.6rem; padding: 4px 9px; margin-top: 6px; border-radius: 5px; }
+  .step-card { border-radius: 16px; }
+  .step-visual { border-radius: 16px 0 0 16px; }
 }
