@@ -86,8 +86,8 @@ export default function ContactPage() {
               </p>
 
               <div className="contact-details">
-                <a href="mailto:info@ogera.com" className="contact-email">info@ogera.com</a>
-                <a href="tel:+250783123456" className="contact-phone">+250 783 123 456</a>
+                <a href="mailto:info@ogera.com" className="contact-email">ogera@sybellasystems.co.rw</a>
+                <a href="tel:+250783123456" className="contact-phone">+250 723 776 020</a>
                 <span className="contact-support-label">Customer Support</span>
               </div>
 
@@ -117,7 +117,7 @@ export default function ContactPage() {
                   <p>
                     For media-related questions or
                     press inquiries, please contact us
-                    at media@ogera.com.
+                    at media@sybellasystems.co.rw.
                   </p>
                 </div>
               </div>

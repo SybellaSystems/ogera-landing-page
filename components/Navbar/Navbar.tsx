@@ -66,8 +66,8 @@ function Navbar({ solid = false }: { solid?: boolean }) {
         </ul>
 
         <div className="nav-actions desktop-actions">
-          <a href="http://45.83.40.83:5173/auth/login" className="login">Login</a>
-          <a href="http://45.83.40.83:5173/auth/register" className="signup">Signup</a>
+          <a href="https://ogera-frontend.vercel.app/" className="login">Login</a>
+          <a href="https://ogera-frontend.vercel.app/auth/register" className="signup">Signup</a>
         </div>
 
         <button className="hamburger" onClick={toggleMenu} aria-label="Toggle menu">
