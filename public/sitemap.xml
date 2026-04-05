@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ogera Sitemap | Powered by Sybella Systems -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main Landing -->
+  <url>
+    <loc>https://ogera.sybellasystems.co.rw/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+    <lastmod>2026-04-05</lastmod>
+  </url>
+
+  <!-- Core Pages -->
+  <url>
+    <loc>https://ogera.sybellasystems.co.rw/about</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ogera.sybellasystems.co.rw/partners</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ogera.sybellasystems.co.rw/scholarship</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ogera.sybellasystems.co.rw/jobs</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ogera.sybellasystems.co.rw/trustscore</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Help & Support -->
+  <url>
+    <loc>https://ogera.sybellasystems.co.rw/help-center</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Legal -->
+  <url>
+    <loc>https://ogera.sybellasystems.co.rw/terms</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ogera.sybellasystems.co.rw/privacy-policy</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://ogera.sybellasystems.co.rw/cookie-policy</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://ogera.sybellasystems.co.rw/contact</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Job Listings (Dynamic Examples) -->
+  <url>
+    <loc>https://ogera.sybellasystems.co.rw/jobs/detail/senior-react-developer</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ogera.sybellasystems.co.rw/jobs/detail/ui-ux-design-intern</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Ecosystem Links -->
+  <url>
+    <loc>https://app.ogera.sybellasystems.co.rw</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sybellasystems.co.rw</loc>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
