@@ -103,8 +103,8 @@ export default function RootLayout({
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "Ogera",
-            url: "https://ogera.com",
-            logo: "https://ogera.com/images/ogera.png",
+            url: "https://ogera.sybellasystems.co.rw",
+            logo: "https://ogera.sybellasystems.co.rw/images/ogera.png",
             sameAs: [
               "https://twitter.com/ogera",
               "https://www.linkedin.com/company/ogera",
@@ -112,9 +112,9 @@ export default function RootLayout({
             ],
             contactPoint: {
               "@type": "ContactPoint",
-              telephone: "+250700000000",
+              telephone: "+250723776020",
               contactType: "Customer Support",
-              areaServed: "Worldwide",
+              areaServed: "Africa",
               availableLanguage: [
                 "English",
                 "French",
@@ -124,23 +124,7 @@ export default function RootLayout({
             },
           })}
         </Script>
-
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C29EEQ9XDG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-C29EEQ9XDG');
-</script>
-
-      </head>
-
-      <body className={`${nunito.className} antialiased bg-white text-gray-900`}>
-        {children}
-
-        {/* ✅ Google Analytics (replace ID) */}
+{/* ✅ Google Analytics (GA4) */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
           strategy="afterInteractive"
@@ -153,6 +137,11 @@ export default function RootLayout({
             gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', { page_path: window.location.pathname });
           `}
         </Script>
+      </head>
+
+      <body className={`${nunito.className} antialiased bg-white text-gray-900`}>
+        {children}
+       
       </body>
     </html>
   );
