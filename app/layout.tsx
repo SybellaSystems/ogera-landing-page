@@ -64,12 +64,12 @@ export const metadata: Metadata = {
     images: ["/images/twitter-image.jpg"],
   },
   alternates: {
-    canonical: "https://ogera.com",
+    canonical: "https://ogera.sybellasystems.co.rw",
     languages: {
-      "en-US": "https://ogera.com",
-      "fr-FR": "https://ogera.com/fr",
-      "sw-KE": "https://ogera.com/sw",
-      "rw-RW": "https://ogera.com/rw",
+      "en-US": "https://ogera.sybellasystems.co.rw",
+      "fr-FR": "https://ogera.sybellasystems.co.rw/fr",
+      "sw-KE": "https://ogera.sybellasystems.co.rw/sw",
+      "rw-RW": "https://ogera.sybellasystems.co.rw/rw",
     },
   },
   verification: {
