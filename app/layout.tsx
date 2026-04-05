@@ -124,6 +124,17 @@ export default function RootLayout({
             },
           })}
         </Script>
+
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C29EEQ9XDG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-C29EEQ9XDG');
+</script>
+
       </head>
 
       <body className={`${nunito.className} antialiased bg-white text-gray-900`}>
