@@ -2,8 +2,21 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { getCategoryById, workersByCategory, getWorkerBySlug, profileImage } from '@/data/workers';
+import { fetchWorkerById, inviteStudentToInterview, type ApiWorker } from '@/lib/api';
 import './worker-profile.css';
+
+const CATEGORIES: Record<string, string> = {
+  development: 'Development & IT',
+  design: 'Design & Creative',
+  finance: 'Finance & Accounting',
+  sales: 'Sales & Marketing',
+  'ai-services': 'AI Services',
+  law: 'Law',
+  hr: 'HR & Training',
+  engineering: 'Engineering & Architecture',
+  writing: 'Writing & Translation',
+  admin: 'Admin & Support',
+};
 
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const DAYS = Array.from({ length: 31 }, (_, i) => i + 1);
@@ -66,7 +79,10 @@ export default function WorkerProfilePage() {
   const params = useParams();
   const router = useRouter();
   const category = params.category as string;
-  const worker = params.worker as string;
+  const workerId = params.worker as string;
+
+  const [workerData, setWorkerData] = useState<ApiWorker | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [isInterviewModalOpen, setIsInterviewModalOpen] = useState(false);
   const [interviewDay, setInterviewDay] = useState('');
@@ -77,10 +93,21 @@ export default function WorkerProfilePage() {
   const [interviewPeriod, setInterviewPeriod] = useState('AM');
   const [interviewMessage, setInterviewMessage] = useState('');
   const [interviewSent, setInterviewSent] = useState(false);
+  const [interviewSubmitting, setInterviewSubmitting] = useState(false);
+  const [interviewError, setInterviewError] = useState('');
   const [yearOptions, setYearOptions] = useState<{ label: string; value: string }[]>([]);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Set year options on client only to avoid hydration mismatch
+  useEffect(() => {
+    const load = async () => {
+      setIsLoading(true);
+      const data = await fetchWorkerById(workerId);
+      setWorkerData(data);
+      setIsLoading(false);
+    };
+    load();
+  }, [workerId]);
+
   useEffect(() => {
     const y = new Date().getFullYear();
     setYearOptions([
@@ -89,78 +116,89 @@ export default function WorkerProfilePage() {
     ]);
   }, []);
 
-  const categoryData = getCategoryById(category);
-  const workerData = getWorkerBySlug(category, worker);
-  const allWorkers = workersByCategory[category] || [];
-  const otherWorkers = allWorkers.filter((w) => w.slug !== worker).slice(0, 3);
-
   const isDateComplete = interviewDay && interviewMonth && interviewYear;
   const isTimeComplete = interviewHour && interviewMinute;
 
   const resetForm = useCallback(() => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
-    setInterviewDay('');
-    setInterviewMonth('');
-    setInterviewYear('');
-    setInterviewHour('');
-    setInterviewMinute('');
-    setInterviewPeriod('AM');
-    setInterviewMessage('');
-    setInterviewSent(false);
+    if (timeoutRef.current) { clearTimeout(timeoutRef.current); timeoutRef.current = null; }
+    setInterviewDay(''); setInterviewMonth(''); setInterviewYear('');
+    setInterviewHour(''); setInterviewMinute(''); setInterviewPeriod('AM');
+    setInterviewMessage(''); setInterviewSent(false); setInterviewError('');
   }, []);
 
-  const handleSendInvitation = useCallback(() => {
+  const handleSendInvitation = useCallback(async () => {
+    setInterviewError('');
+    if (!workerId) {
+      setInterviewError('Missing student id');
+      return;
+    }
+    // Build a Date from the dropdown values (12-hour clock with AM/PM)
+    let hour = parseInt(interviewHour, 10);
+    if (interviewPeriod === 'PM' && hour !== 12) hour += 12;
+    if (interviewPeriod === 'AM' && hour === 12) hour = 0;
+    const minute = parseInt(interviewMinute, 10);
+    const month = parseInt(interviewMonth, 10) - 1;
+    const day = parseInt(interviewDay, 10);
+    const year = parseInt(interviewYear, 10);
+    const when = new Date(year, month, day, hour, minute, 0, 0);
+    if (isNaN(when.getTime()) || when.getTime() < Date.now()) {
+      setInterviewError('Please pick a valid future date and time');
+      return;
+    }
+
+    setInterviewSubmitting(true);
+    const result = await inviteStudentToInterview(workerId, when.toISOString(), interviewMessage);
+    setInterviewSubmitting(false);
+
+    if (!result.ok) {
+      setInterviewError(result.error);
+      return;
+    }
+
     setInterviewSent(true);
     timeoutRef.current = setTimeout(() => {
       timeoutRef.current = null;
-      setInterviewDay('');
-      setInterviewMonth('');
-      setInterviewYear('');
-      setInterviewHour('');
-      setInterviewMinute('');
-      setInterviewPeriod('AM');
-      setInterviewMessage('');
-      setInterviewSent(false);
+      resetForm();
       setIsInterviewModalOpen(false);
     }, 2000);
-  }, []);
+  }, [workerId, interviewDay, interviewMonth, interviewYear, interviewHour, interviewMinute, interviewPeriod, interviewMessage, resetForm]);
 
   const handleCloseModal = useCallback(() => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
-    setInterviewDay('');
-    setInterviewMonth('');
-    setInterviewYear('');
-    setInterviewHour('');
-    setInterviewMinute('');
-    setInterviewPeriod('AM');
-    setInterviewMessage('');
-    setInterviewSent(false);
+    if (timeoutRef.current) { clearTimeout(timeoutRef.current); timeoutRef.current = null; }
+    resetForm();
     setIsInterviewModalOpen(false);
-  }, []);
+  }, [resetForm]);
 
-  // Clean up on unmount or worker change
   useEffect(() => {
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
       document.body.style.overflow = '';
     };
-  }, [worker]);
+  }, [workerId]);
 
   useEffect(() => {
-    if (isInterviewModalOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = isInterviewModalOpen ? 'hidden' : '';
   }, [isInterviewModalOpen]);
 
-  if (!categoryData || !workerData) {
+  const categoryName = CATEGORIES[category] || category;
+
+  if (isLoading) {
+    return (
+      <div className="worker-profile-page">
+        <div className="profile-top-bar">
+          <button className="profile-back-btn" onClick={() => router.back()}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+            <span>Back</span>
+          </button>
+        </div>
+        <div className="profile-not-found"><p>Loading profile...</p></div>
+      </div>
+    );
+  }
+
+  if (!workerData) {
     return (
       <div className="worker-profile-page">
         <div className="profile-top-bar">
@@ -193,12 +231,21 @@ export default function WorkerProfilePage() {
         </div>
 
         <div className="profile-container">
-          {/* Main Profile Layout */}
           <div className="profile-main">
             {/* Sidebar */}
             <aside className="profile-sidebar">
               <div className="profile-image-wrapper">
-                <img src={profileImage} alt={workerData.name} width={200} height={200} />
+                {workerData.profile_image_url ? (
+                  <img src={workerData.profile_image_url} alt={workerData.full_name} width={200} height={200} />
+                ) : (
+                  <div style={{
+                    width: 200, height: 200, display: 'flex', alignItems: 'center',
+                    justifyContent: 'center', background: 'linear-gradient(135deg, #7F56D9, #9E77ED)',
+                    color: '#fff', fontSize: '4rem', fontWeight: 700, borderRadius: '50%',
+                  }}>
+                    {workerData.full_name.charAt(0).toUpperCase()}
+                  </div>
+                )}
               </div>
               <div className="profile-actions">
                 <button className="action-btn-interview" onClick={() => setIsInterviewModalOpen(true)}>
@@ -215,83 +262,47 @@ export default function WorkerProfilePage() {
 
             {/* Details */}
             <div className="profile-details">
-              <h1 className="profile-worker-name">{workerData.name}</h1>
-              <p className="profile-worker-title">{workerData.title}</p>
-              <div className="profile-worker-location">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <span>{workerData.location}</span>
-              </div>
+              <h1 className="profile-worker-name">{workerData.full_name}</h1>
+              <p className="profile-worker-title">{workerData.title || categoryName}</p>
 
-              {/* Stats Row */}
-              <div className="profile-stats-row">
-                <div className="profile-stat">
-                  <span className="stat-value">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" strokeWidth="2">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                    {workerData.rating}
-                  </span>
-                  <span className="stat-label">Rating</span>
+              {workerData.location && (
+                <div className="profile-worker-location">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span>{workerData.location}</span>
                 </div>
-                <div className="profile-stat">
-                  <span className="stat-value">${workerData.rate}/hr</span>
-                  <span className="stat-label">Hourly Rate</span>
-                </div>
-                <div className="profile-stat">
-                  <span className="stat-value">{workerData.jobs}</span>
-                  <span className="stat-label">Jobs Done</span>
-                </div>
-              </div>
+              )}
 
-              {/* About */}
-              <div className="profile-about">
-                <h2>About</h2>
-                <p>{workerData.description}</p>
-              </div>
-
-              {/* Skills */}
-              <div className="profile-skills">
-                <h2>Skills</h2>
-                <div className="skills-list">
-                  {workerData.skills.map((skill) => (
-                    <span key={skill} className="skill-badge">{skill}</span>
-                  ))}
+              {workerData.experience_years > 0 && (
+                <div className="profile-stats-row">
+                  <div className="profile-stat">
+                    <span className="stat-value">{workerData.experience_years}+</span>
+                    <span className="stat-label">Years Exp.</span>
+                  </div>
                 </div>
-              </div>
+              )}
+
+              {workerData.description && (
+                <div className="profile-about">
+                  <h2>About</h2>
+                  <p>{workerData.description}</p>
+                </div>
+              )}
+
+              {workerData.skills.length > 0 && (
+                <div className="profile-skills">
+                  <h2>Skills</h2>
+                  <div className="skills-list">
+                    {workerData.skills.map((skill) => (
+                      <span key={skill} className="skill-badge">{skill}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
-
-          {/* Other Professionals */}
-          {otherWorkers.length > 0 && (
-            <section className="related-workers-section">
-              <h2>Other professionals in {categoryData.name}</h2>
-              <div className="related-workers-grid">
-                {otherWorkers.map((w) => (
-                  <Link key={w.slug} href={`/jobs/${category}/${w.slug}`} className="related-worker-card">
-                    <div className="related-worker-image">
-                      <img src={profileImage} alt={w.name} width={48} height={48} />
-                    </div>
-                    <div className="related-worker-info">
-                      <h3>{w.name}</h3>
-                      <p className="related-worker-title">{w.title}</p>
-                      <div className="related-worker-meta">
-                        <span className="related-worker-rating">
-                          <svg width="11" height="11" viewBox="0 0 24 24" fill="#F59E0B" stroke="#F59E0B" strokeWidth="2">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                          </svg>
-                          {w.rating}
-                        </span>
-                        <span className="related-worker-rate">${w.rate}/hr</span>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          )}
         </div>
       </div>
 
@@ -302,8 +313,7 @@ export default function WorkerProfilePage() {
             {!interviewSent && (
               <button className="modal-close-btn" onClick={handleCloseModal}>
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="18" y1="6" x2="6" y2="18" />
-                  <line x1="6" y1="6" x2="18" y2="18" />
+                  <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
               </button>
             )}
@@ -316,7 +326,7 @@ export default function WorkerProfilePage() {
                   </svg>
                 </div>
                 <h2 className="modal-title">Invitation Sent!</h2>
-                <p className="modal-subtitle">Your interview invitation has been sent to {workerData.name}. You will be notified when they respond.</p>
+                <p className="modal-subtitle">Your interview invitation has been sent to {workerData.full_name}. You will be notified when they respond.</p>
               </div>
             ) : (
               <>
@@ -329,7 +339,7 @@ export default function WorkerProfilePage() {
                   </svg>
                 </div>
                 <h2 className="modal-title">Invite to Interview</h2>
-                <p className="modal-subtitle">Schedule an interview with {workerData.name}</p>
+                <p className="modal-subtitle">Schedule an interview with {workerData.full_name}</p>
 
                 <div className="modal-form">
                   <div className="modal-field">
@@ -352,11 +362,22 @@ export default function WorkerProfilePage() {
                     <label htmlFor="interview-message">Message (optional)</label>
                     <textarea id="interview-message" rows={3} placeholder="Add a note for the professional..." value={interviewMessage} onChange={(e) => setInterviewMessage(e.target.value)} />
                   </div>
+                  {interviewError && (
+                    <div style={{ marginTop: 10, padding: '8px 12px', background: '#fef2f2', color: '#b91c1c', border: '1px solid #fecaca', borderRadius: 8, fontSize: 13 }}>
+                      {interviewError}
+                    </div>
+                  )}
                 </div>
 
                 <div className="modal-actions">
-                  <button className="modal-btn-cancel" onClick={handleCloseModal}>Cancel</button>
-                  <button className="modal-btn-confirm" disabled={!isDateComplete || !isTimeComplete} onClick={handleSendInvitation}>Send Invitation</button>
+                  <button className="modal-btn-cancel" onClick={handleCloseModal} disabled={interviewSubmitting}>Cancel</button>
+                  <button
+                    className="modal-btn-confirm"
+                    disabled={!isDateComplete || !isTimeComplete || interviewSubmitting}
+                    onClick={handleSendInvitation}
+                  >
+                    {interviewSubmitting ? 'Sending...' : 'Send Invitation'}
+                  </button>
                 </div>
               </>
             )}

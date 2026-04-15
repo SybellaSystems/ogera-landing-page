@@ -2,10 +2,9 @@
 
 import { useState, useMemo, useRef, useEffect } from "react";
 import Link from "next/link";
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/Navbar/NavbarWrapper";
 import Footer from "@/components/Footer/Footer";
-import { jobListings, formatSalary, getRelativeDate } from "@/data/jobs";
-import { categories } from "@/data/workers";
+import { fetchActiveJobs, fetchCategories, type ApiJob, type ApiCategory } from "@/lib/api";
 import "./jobs.css";
 
 const JOBS_PER_PAGE = 15;
@@ -17,7 +16,24 @@ export default function JobsPage() {
   const [selectedLocation, setSelectedLocation] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [jobs, setJobs] = useState<ApiJob[]>([]);
+  const [apiCategories, setApiCategories] = useState<ApiCategory[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const filterBarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const loadData = async () => {
+      setIsLoading(true);
+      const [jobsData, categoriesData] = await Promise.all([
+        fetchActiveJobs(),
+        fetchCategories(),
+      ]);
+      setJobs(jobsData);
+      setApiCategories(categoriesData);
+      setIsLoading(false);
+    };
+    loadData();
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -30,28 +46,25 @@ export default function JobsPage() {
   }, []);
 
   const locations = useMemo(() => {
-    const locs = new Set(jobListings.map((j) => j.location.split(", ")[1]));
+    const locs = new Set(jobs.map((j) => j.location).filter(Boolean));
     return Array.from(locs).sort();
-  }, []);
+  }, [jobs]);
 
   const filteredJobs = useMemo(() => {
-    return jobListings.filter((job) => {
+    return jobs.filter((job) => {
       const q = searchQuery.toLowerCase();
       const matchesSearch =
         !searchQuery ||
-        job.title.toLowerCase().includes(q) ||
-        job.company.toLowerCase().includes(q) ||
-        job.skills.some((s) => s.toLowerCase().includes(q));
-      const matchesType =
-        !selectedJobType ||
-        job.jobType.toLowerCase().replace("-", "") === selectedJobType;
+        job.job_title.toLowerCase().includes(q) ||
+        (job.employer?.full_name || '').toLowerCase().includes(q) ||
+        job.category?.toLowerCase().includes(q);
       const matchesCategory =
-        !selectedCategory || job.category === selectedCategory;
+        !selectedCategory || job.category?.toLowerCase() === selectedCategory.toLowerCase();
       const matchesLocation =
-        !selectedLocation || job.location.includes(selectedLocation);
-      return matchesSearch && matchesType && matchesCategory && matchesLocation;
+        !selectedLocation || job.location?.includes(selectedLocation);
+      return matchesSearch && matchesCategory && matchesLocation;
     });
-  }, [searchQuery, selectedJobType, selectedCategory, selectedLocation]);
+  }, [jobs, searchQuery, selectedCategory, selectedLocation]);
 
   const totalPages = Math.ceil(filteredJobs.length / JOBS_PER_PAGE);
   const paginatedJobs = filteredJobs.slice(
@@ -99,11 +112,11 @@ export default function JobsPage() {
             </p>
             <div className="jobs-hero-stats">
               <div className="jobs-stat">
-                <span className="jobs-stat-number">{jobListings.length}+</span>
+                <span className="jobs-stat-number">{jobs.length}+</span>
                 <span className="jobs-stat-label">Open Positions</span>
               </div>
               <div className="jobs-stat">
-                <span className="jobs-stat-number">{categories.length}</span>
+                <span className="jobs-stat-number">{apiCategories.length}</span>
                 <span className="jobs-stat-label">Categories</span>
               </div>
               <div className="jobs-stat">
@@ -175,7 +188,7 @@ export default function JobsPage() {
                 className="custom-dropdown-trigger"
                 onClick={() => setOpenDropdown(openDropdown === "category" ? null : "category")}
               >
-                <span>{selectedCategory ? categories.find((c) => c.id === selectedCategory)?.name : "All Categories"}</span>
+                <span>{selectedCategory ? apiCategories.find((c) => c.name === selectedCategory)?.name : "All Categories"}</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
               </button>
               <div className="custom-dropdown-menu">
@@ -185,11 +198,11 @@ export default function JobsPage() {
                 >
                   All Categories
                 </div>
-                {categories.map((cat) => (
+                {apiCategories.map((cat) => (
                   <div
                     key={cat.id}
-                    className={`custom-dropdown-option${selectedCategory === cat.id ? " selected" : ""}`}
-                    onClick={() => { handleFilterChange(setSelectedCategory, cat.id); setOpenDropdown(null); }}
+                    className={`custom-dropdown-option${selectedCategory === cat.name ? " selected" : ""}`}
+                    onClick={() => { handleFilterChange(setSelectedCategory, cat.name); setOpenDropdown(null); }}
                   >
                     {cat.name}
                   </div>
@@ -254,7 +267,7 @@ export default function JobsPage() {
               )}
               {selectedCategory && (
                 <span className="jobs-filter-tag">
-                  {categories.find((c) => c.id === selectedCategory)?.name}
+                  {apiCategories.find((c) => c.name === selectedCategory)?.name || selectedCategory}
                   <button
                     onClick={() => handleFilterChange(setSelectedCategory, "")}
                   >
@@ -289,27 +302,19 @@ export default function JobsPage() {
             </span>
           </div>
 
-          {filteredJobs.length === 0 ? (
+          {isLoading ? (
             <div className="jobs-empty-state">
-              <svg
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+              <p>Loading jobs...</p>
+            </div>
+          ) : filteredJobs.length === 0 ? (
+            <div className="jobs-empty-state">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
                 <line x1="8" y1="11" x2="14" y2="11" />
               </svg>
               <h3>No jobs match your filters</h3>
-              <p>
-                Try adjusting your search criteria or browse all available
-                positions.
-              </p>
+              <p>Try adjusting your search criteria or browse all available positions.</p>
               <button onClick={clearFilters}>Clear All Filters</button>
             </div>
           ) : (
@@ -317,29 +322,27 @@ export default function JobsPage() {
               <div className="jobs-grid">
                 {paginatedJobs.map((job) => (
                   <Link
-                    href={`/jobs/detail/${job.slug}`}
-                    key={job.id}
+                    href={`/jobs/detail/${job.job_id}`}
+                    key={job.job_id}
                     className="job-card"
                   >
                     <div className="job-card-header">
                       <div className="job-card-badges">
-                        <span
-                          className={`job-type-badge ${job.jobType
-                            .toLowerCase()
-                            .replace(" ", "-")}`}
-                        >
-                          {job.jobType}
-                        </span>
-                        {job.featured && (
-                          <span className="job-featured-badge">Featured</span>
+                        {job.employment_type && (
+                          <span className={`job-type-badge ${job.employment_type.toLowerCase().replace(" ", "-")}`}>
+                            {job.employment_type}
+                          </span>
+                        )}
+                        {job.category && (
+                          <span className="job-featured-badge">{job.category}</span>
                         )}
                       </div>
                       <span className="job-posted-date">
-                        {getRelativeDate(job.postedDate)}
+                        {job.created_at ? new Date(job.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : ''}
                       </span>
                     </div>
-                    <h3 className="job-card-title">{job.title}</h3>
-                    <p className="job-card-company">{job.company}</p>
+                    <h3 className="job-card-title">{job.job_title}</h3>
+                    <p className="job-card-company">{job.employer?.full_name || 'Employer'}</p>
                     <div className="job-card-meta">
                       <span className="job-card-location">
                         <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -348,26 +351,22 @@ export default function JobsPage() {
                         </svg>
                         {job.location}
                       </span>
-                      <span className="job-card-salary">
-                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <line x1="12" y1="1" x2="12" y2="23" />
-                          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                        </svg>
-                        {formatSalary(job)}
-                      </span>
-                    </div>
-                    <div className="job-card-skills">
-                      {job.skills.slice(0, 2).map((skill, idx) => (
-                        <span key={idx} className="job-skill-tag">
-                          {skill}
-                        </span>
-                      ))}
-                      {job.skills.length > 2 && (
-                        <span className="job-skill-more">
-                          +{job.skills.length - 2}
+                      {job.budget && (
+                        <span className="job-card-salary">
+                          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="12" y1="1" x2="12" y2="23" />
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                          </svg>
+                          ${job.budget.toLocaleString()}
                         </span>
                       )}
                     </div>
+                    {job.experience_level && (
+                      <div className="job-card-skills">
+                        <span className="job-skill-tag">{job.experience_level}</span>
+                        {job.duration && <span className="job-skill-tag">{job.duration}</span>}
+                      </div>
+                    )}
                     <div className="job-card-footer">
                       <span className="job-card-arrow">View &rarr;</span>
                     </div>
