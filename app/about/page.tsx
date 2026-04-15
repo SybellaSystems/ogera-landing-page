@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/Navbar/NavbarWrapper";
 import Footer from "@/components/Footer/Footer";
 import AfricaMap from "@/components/AfricaMap/AfricaMap";
 import Link from "next/link";

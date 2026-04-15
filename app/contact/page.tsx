@@ -1,10 +1,11 @@
 "use client";
 
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/Navbar/NavbarWrapper";
 import Footer from "@/components/Footer/Footer";
 import "./contact.css";
 import Link from "next/link";
 import { FormEvent, useState, useRef, useEffect } from "react";
+import { submitContactForm } from "@/lib/api";
 
 // African countries with dial codes
 const countries = [
@@ -39,6 +40,8 @@ export default function ContactPage() {
   });
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Close dropdown when clicking outside
@@ -52,10 +55,24 @@ export default function ContactPage() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // In a real implementation this is where we'd send the form data.
-    console.log('Form submitted:', { ...formData, countryCode: selectedCountry.dial });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    const result = await submitContactForm({
+      fullName: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      countryCode: selectedCountry.dial,
+      message: formData.message,
+    });
+
+    setSubmitStatus({ type: result.success ? 'success' : 'error', message: result.message });
+    if (result.success) {
+      setFormData({ fullName: '', email: '', phone: '', message: '' });
+    }
+    setIsSubmitting(false);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -217,8 +234,22 @@ export default function ContactPage() {
                   />
                 </div>
 
-                <button type="submit" className="submit-btn">
-                  Submit
+                {submitStatus && (
+                  <div style={{
+                    padding: '12px 16px',
+                    borderRadius: '8px',
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    backgroundColor: submitStatus.type === 'success' ? '#f0fdf4' : '#fef2f2',
+                    color: submitStatus.type === 'success' ? '#166534' : '#991b1b',
+                    border: `1px solid ${submitStatus.type === 'success' ? '#bbf7d0' : '#fecaca'}`,
+                  }}>
+                    {submitStatus.message}
+                  </div>
+                )}
+
+                <button type="submit" className="submit-btn" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Submit'}
                 </button>
 
                 <p className="form-terms">
