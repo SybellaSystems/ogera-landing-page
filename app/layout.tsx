@@ -12,21 +12,32 @@ const nunito = Nunito({
 // Strong SEO Metadata for Ogera
 export const metadata: Metadata = {
   metadataBase: new URL("https://ogera.sybellasystems.co.rw"),
-  title: "Ogera",
+
+  title:
+    "Ogera – Student Jobs, Internships & Remote Work Platform in Africa",
+
   description:
-    "Ogera helps organizations streamline operations, enhance productivity, and drive growth through intelligent, easy-to-use digital tools.",
+    "Ogera by Sybella Systems is Africa’s leading student-first job platform. Find remote jobs, internships, and earn online while building your career using TrustScore™.",
+
   keywords: [
-    "Ogera",
-    "business management",
-    "productivity software",
-    "workflow automation",
-    "organization software",
-    "digital transformation",
-    "Ogera platform",
+    "student jobs Africa",
+    "online jobs for students",
+    "remote jobs Africa",
+    "internships Africa",
+    "earn money online students",
+    "freelance platform Africa",
+    "job platform Rwanda",
+    "student work platform",
+    "youth employment Africa",
+    "Ogera jobs",
+    "TrustScore system",
+    "Sybella Systems Ogera",
   ],
-  authors: [{ name: "Ogera" }],
+
+  authors: [{ name: "Ogera by Sybella Systems" }],
   creator: "Ogera",
-  publisher: "Ogera",
+  publisher: "Sybella Systems",
+
   robots: {
     index: true,
     follow: true,
@@ -38,32 +49,43 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ogera.com",
+    url: "https://ogera.sybellasystems.co.rw",
     siteName: "Ogera",
-    title: "Ogera — Empowering Businesses with Smart Digital Solutions",
+
+    title:
+      "Ogera – Africa’s Student Job & Earning Platform",
+
     description:
-      "Simplify your operations and scale your organization with Ogera’s modern, data-driven business management platform.",
+      "Find student jobs, internships, and remote work across Africa. Ogera connects talent with real opportunities using TrustScore™ for skill-based hiring.",
+
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Ogera - Empowering Businesses with Smart Digital Solutions",
+        alt: "Ogera - Student Job Platform in Africa",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     site: "@ogera",
     creator: "@ogera",
-    title: "Ogera — Empowering Businesses with Smart Digital Solutions",
+
+    title:
+      "Ogera – Build now. Graduate proud.",
+
     description:
-      "Ogera provides modern digital solutions to help businesses work smarter and achieve more.",
+      "Join Ogera to access student jobs, remote work, and real earning opportunities. Build your TrustScore™ and get hired based on skills.",
+
     images: ["/images/twitter-image.jpg"],
   },
+
   alternates: {
     canonical: "https://ogera.sybellasystems.co.rw",
     languages: {
@@ -73,6 +95,7 @@ export const metadata: Metadata = {
       "rw-RW": "https://ogera.sybellasystems.co.rw/rw",
     },
   },
+
   verification: {
     google: "YOUR-GOOGLE-VERIFICATION-CODE",
     yandex: "YOUR-YANDEX-VERIFICATION-CODE",
