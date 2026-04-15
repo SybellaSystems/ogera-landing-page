@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/Navbar/NavbarWrapper";
 import Hero from "../components/Hero/Hero";
 import SearchBar from "../components/SearchBar/SearchBar";
 import Companies from "../components/Companies/Companies";
