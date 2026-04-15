@@ -1,4 +1,4 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.ogera.sybellasystems.co.rw/api';
 
 export interface ApiWorker {
   user_id: string;
@@ -69,7 +69,7 @@ export const checkHasApplied = async (jobId: string): Promise<boolean> => {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (!res.ok) return false;
-    const data = await res.json();
+    const data: { data: { hasApplied: any; }; } = await res.json();
     return Boolean(data?.data?.hasApplied);
   } catch {
     return false;
