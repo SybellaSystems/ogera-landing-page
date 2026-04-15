@@ -1,0 +1,16 @@
+{
+  "name": "Ogera - Find Your Next Opportunity",
+  "short_name": "Ogera",
+  "description": "Browse jobs from trusted companies across Africa",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#7F56D9",
+  "icons": [
+    {
+      "src": "/ogera.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
