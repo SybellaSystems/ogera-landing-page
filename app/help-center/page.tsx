@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar/NavbarWrapper";
@@ -229,7 +229,7 @@ export default function HelpCenterPage() {
   ];
 
   // Search filtering
-  const searchResults = useMemo(() => {
+  const searchResults = (() => {
     if (!searchQuery.trim()) return { questions: [], articles: [] };
 
     const query = searchQuery.toLowerCase();
@@ -256,7 +256,7 @@ export default function HelpCenterPage() {
     });
 
     return { questions: filteredQuestions, articles: filteredArticles };
-  }, [searchQuery]);
+  })();
 
   const hasSearchResults = searchResults.questions.length > 0 || searchResults.articles.length > 0;
   const showSearchDropdown = isSearchFocused && searchQuery.trim().length > 0;

@@ -95,7 +95,13 @@ export default function WorkerProfilePage() {
   const [interviewSent, setInterviewSent] = useState(false);
   const [interviewSubmitting, setInterviewSubmitting] = useState(false);
   const [interviewError, setInterviewError] = useState('');
-  const [yearOptions, setYearOptions] = useState<{ label: string; value: string }[]>([]);
+  const [yearOptions, setYearOptions] = useState<{ label: string; value: string }[]>(() => {
+    const y = new Date().getFullYear();
+    return [
+      { label: String(y), value: String(y) },
+      { label: String(y + 1), value: String(y + 1) },
+    ];
+  });
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
@@ -108,13 +114,6 @@ export default function WorkerProfilePage() {
     load();
   }, [workerId]);
 
-  useEffect(() => {
-    const y = new Date().getFullYear();
-    setYearOptions([
-      { label: String(y), value: String(y) },
-      { label: String(y + 1), value: String(y + 1) },
-    ]);
-  }, []);
 
   const isDateComplete = interviewDay && interviewMonth && interviewYear;
   const isTimeComplete = interviewHour && interviewMinute;

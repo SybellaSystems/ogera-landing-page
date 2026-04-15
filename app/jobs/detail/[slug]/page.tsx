@@ -34,13 +34,16 @@ export default function JobDetailPage() {
 
   // Detect login state from the shared cookie set by the dashboard app
   useEffect(() => {
-    const cookies = document.cookie.split(";").reduce((acc, c) => {
-      const [k, v] = c.trim().split("=");
-      if (k) acc[k.trim()] = v || "";
-      return acc;
-    }, {} as Record<string, string>);
-    const loggedIn = cookies["ogera_logged_in"] === "true";
-    setIsLoggedIn(loggedIn);
+    const raf = requestAnimationFrame(() => {
+      const cookies = document.cookie.split(";").reduce((acc, c) => {
+        const [k, v] = c.trim().split("=");
+        if (k) acc[k.trim()] = v || "";
+        return acc;
+      }, {} as Record<string, string>);
+      const loggedIn = cookies["ogera_logged_in"] === "true";
+      setIsLoggedIn(loggedIn);
+    });
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   // If logged in, check whether this student has already applied so we can show "Already Applied"

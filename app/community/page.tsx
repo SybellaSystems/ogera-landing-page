@@ -66,7 +66,7 @@ export default function CommunityPage() {
                 <h2>Mentorship Program</h2>
                 <p>
                   Our mentorship program connects experienced professionals with those starting
-                  their remote work journey. Whether you're seeking guidance or ready to give
+                  their remote work journey. Whether you&apos;re seeking guidance or ready to give
                   back, participate in our mentorship initiatives to foster growth and learning
                   within the community.
                 </p>

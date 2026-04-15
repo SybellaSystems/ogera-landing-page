@@ -15,7 +15,7 @@ import {
 const Sidebar: React.FC = () => {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
 
-  const role = useSelector((state: any) => state.auth.role);
+  const role = useSelector((state: { auth: { role: string } }) => state.auth.role);
 
   const toggleMenu = (menu: string) => {
     setOpenMenu(openMenu === menu ? null : menu);

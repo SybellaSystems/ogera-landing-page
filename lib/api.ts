@@ -104,8 +104,9 @@ export const inviteStudentToInterview = async (
       return { ok: false, error: data?.message || data?.error || 'Failed to schedule interview' };
     }
     return { ok: true };
-  } catch (err: any) {
-    return { ok: false, error: err?.message || 'Network error' };
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'Network error';
+    return { ok: false, error: message };
   }
 };
 
@@ -132,8 +133,9 @@ export const applyForJobFromLanding = async (
       return { ok: false, error: data?.message || data?.error || 'Failed to apply' };
     }
     return { ok: true };
-  } catch (err: any) {
-    return { ok: false, error: err?.message || 'Network error' };
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'Network error';
+    return { ok: false, error: message };
   }
 };
 

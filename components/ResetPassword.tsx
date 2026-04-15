@@ -89,7 +89,7 @@ const RestPasswordTemplate: React.FC<RestPasswordTemplateProps> = ({
 
         {showResend && (
           <ResendClick>
-            If you don't receive a code! <span>Resend</span>
+            If you don&apos;t receive a code! <span>Resend</span>
           </ResendClick>
         )}
       </BoxContainer>

@@ -17,7 +17,7 @@ export default function PressPage() {
 
         <div className="press-content">
           <p>
-            Welcome to the Ogera press room. Here you'll find the latest news, press releases,
+            Welcome to the Ogera press room. Here you&apos;ll find the latest news, press releases,
             media kits, and resources about Ogera. For media inquiries, interviews, or additional
             information, please contact our communications team at press@ogera.com.
           </p>
@@ -36,10 +36,10 @@ export default function PressPage() {
           <section>
             <h2>Latest News</h2>
             <p>
-              Stay updated with Ogera's latest announcements, product launches, partnerships,
+              Stay updated with Ogera&apos;s latest announcements, product launches, partnerships,
               and milestones. We regularly share updates about new features, market expansion,
               funding rounds, and strategic initiatives. Subscribe to our newsletter or follow
-              our social media channels to receive real-time updates about Ogera's growth
+              our social media channels to receive real-time updates about Ogera&apos;s growth
               and impact.
             </p>
           </section>
@@ -68,7 +68,7 @@ export default function PressPage() {
           <section>
             <h2>Leadership Team</h2>
             <p>
-              Meet the leadership team driving Ogera's vision forward. Our executives bring
+              Meet the leadership team driving Ogera&apos;s vision forward. Our executives bring
               decades of combined experience in technology, recruitment, product development,
               and business strategy. They are available for interviews, speaking engagements,
               and expert commentary on remote work trends, digital transformation, and the
@@ -79,7 +79,7 @@ export default function PressPage() {
           <section>
             <h2>Industry Insights</h2>
             <p>
-              Ogera's leadership team regularly shares insights on remote work trends,
+              Ogera&apos;s leadership team regularly shares insights on remote work trends,
               hiring best practices, workforce transformation, and the future of employment.
               We publish research reports, white papers, and thought leadership articles.
               Our experts are available to provide commentary on industry trends and
@@ -93,7 +93,7 @@ export default function PressPage() {
               Ogera has been recognized by leading technology publications, business
               journals, and industry organizations for innovation in the remote work space.
               Our platform has received accolades for user experience, social impact, and
-              contribution to the future of work. We're proud to be leaders in democratizing
+              contribution to the future of work. We&apos;re proud to be leaders in democratizing
               access to remote employment opportunities.
             </p>
           </section>
@@ -126,7 +126,7 @@ export default function PressPage() {
               For media inquiries, interview requests, press kit access, or additional
               information, contact our press team at press@ogera.com. We typically respond
               within 24 hours during business days. For urgent requests, please indicate
-              "URGENT" in your subject line. Follow us on social media for real-time updates
+              &quot;URGENT&quot; in your subject line. Follow us on social media for real-time updates
               and announcements.
             </p>
           </section>

@@ -69,9 +69,15 @@ function Features() {
 
   // Re-trigger card animation on tab switch
   useEffect(() => {
-    setAnimateCards(false);
-    const raf = requestAnimationFrame(() => setAnimateCards(true));
-    return () => cancelAnimationFrame(raf);
+    let raf2 = 0;
+    const raf1 = requestAnimationFrame(() => {
+      setAnimateCards(false);
+      raf2 = requestAnimationFrame(() => setAnimateCards(true));
+    });
+    return () => {
+      cancelAnimationFrame(raf1);
+      if (raf2) cancelAnimationFrame(raf2);
+    };
   }, [activeTab]);
 
   return (

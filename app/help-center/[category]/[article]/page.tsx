@@ -17,7 +17,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <p>Getting started with Ogera is quick and easy. Follow these simple steps to create your account and begin your journey to finding the perfect remote job.</p>
 
           <h2>Step 1: Visit the Sign Up Page</h2>
-          <p>Click the "Sign Up" button in the top right corner of the homepage. You'll be directed to our registration page.</p>
+          <p>Click the &quot;Sign Up&quot; button in the top right corner of the homepage. You&apos;ll be directed to our registration page.</p>
 
           <h2>Step 2: Enter Your Information</h2>
           <p>Fill in the required fields:</p>
@@ -28,10 +28,10 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           </ul>
 
           <h2>Step 3: Verify Your Email</h2>
-          <p>Check your inbox for a verification email from Ogera. Click the verification link to activate your account. If you don't see it, check your spam folder.</p>
+          <p>Check your inbox for a verification email from Ogera. Click the verification link to activate your account. If you don&apos;t see it, check your spam folder.</p>
 
           <h2>Step 4: Complete Your Profile</h2>
-          <p>Once verified, you'll be prompted to complete your profile. Add your skills, experience, and a professional photo to increase your chances of getting hired.</p>
+          <p>Once verified, you&apos;ll be prompted to complete your profile. Add your skills, experience, and a professional photo to increase your chances of getting hired.</p>
 
           <div className="tip-box">
             <strong>Pro Tip:</strong> A complete profile gets 3x more views from employers!
@@ -49,22 +49,22 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <p>Upload a professional headshot. Studies show profiles with photos get 14x more views. Use a clear, well-lit image where your face is visible.</p>
 
           <h2>Professional Headline</h2>
-          <p>Write a compelling headline that summarizes your expertise. For example: "Senior React Developer | 5+ Years Experience | Remote Work Specialist"</p>
+          <p>Write a compelling headline that summarizes your expertise. For example: &quot;Senior React Developer | 5+ Years Experience | Remote Work Specialist&quot;</p>
 
           <h2>About Section</h2>
           <p>Write a brief summary (2-3 paragraphs) about yourself:</p>
           <ul>
             <li>Your professional background</li>
             <li>Key skills and expertise</li>
-            <li>What you're looking for in your next role</li>
+            <li>What you&apos;re looking for in your next role</li>
             <li>Your remote work experience</li>
           </ul>
 
           <h2>Skills & Expertise</h2>
-          <p>Add relevant skills that match the jobs you're targeting. Include both technical skills and soft skills.</p>
+          <p>Add relevant skills that match the jobs you&apos;re targeting. Include both technical skills and soft skills.</p>
 
           <div className="tip-box">
-            <strong>Pro Tip:</strong> Use keywords from job postings you're interested in to improve your visibility in search results.
+            <strong>Pro Tip:</strong> Use keywords from job postings you&apos;re interested in to improve your visibility in search results.
           </div>
         </>
       ),
@@ -73,7 +73,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
       title: "Explore Features",
       content: (
         <>
-          <p>Ogera offers a comprehensive suite of features designed to help you find and land your perfect remote job. Here's an overview of what you can do on our platform.</p>
+          <p>Ogera offers a comprehensive suite of features designed to help you find and land your perfect remote job. Here&apos;s an overview of what you can do on our platform.</p>
 
           <h2>Job Search</h2>
           <p>Use our powerful search engine to find remote jobs that match your skills and preferences. Filter by:</p>
@@ -95,7 +95,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <p>Communicate directly with employers through our secure messaging platform.</p>
 
           <h2>Profile Analytics</h2>
-          <p>Track who's viewing your profile and how your applications are performing.</p>
+          <p>Track who&apos;s viewing your profile and how your applications are performing.</p>
         </>
       ),
     },
@@ -150,9 +150,9 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <ol>
             <li>Log in to your Ogera account</li>
             <li>Click on your profile picture in the top right</li>
-            <li>Select "Profile Settings" from the dropdown</li>
+            <li>Select &quot;Profile Settings&quot; from the dropdown</li>
             <li>Edit any section by clicking the pencil icon</li>
-            <li>Click "Save Changes" when done</li>
+            <li>Click &quot;Save Changes&quot; when done</li>
           </ol>
 
           <h2>What to Update Regularly</h2>
@@ -182,11 +182,11 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <h2>Steps to Change Your Password</h2>
           <ol>
             <li>Go to Account Settings</li>
-            <li>Click on "Security"</li>
-            <li>Select "Change Password"</li>
+            <li>Click on &quot;Security&quot;</li>
+            <li>Select &quot;Change Password&quot;</li>
             <li>Enter your current password</li>
             <li>Enter your new password twice</li>
-            <li>Click "Update Password"</li>
+            <li>Click &quot;Update Password&quot;</li>
           </ol>
 
           <h2>Password Requirements</h2>
@@ -198,7 +198,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           </ul>
 
           <h2>Forgot Your Password?</h2>
-          <p>Click "Forgot Password" on the login page. Enter your email address and we'll send you a reset link.</p>
+          <p>Click &quot;Forgot Password&quot; on the login page. Enter your email address and we&apos;ll send you a reset link.</p>
 
           <div className="warning-box">
             <strong>Security Note:</strong> Never share your password with anyone. Ogera staff will never ask for your password.
@@ -249,7 +249,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <p>Add an extra layer of security to your account:</p>
           <ol>
             <li>Go to Account Settings → Security</li>
-            <li>Click "Enable 2FA"</li>
+            <li>Click &quot;Enable 2FA&quot;</li>
             <li>Choose your method (SMS or Authenticator app)</li>
             <li>Follow the setup instructions</li>
             <li>Save your backup codes in a safe place</li>
@@ -277,7 +277,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
       title: "Search for Jobs",
       content: (
         <>
-          <p>Find your perfect remote opportunity using Ogera's powerful job search tools.</p>
+          <p>Find your perfect remote opportunity using Ogera&apos;s powerful job search tools.</p>
 
           <h2>Basic Search</h2>
           <p>Use the search bar on the homepage to enter keywords, job titles, or company names. Press Enter or click Search to see results.</p>
@@ -294,7 +294,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           </ul>
 
           <h2>Save Your Search</h2>
-          <p>Click the "Save Search" button to store your filter combination. You'll receive alerts when new jobs match your criteria.</p>
+          <p>Click the &quot;Save Search&quot; button to store your filter combination. You&apos;ll receive alerts when new jobs match your criteria.</p>
 
           <div className="tip-box">
             <strong>Pro Tip:</strong> Use Boolean operators (AND, OR, NOT) in your search for more precise results.
@@ -309,17 +309,17 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <p>Learn how to submit compelling job applications that get noticed.</p>
 
           <h2>One-Click Apply</h2>
-          <p>For jobs with the "Quick Apply" badge, you can apply instantly using your Ogera profile. Just click the button and confirm your submission.</p>
+          <p>For jobs with the &quot;Quick Apply&quot; badge, you can apply instantly using your Ogera profile. Just click the button and confirm your submission.</p>
 
           <h2>Custom Applications</h2>
           <p>Some employers require additional information:</p>
           <ol>
-            <li>Click "Apply Now" on the job listing</li>
+            <li>Click &quot;Apply Now&quot; on the job listing</li>
             <li>Review your profile information</li>
             <li>Upload any required documents</li>
             <li>Answer screening questions if any</li>
             <li>Write a personalized cover letter</li>
-            <li>Click "Submit Application"</li>
+            <li>Click &quot;Submit Application&quot;</li>
           </ol>
 
           <h2>Application Tips</h2>
@@ -343,12 +343,12 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <p>Stay organized and informed about all your job applications in one place.</p>
 
           <h2>Application Dashboard</h2>
-          <p>Access your applications dashboard from the main menu. Here you'll see all your applications organized by status:</p>
+          <p>Access your applications dashboard from the main menu. Here you&apos;ll see all your applications organized by status:</p>
           <ul>
             <li><strong>Submitted:</strong> Application received by employer</li>
             <li><strong>Under Review:</strong> Employer is reviewing your application</li>
-            <li><strong>Interview:</strong> You've been selected for an interview</li>
-            <li><strong>Offer:</strong> You've received a job offer</li>
+            <li><strong>Interview:</strong> You&apos;ve been selected for an interview</li>
+            <li><strong>Offer:</strong> You&apos;ve received a job offer</li>
             <li><strong>Rejected:</strong> Application was not successful</li>
           </ul>
 
@@ -370,7 +370,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
       title: "Contact Employers",
       content: (
         <>
-          <p>Communicate effectively with potential employers through Ogera's messaging system.</p>
+          <p>Communicate effectively with potential employers through Ogera&apos;s messaging system.</p>
 
           <h2>When to Message Employers</h2>
           <ul>
@@ -382,11 +382,11 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
 
           <h2>How to Send a Message</h2>
           <ol>
-            <li>Go to your application or the employer's profile</li>
-            <li>Click the "Message" button</li>
+            <li>Go to your application or the employer&apos;s profile</li>
+            <li>Click the &quot;Message&quot; button</li>
             <li>Write your message</li>
             <li>Attach any relevant files if needed</li>
-            <li>Click "Send"</li>
+            <li>Click &quot;Send&quot;</li>
           </ol>
 
           <h2>Messaging Best Practices</h2>
@@ -409,11 +409,11 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
       title: "Add Work Experience",
       content: (
         <>
-          <p>Your work experience section is one of the most important parts of your profile. Here's how to make it shine.</p>
+          <p>Your work experience section is one of the most important parts of your profile. Here&apos;s how to make it shine.</p>
 
           <h2>Adding a New Position</h2>
           <ol>
-            <li>Go to your profile and click "Add Experience"</li>
+            <li>Go to your profile and click &quot;Add Experience&quot;</li>
             <li>Enter the company name</li>
             <li>Add your job title</li>
             <li>Select start and end dates</li>
@@ -431,8 +431,8 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
 
           <h2>Example</h2>
           <div className="example-box">
-            <p><strong>Before:</strong> "Managed social media accounts"</p>
-            <p><strong>After:</strong> "Grew social media following by 150% in 6 months, resulting in 40% increase in website traffic and $50K in additional revenue"</p>
+            <p><strong>Before:</strong> &quot;Managed social media accounts&quot;</p>
+            <p><strong>After:</strong> &quot;Grew social media following by 150% in 6 months, resulting in 40% increase in website traffic and $50K in additional revenue&quot;</p>
           </div>
         </>
       ),
@@ -453,7 +453,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <h2>How to Add Portfolio Items</h2>
           <ol>
             <li>Navigate to the Portfolio section of your profile</li>
-            <li>Click "Add Project"</li>
+            <li>Click &quot;Add Project&quot;</li>
             <li>Upload images or add external links</li>
             <li>Add a title and description</li>
             <li>Tag relevant skills</li>
@@ -480,7 +480,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <h2>Adding Skills</h2>
           <ol>
             <li>Go to the Skills section of your profile</li>
-            <li>Click "Add Skill"</li>
+            <li>Click &quot;Add Skill&quot;</li>
             <li>Start typing to search from our skill database</li>
             <li>Select your proficiency level</li>
             <li>Add endorsements or certifications if available</li>
@@ -491,7 +491,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
             <li><strong>Technical Skills:</strong> Programming languages, tools, frameworks</li>
             <li><strong>Soft Skills:</strong> Communication, leadership, problem-solving</li>
             <li><strong>Industry Skills:</strong> Domain-specific knowledge</li>
-            <li><strong>Tools:</strong> Software and platforms you're proficient in</li>
+            <li><strong>Tools:</strong> Software and platforms you&apos;re proficient in</li>
           </ul>
 
           <h2>Skill Endorsements</h2>
@@ -512,9 +512,9 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <h2>Bio Structure</h2>
           <ol>
             <li><strong>Opening Hook:</strong> Start with something engaging</li>
-            <li><strong>Your Expertise:</strong> What you're great at</li>
+            <li><strong>Your Expertise:</strong> What you&apos;re great at</li>
             <li><strong>Your Value:</strong> What you bring to teams</li>
-            <li><strong>Your Goal:</strong> What you're looking for</li>
+            <li><strong>Your Goal:</strong> What you&apos;re looking for</li>
           </ol>
 
           <h2>What to Include</h2>
@@ -528,7 +528,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
 
           <h2>Example Bio</h2>
           <div className="example-box">
-            <p>"As a product designer with 7 years of experience, I've helped startups and Fortune 500 companies create user experiences that drive results. I specialize in design systems and accessibility, having led projects that increased user engagement by 200%. Remote work enthusiast since 2018, I thrive in async environments and love collaborating across time zones. Currently seeking a senior role where I can mentor others while tackling complex design challenges."</p>
+            <p>&quot;As a product designer with 7 years of experience, I&apos;ve helped startups and Fortune 500 companies create user experiences that drive results. I specialize in design systems and accessibility, having led projects that increased user engagement by 200%. Remote work enthusiast since 2018, I thrive in async environments and love collaborating across time zones. Currently seeking a senior role where I can mentor others while tackling complex design challenges.&quot;</p>
           </div>
 
           <h2>Tips for Success</h2>
@@ -559,11 +559,11 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <h2>Adding a Payment Method</h2>
           <ol>
             <li>Go to Account Settings</li>
-            <li>Click "Payment & Billing"</li>
-            <li>Select "Add Payment Method"</li>
+            <li>Click &quot;Payment & Billing&quot;</li>
+            <li>Select &quot;Add Payment Method&quot;</li>
             <li>Choose your payment type</li>
             <li>Enter your payment details</li>
-            <li>Click "Save"</li>
+            <li>Click &quot;Save&quot;</li>
           </ol>
 
           <h2>Managing Payment Methods</h2>
@@ -595,7 +595,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           </ul>
 
           <h2>Billing Date</h2>
-          <p>Your billing date is set when you first subscribe. You'll be charged on the same date each billing cycle.</p>
+          <p>Your billing date is set when you first subscribe. You&apos;ll be charged on the same date each billing cycle.</p>
 
           <h2>Changing Your Plan</h2>
           <p>You can upgrade, downgrade, or cancel your plan at any time:</p>
@@ -606,7 +606,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           </ul>
 
           <h2>Auto-Renewal</h2>
-          <p>Plans renew automatically unless cancelled. You'll receive a reminder email 7 days before each renewal.</p>
+          <p>Plans renew automatically unless cancelled. You&apos;ll receive a reminder email 7 days before each renewal.</p>
         </>
       ),
     },
@@ -619,8 +619,8 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <h2>Accessing Your History</h2>
           <ol>
             <li>Go to Account Settings</li>
-            <li>Click "Payment & Billing"</li>
-            <li>Select "Transaction History"</li>
+            <li>Click &quot;Payment & Billing&quot;</li>
+            <li>Select &quot;Transaction History&quot;</li>
           </ol>
 
           <h2>Transaction Details</h2>
@@ -652,7 +652,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
       title: "Resolve Issues",
       content: (
         <>
-          <p>Having payment problems? Here's how to resolve common billing issues.</p>
+          <p>Having payment problems? Here&apos;s how to resolve common billing issues.</p>
 
           <h2>Payment Declined</h2>
           <p>If your payment was declined:</p>
@@ -664,7 +664,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           </ol>
 
           <h2>Unexpected Charges</h2>
-          <p>If you see a charge you don't recognize:</p>
+          <p>If you see a charge you don&apos;t recognize:</p>
           <ol>
             <li>Check your transaction history for details</li>
             <li>Review your active subscriptions</li>
@@ -675,14 +675,14 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <p>Request a refund within 14 days of purchase:</p>
           <ol>
             <li>Go to the transaction in your history</li>
-            <li>Click "Request Refund"</li>
+            <li>Click &quot;Request Refund&quot;</li>
             <li>Provide a reason</li>
             <li>Submit your request</li>
           </ol>
           <p>Refunds are processed within 5-10 business days.</p>
 
           <h2>Contact Billing Support</h2>
-          <p>For issues you can't resolve, contact our billing team at billing@ogera.com with:</p>
+          <p>For issues you can&apos;t resolve, contact our billing team at billing@ogera.com with:</p>
           <ul>
             <li>Your account email</li>
             <li>Transaction ID (if applicable)</li>
@@ -701,26 +701,26 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
 
           <h2>Forgot Password</h2>
           <ol>
-            <li>Click "Forgot Password" on the login page</li>
+            <li>Click &quot;Forgot Password&quot; on the login page</li>
             <li>Enter your registered email address</li>
             <li>Check your inbox for the reset link</li>
             <li>Create a new password</li>
           </ol>
 
           <h2>Account Locked</h2>
-          <p>After 5 failed login attempts, your account is temporarily locked for security. Wait 30 minutes or click "Unlock Account" and verify your identity via email.</p>
+          <p>After 5 failed login attempts, your account is temporarily locked for security. Wait 30 minutes or click &quot;Unlock Account&quot; and verify your identity via email.</p>
 
           <h2>Email Not Recognized</h2>
-          <p>Make sure you're using the email you registered with. Check for typos and try different email addresses you may have used.</p>
+          <p>Make sure you&apos;re using the email you registered with. Check for typos and try different email addresses you may have used.</p>
 
           <h2>Two-Factor Authentication Issues</h2>
-          <p>If you've lost access to your 2FA device:</p>
+          <p>If you&apos;ve lost access to your 2FA device:</p>
           <ol>
             <li>Use a backup code (if saved)</li>
             <li>Contact support with identity verification</li>
           </ol>
 
-          <h2>Still Can't Log In?</h2>
+          <h2>Still Can&apos;t Log In?</h2>
           <p>Contact our support team with your registered email address and a description of the issue.</p>
         </>
       ),
@@ -804,7 +804,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
       title: "Contact Tech Support",
       content: (
         <>
-          <p>Can't solve your technical issue? Our support team is here to help.</p>
+          <p>Can&apos;t solve your technical issue? Our support team is here to help.</p>
 
           <h2>Before Contacting Support</h2>
           <p>Please have this information ready:</p>
@@ -843,7 +843,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
       title: "Job Search Filters",
       content: (
         <>
-          <p>Master Ogera's search filters to find your perfect remote job faster.</p>
+          <p>Master Ogera&apos;s search filters to find your perfect remote job faster.</p>
 
           <h2>Available Filters</h2>
 
@@ -889,10 +889,10 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <h2>Creating a Saved Search</h2>
           <ol>
             <li>Perform a search with your desired filters</li>
-            <li>Click "Save This Search"</li>
+            <li>Click &quot;Save This Search&quot;</li>
             <li>Give your search a name</li>
             <li>Choose notification preferences</li>
-            <li>Click "Save"</li>
+            <li>Click &quot;Save&quot;</li>
           </ol>
 
           <h2>Managing Saved Searches</h2>
@@ -922,7 +922,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
       title: "Messaging System",
       content: (
         <>
-          <p>Communicate securely with employers through Ogera's built-in messaging system.</p>
+          <p>Communicate securely with employers through Ogera&apos;s built-in messaging system.</p>
 
           <h2>Features</h2>
           <ul>
@@ -935,11 +935,11 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
 
           <h2>Sending Messages</h2>
           <ol>
-            <li>Go to an employer's profile or your application</li>
-            <li>Click "Send Message"</li>
+            <li>Go to an employer&apos;s profile or your application</li>
+            <li>Click &quot;Send Message&quot;</li>
             <li>Type your message</li>
             <li>Attach files if needed (max 10MB)</li>
-            <li>Click "Send"</li>
+            <li>Click &quot;Send&quot;</li>
           </ol>
 
           <h2>Message Inbox</h2>
@@ -979,8 +979,8 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <ul>
             <li>Apply within the first 24 hours of a posting</li>
             <li>Set up multiple saved searches</li>
-            <li>Check the "Featured Jobs" section daily</li>
-            <li>Follow companies you're interested in</li>
+            <li>Check the &quot;Featured Jobs&quot; section daily</li>
+            <li>Follow companies you&apos;re interested in</li>
           </ul>
 
           <h2>Application Tips</h2>
@@ -993,9 +993,9 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
 
           <h2>Hidden Features</h2>
           <ul>
-            <li><strong>Keyboard shortcuts:</strong> Press "?" to see all shortcuts</li>
-            <li><strong>Quick apply:</strong> Press "A" on any job listing</li>
-            <li><strong>Save job:</strong> Press "S" to bookmark</li>
+            <li><strong>Keyboard shortcuts:</strong> Press &quot;?&quot; to see all shortcuts</li>
+            <li><strong>Quick apply:</strong> Press &quot;A&quot; on any job listing</li>
+            <li><strong>Save job:</strong> Press &quot;S&quot; to bookmark</li>
             <li><strong>Advanced search:</strong> Use quotes for exact phrases</li>
           </ul>
         </>
@@ -1023,7 +1023,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
             <li>Your registered email address</li>
             <li>A clear description of your issue</li>
             <li>Any relevant screenshots</li>
-            <li>Steps you've already tried</li>
+            <li>Steps you&apos;ve already tried</li>
             <li>Your browser/device information</li>
           </ul>
 
@@ -1031,7 +1031,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <p>We aim to respond to all emails within 24 hours during business days.</p>
 
           <h2>Follow-up</h2>
-          <p>If you haven't received a response within 48 hours, please check your spam folder and reply to your original email.</p>
+          <p>If you haven&apos;t received a response within 48 hours, please check your spam folder and reply to your original email.</p>
         </>
       ),
     },
@@ -1148,7 +1148,7 @@ const articleContent: Record<string, Record<string, { title: string; content: Re
           <h2>Holiday Schedule</h2>
           <p>We observe major US holidays. Limited support is available on:</p>
           <ul>
-            <li>New Year's Day</li>
+            <li>New Year&apos;s Day</li>
             <li>Memorial Day</li>
             <li>Independence Day</li>
             <li>Labor Day</li>
@@ -1260,7 +1260,7 @@ export default function HelpArticlePage() {
           <div className="article-container">
             <div className="article-not-found">
               <h1>Article Not Found</h1>
-              <p>Sorry, we couldn't find the article you're looking for.</p>
+              <p>Sorry, we couldn&apos;t find the article you&apos;re looking for.</p>
               <Link href="/help-center" className="back-link">
                 ← Back to Help Center
               </Link>
@@ -1388,7 +1388,7 @@ export default function HelpArticlePage() {
 
             <div className="sidebar-section">
               <h3>Need More Help?</h3>
-              <p>Can't find what you're looking for?</p>
+              <p>Can&apos;t find what you&apos;re looking for?</p>
               <Link href="/contact" className="contact-support-btn">
                 Contact Support
               </Link>
