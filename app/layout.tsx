@@ -11,6 +11,7 @@ const nunito = Nunito({
 
 // Strong SEO Metadata for Ogera
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ogera.sybellasystems.co.rw"),
   title: "Ogera",
   description:
     "Ogera helps organizations streamline operations, enhance productivity, and drive growth through intelligent, easy-to-use digital tools.",
