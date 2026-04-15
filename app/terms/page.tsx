@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/Navbar/NavbarWrapper";
 import Footer from "@/components/Footer/Footer";
 import Link from "next/link";
 import "./terms.css";
