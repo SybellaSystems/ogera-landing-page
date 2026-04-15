@@ -23,6 +23,7 @@ function Footer() {
               height={60}
               alt="Ogera Logo"
               className="footer-logo"
+              style={{ height: 'auto' }}
             />
           </Link>
         </div>
