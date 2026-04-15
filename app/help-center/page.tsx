@@ -3,7 +3,7 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/Navbar/NavbarWrapper";
 import Footer from "@/components/Footer/Footer";
 import "./help-center.css";
 
