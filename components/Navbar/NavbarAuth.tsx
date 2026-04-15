@@ -45,10 +45,30 @@ export default function NavbarAuth({ appUrl, mobile = false, onClose }: Props) {
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
-  const handleLogout = () => {
-    document.cookie = "ogera_logged_in=; path=/; max-age=0";
-    document.cookie = "ogera_user_name=; path=/; max-age=0";
-    document.cookie = "ogera_user_image=; path=/; max-age=0";
+  const handleLogout = async () => {
+    // 1) Ask the backend to invalidate the refreshToken httpOnly cookie.
+    //    This is what actually logs the user out of the dashboard session —
+    //    without this, they'd still be logged in on app.ogera... next time they visit.
+    try {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.ogera.sybellasystems.co.rw/api";
+      await fetch(`${API_URL}/auth/logout`, {
+        method: "POST",
+        credentials: "include",
+      });
+    } catch {
+      // best-effort; fall through to cookie cleanup either way
+    }
+
+    // 2) Clear the shared hint cookies. We need to clear both the host-scoped
+    //    AND the domain-scoped variants because we don't know which one set them.
+    const clear = (name: string) => {
+      document.cookie = `${name}=; path=/; max-age=0`;
+      document.cookie = `${name}=; path=/; max-age=0; Domain=.ogera.sybellasystems.co.rw`;
+    };
+    clear("ogera_logged_in");
+    clear("ogera_user_name");
+    clear("ogera_user_image");
+
     onClose?.();
     window.location.reload();
   };

@@ -6,7 +6,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import "./Navbar.css";
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:5173";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.ogera.sybellasystems.co.rw";
 
 // ssr:false — renders only on the client, reads cookies synchronously
 // in its lazy useState initializer so the correct state (avatar or
