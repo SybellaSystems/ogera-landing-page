@@ -55,13 +55,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://ogera.sybellasystems.co.rw",
     siteName: "Ogera",
-
-    title:
-      "Ogera – Africa’s Student Job & Earning Platform",
-
+    title: "Ogera – Africa’s Student Job & Earning Platform",
     description:
       "Find student jobs, internships, and remote work across Africa. Ogera connects talent with real opportunities using TrustScore™ for skill-based hiring.",
-
     images: [
       {
         url: "/images/og-image.jpg",
@@ -76,13 +72,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@ogera",
     creator: "@ogera",
-
-    title:
-      "Ogera – Build now. Graduate proud.",
-
+    title: "Ogera – Build now. Graduate proud.",
     description:
       "Join Ogera to access student jobs, remote work, and real earning opportunities. Build your TrustScore™ and get hired based on skills.",
-
     images: ["/images/twitter-image.jpg"],
   },
 
@@ -109,63 +101,34 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
-        {/* ✅ Favicon & Manifest */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#6D28D9" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <body
+        className={`${nunito.className} antialiased bg-white text-gray-900`}
+      >
+        {/* ===================== */}
+        {/* GOOGLE ANALYTICS (CORRECT PLACE) */}
+        {/* ===================== */}
 
-        {/* ✅ Structured Data (Organization Schema) */}
         <Script
-          id="structured-data"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-        >
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            name: "Ogera",
-            url: "https://ogera.sybellasystems.co.rw",
-            logo: "https://ogera.sybellasystems.co.rw/images/ogera.png",
-            sameAs: [
-              "https://twitter.com/ogera",
-              "https://www.linkedin.com/company/ogera",
-              "https://www.facebook.com/ogera",
-            ],
-            contactPoint: {
-              "@type": "ContactPoint",
-              telephone: "+250723776020",
-              contactType: "Customer Support",
-              areaServed: "Africa",
-              availableLanguage: [
-                "English",
-                "French",
-                "Swahili",
-                "Kinyarwanda",
-              ],
-            },
-          })}
-        </Script>
-{/* ✅ Google Analytics (GA4) */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}', { page_path: window.location.pathname });
-          `}
-        </Script>
-      </head>
+  src="https://www.googletagmanager.com/gtag/js?id=G-MYPLT8Q17H"
+  strategy="afterInteractive"
+/>
 
-      <body className={`${nunito.className} antialiased bg-white text-gray-900`}>
+<Script id="ga-init" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+
+    window.gtag = gtag;
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-MYPLT8Q17H', {
+      send_page_view: true
+    });
+  `}
+</Script>
+
         {children}
-       
       </body>
     </html>
   );
