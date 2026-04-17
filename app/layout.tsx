@@ -109,21 +109,24 @@ export default function RootLayout({
         {/* ===================== */}
 
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-MYPLT8Q17H"
-          strategy="afterInteractive"
-        />
+  src="https://www.googletagmanager.com/gtag/js?id=G-MYPLT8Q17H"
+  strategy="afterInteractive"
+/>
 
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+<Script id="ga-init" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
 
-            gtag('config', 'G-MYPLT8Q17H', {
-              page_path: window.location.pathname,
-            });
-          `}
-        </Script>
+    window.gtag = gtag;
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-MYPLT8Q17H', {
+      send_page_view: true
+    });
+  `}
+</Script>
 
         {children}
       </body>
