@@ -4,7 +4,12 @@ import { useState, useEffect } from 'react';
 import './Hero.css';
 import GridCanvas from './GridCanvas';
 
-function Hero() {
+type HeroProps = {
+  onGetStarted?: () => void; // optional so it doesn't break anything
+  user?: any;
+};
+
+function Hero({ onGetStarted, user }: HeroProps) {
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const fullText = 'companies';
@@ -44,6 +49,7 @@ function Hero() {
   return (
     <section id="home" className="hero-section">
       <GridCanvas />
+
       <div className="hero-container">
         <div className="hero-content">
           <h1 className="hero-title">
@@ -60,8 +66,11 @@ function Hero() {
           </h1>
 
           <div className="hero-actions">
-            <button className="hero-cta" onClick={scrollToSearch}>
-              Start your remote job search now
+            <button
+              className="hero-cta"
+              onClick={onGetStarted ? onGetStarted : scrollToSearch}
+            >
+              {user ? "Go to Dashboard" : "Start your remote job search now"}
             </button>
           </div>
         </div>
