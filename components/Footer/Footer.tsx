@@ -135,7 +135,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} SybellaSystem. All rights reserved。</p>
+        <p>© {new Date().getFullYear()} Sybella Systems. All rights reserved。</p>
       </div>
     </footer>
     </>
