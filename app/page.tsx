@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -17,7 +18,7 @@ function Home() {
   const [user, setUser] = useState<any>(null);
   const [showForm, setShowForm] = useState(false);
 
-  const navigate = useNavigate();
+  const router = useRouter(); // ✅ FIXED
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -32,6 +33,10 @@ function Home() {
     script.src = "https://js-eu1.hsforms.net/forms/embed/147717629.js";
     script.defer = true;
     document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script); // cleanup (safe)
+    };
   }, []);
 
   // -----------------------------
@@ -54,16 +59,16 @@ function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowForm(true);
-    }, 120000); // 2 minutes = 120,000ms
+    }, 120000);
 
     return () => clearTimeout(timer);
   }, []);
 
   const handleGetStarted = () => {
     if (user) {
-      navigate("/dashboard");
+      router.push("/dashboard"); // ✅ FIXED
     } else {
-      navigate("/signup");
+      router.push("/signup"); // ✅ FIXED
     }
   };
 
@@ -80,9 +85,7 @@ function Home() {
       <Features />
       <Testimonials />
 
-      {/* -----------------------------
-          SMART HUBSPOT FORM SECTION
-      ------------------------------ */}
+      {/* HubSpot Form */}
       {!user && showForm && (
         <section style={{ margin: "80px 0", padding: "20px" }}>
           <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
