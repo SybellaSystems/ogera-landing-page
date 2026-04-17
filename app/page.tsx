@@ -1,5 +1,6 @@
+"use client";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 import Navbar from "@/components/Navbar/NavbarWrapper";
 import Hero from "../components/Hero/Hero";
