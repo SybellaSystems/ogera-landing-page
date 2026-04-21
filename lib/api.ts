@@ -1,4 +1,4 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://api.ogera.sybellasystems.co.rw/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://ogera-be-1.onrender.com/api';
 
 export interface ApiWorker {
   user_id: string;
@@ -16,6 +16,7 @@ export interface ApiJob {
   job_title: string;
   category: string;
   budget: number;
+  currency?: string;
   duration: string;
   location: string;
   status: string;
@@ -69,7 +70,7 @@ export const checkHasApplied = async (jobId: string): Promise<boolean> => {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (!res.ok) return false;
-    const data: { data: { hasApplied: any; }; } = await res.json();
+    const data: { data: { hasApplied: boolean | null | undefined } } = await res.json();
     return Boolean(data?.data?.hasApplied);
   } catch {
     return false;
@@ -142,7 +143,7 @@ export const applyForJobFromLanding = async (
 // Fetch active jobs for landing page
 export const fetchActiveJobs = async (): Promise<ApiJob[]> => {
   try {
-    const res = await fetch(`${API_URL}/jobs/active`, {
+    const res = await fetch(`${API_URL}/jobs/public`, {
       next: { revalidate: 60 }, // Cache for 60 seconds
     });
     if (!res.ok) return [];

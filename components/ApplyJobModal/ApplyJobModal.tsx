@@ -16,6 +16,7 @@ export default function ApplyJobModal({ job, isOpen, onClose, onSuccess }: Props
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const budgetLabel = `${(job.currency || "USD").toUpperCase()} ${Number(job.budget || 0).toLocaleString()}`;
 
   if (!isOpen) return null;
 
@@ -74,7 +75,7 @@ export default function ApplyJobModal({ job, isOpen, onClose, onSuccess }: Props
               </div>
               <div className="ajm-info-row">
                 <span className="ajm-info-label">Budget</span>
-                <span className="ajm-info-value">${job.budget?.toLocaleString?.() || job.budget}</span>
+                <span className="ajm-info-value">{budgetLabel}</span>
               </div>
               <div className="ajm-info-row">
                 <span className="ajm-info-label">Category</span>

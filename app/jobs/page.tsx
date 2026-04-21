@@ -8,6 +8,7 @@ import { fetchActiveJobs, fetchCategories, type ApiJob, type ApiCategory } from 
 import "./jobs.css";
 
 const JOBS_PER_PAGE = 15;
+const DEFAULT_CURRENCY = "USD";
 
 export default function JobsPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -94,6 +95,11 @@ export default function JobsPage() {
   const goToPage = (page: number) => {
     setCurrentPage(page);
     window.scrollTo({ top: 400, behavior: "smooth" });
+  };
+
+  const formatBudget = (job: ApiJob) => {
+    if (job.budget === undefined || job.budget === null) return "";
+    return `${(job.currency || DEFAULT_CURRENCY).toUpperCase()} ${Number(job.budget).toLocaleString()}`;
   };
 
   return (
@@ -198,9 +204,9 @@ export default function JobsPage() {
                 >
                   All Categories
                 </div>
-                {apiCategories.map((cat) => (
+                {apiCategories.map((cat, index) => (
                   <div
-                    key={cat.id}
+                    key={cat.id || `${cat.name}-${index}`}
                     className={`custom-dropdown-option${selectedCategory === cat.name ? " selected" : ""}`}
                     onClick={() => { handleFilterChange(setSelectedCategory, cat.name); setOpenDropdown(null); }}
                   >
@@ -357,7 +363,7 @@ export default function JobsPage() {
                             <line x1="12" y1="1" x2="12" y2="23" />
                             <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                           </svg>
-                          ${job.budget.toLocaleString()}
+                          {formatBudget(job)}
                         </span>
                       )}
                     </div>

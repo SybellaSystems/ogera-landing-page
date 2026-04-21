@@ -9,6 +9,7 @@ import { fetchJobById, checkHasApplied, type ApiJob } from "@/lib/api";
 import "./job-detail.css";
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://app.ogera.sybellasystems.co.rw";
+const DEFAULT_CURRENCY = "USD";
 
 export default function JobDetailPage() {
   const params = useParams();
@@ -21,6 +22,7 @@ export default function JobDetailPage() {
   const [copyText, setCopyText] = useState("Copy Link");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [hasApplied, setHasApplied] = useState(false);
+  const [showLoginToast, setShowLoginToast] = useState(false);
 
   useEffect(() => {
     const loadJob = async () => {
@@ -70,9 +72,21 @@ export default function JobDetailPage() {
   // Apply always happens inside the dashboard. The landing page is the public
   // marketplace; the dashboard's JobDetails page owns the actual apply modal.
   const dashboardJobPath = `/dashboard/jobs/${slug}?apply=1`;
+  const dashboardJobsPath = "/dashboard/jobs";
   const applyUrl = isLoggedIn
     ? `${APP_URL}${dashboardJobPath}`
-    : `${APP_URL}/auth/login?redirect=${encodeURIComponent(dashboardJobPath)}`;
+    : `${APP_URL}/auth/login?redirect=${encodeURIComponent(dashboardJobsPath)}`;
+
+  const handleApplyClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isLoggedIn) return;
+
+    e.preventDefault();
+    setShowLoginToast(true);
+
+    window.setTimeout(() => {
+      window.location.href = applyUrl;
+    }, 900);
+  };
 
   if (isLoading) {
     return (
@@ -123,6 +137,7 @@ export default function JobDetailPage() {
   const postedDate = job.created_at
     ? new Date(job.created_at).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })
     : "";
+  const budgetLabel = `${(job.currency || DEFAULT_CURRENCY).toUpperCase()} ${Number(job.budget || 0).toLocaleString()}`;
 
   return (
     <>
@@ -180,7 +195,7 @@ export default function JobDetailPage() {
                         <line x1="12" y1="1" x2="12" y2="23" />
                         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                       </svg>
-                      ${job.budget.toLocaleString()}
+                      {budgetLabel}
                     </span>
                   )}
                 </div>
@@ -224,7 +239,7 @@ export default function JobDetailPage() {
                     {job.budget && (
                       <div className="jd-detail">
                         <div className="jd-detail-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23" /><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg></div>
-                        <div><span className="jd-detail-label">Budget</span><span className="jd-detail-value">${job.budget.toLocaleString()}</span></div>
+                        <div><span className="jd-detail-label">Budget</span><span className="jd-detail-value">{budgetLabel}</span></div>
                       </div>
                     )}
                     {job.experience_level && (
@@ -255,7 +270,7 @@ export default function JobDetailPage() {
               <div className="jd-apply-card">
                 {job.budget && (
                   <div className="jd-apply-top">
-                    <span className="jd-apply-salary">${job.budget.toLocaleString()}</span>
+                    <span className="jd-apply-salary">{budgetLabel}</span>
                   </div>
                 )}
 
@@ -273,7 +288,7 @@ export default function JobDetailPage() {
                     Already Applied
                   </button>
                 ) : (
-                  <a href={applyUrl} className="jd-apply-btn">
+                  <a href={applyUrl} className="jd-apply-btn" onClick={handleApplyClick}>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M22 2L11 13" />
                       <path d="M22 2l-7 20-4-9-9-4 20-7z" />
@@ -391,6 +406,11 @@ export default function JobDetailPage() {
           </div>
         </section>
       </main>
+      {showLoginToast && (
+        <div className="jd-login-toast" role="status" aria-live="polite">
+          Please login first to apply for this job.
+        </div>
+      )}
       <Footer />
     </>
   );
