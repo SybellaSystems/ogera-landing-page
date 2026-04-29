@@ -72,10 +72,9 @@ export default function JobDetailPage() {
   // Apply always happens inside the dashboard. The landing page is the public
   // marketplace; the dashboard's JobDetails page owns the actual apply modal.
   const dashboardJobPath = `/dashboard/jobs/${slug}?apply=1`;
-  const dashboardJobsPath = "/dashboard/jobs";
   const applyUrl = isLoggedIn
     ? `${APP_URL}${dashboardJobPath}`
-    : `${APP_URL}/auth/login?redirect=${encodeURIComponent(dashboardJobsPath)}`;
+    : `${APP_URL}/auth/login?redirect=${encodeURIComponent(dashboardJobPath)}`;
 
   const handleApplyClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (isLoggedIn) return;
