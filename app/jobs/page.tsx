@@ -1,18 +1,33 @@
 "use client";
 
-import { useState, useMemo, useRef, useEffect } from "react";
+import { useState, useMemo, useRef, useEffect, Suspense } from "react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/Navbar/NavbarWrapper";
 import Footer from "@/components/Footer/Footer";
 import { fetchActiveJobs, fetchCategories, type ApiJob, type ApiCategory } from "@/lib/api";
+import {
+  buildJobsSearchUrl,
+  parseJobsSearchParams,
+  matchesExperience,
+  matchesJobType,
+  matchesSkillsSearch,
+  EXPERIENCE_FILTER_OPTIONS,
+  EXPERIENCE_LABELS,
+  JOB_TYPE_FILTER_OPTIONS,
+  JOB_TYPE_LABELS,
+} from "@/lib/jobSearchParams";
 import "./jobs.css";
 
 const JOBS_PER_PAGE = 15;
 const DEFAULT_CURRENCY = "USD";
 
-export default function JobsPage() {
+function JobsPageContent() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedJobType, setSelectedJobType] = useState("");
+  const [selectedExperience, setSelectedExperience] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -21,6 +36,14 @@ export default function JobsPage() {
   const [apiCategories, setApiCategories] = useState<ApiCategory[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const filterBarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const fromUrl = parseJobsSearchParams(searchParams);
+    setSearchQuery(fromUrl.skills);
+    setSelectedExperience(fromUrl.experience);
+    setSelectedJobType(fromUrl.jobType);
+    setCurrentPage(1);
+  }, [searchParams]);
 
   useEffect(() => {
     const loadData = async () => {
@@ -53,19 +76,16 @@ export default function JobsPage() {
 
   const filteredJobs = useMemo(() => {
     return jobs.filter((job) => {
-      const q = searchQuery.toLowerCase();
-      const matchesSearch =
-        !searchQuery ||
-        job.job_title.toLowerCase().includes(q) ||
-        (job.employer?.full_name || '').toLowerCase().includes(q) ||
-        job.category?.toLowerCase().includes(q);
+      const matchesSearch = matchesSkillsSearch(job, searchQuery);
+      const matchesType = matchesJobType(job, selectedJobType);
+      const matchesExp = matchesExperience(job, selectedExperience);
       const matchesCategory =
         !selectedCategory || job.category?.toLowerCase() === selectedCategory.toLowerCase();
       const matchesLocation =
         !selectedLocation || job.location?.includes(selectedLocation);
-      return matchesSearch && matchesCategory && matchesLocation;
+      return matchesSearch && matchesType && matchesExp && matchesCategory && matchesLocation;
     });
-  }, [jobs, searchQuery, selectedCategory, selectedLocation]);
+  }, [jobs, searchQuery, selectedJobType, selectedExperience, selectedCategory, selectedLocation]);
 
   const totalPages = Math.ceil(filteredJobs.length / JOBS_PER_PAGE);
   const paginatedJobs = filteredJobs.slice(
@@ -74,22 +94,49 @@ export default function JobsPage() {
   );
 
   const hasFilters =
-    searchQuery || selectedJobType || selectedCategory || selectedLocation;
+    searchQuery ||
+    selectedJobType ||
+    selectedExperience ||
+    selectedCategory ||
+    selectedLocation;
+
+  const syncUrlWithFilters = (
+    next: Partial<{
+      skills: string;
+      experience: string;
+      jobType: string;
+    }>
+  ) => {
+    router.replace(
+      buildJobsSearchUrl({
+        skills: next.skills ?? searchQuery,
+        experience: next.experience ?? selectedExperience,
+        jobType: next.jobType ?? selectedJobType,
+      }),
+      { scroll: false }
+    );
+  };
 
   const clearFilters = () => {
     setSearchQuery("");
     setSelectedJobType("");
+    setSelectedExperience("");
     setSelectedCategory("");
     setSelectedLocation("");
     setCurrentPage(1);
+    router.replace("/jobs", { scroll: false });
   };
 
   const handleFilterChange = (
     setter: (val: string) => void,
-    value: string
+    value: string,
+    urlKey?: "skills" | "experience" | "jobType"
   ) => {
     setter(value);
     setCurrentPage(1);
+    if (urlKey === "skills") syncUrlWithFilters({ skills: value });
+    if (urlKey === "experience") syncUrlWithFilters({ experience: value });
+    if (urlKey === "jobType") syncUrlWithFilters({ jobType: value });
   };
 
   const goToPage = (page: number) => {
@@ -155,7 +202,7 @@ export default function JobsPage() {
                 placeholder="Search by title, skill, or company..."
                 value={searchQuery}
                 onChange={(e) =>
-                  handleFilterChange(setSearchQuery, e.target.value)
+                  handleFilterChange(setSearchQuery, e.target.value, "skills")
                 }
               />
             </div>
@@ -166,25 +213,59 @@ export default function JobsPage() {
                 className="custom-dropdown-trigger"
                 onClick={() => setOpenDropdown(openDropdown === "jobType" ? null : "jobType")}
               >
-                <span>{selectedJobType ? { fulltime: "Full-time", parttime: "Part-time", freelance: "Freelance", internship: "Internship" }[selectedJobType] : "All Job Types"}</span>
+                <span>
+                  {selectedJobType
+                    ? JOB_TYPE_LABELS[selectedJobType] || selectedJobType
+                    : "All Job Types"}
+                </span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
               </button>
               <div className="custom-dropdown-menu">
-                {[
-                  { value: "", label: "All Job Types" },
-                  { value: "fulltime", label: "Full-time" },
-                  { value: "parttime", label: "Part-time" },
-                  { value: "freelance", label: "Freelance" },
-                  { value: "internship", label: "Internship" },
-                ].map((opt) => (
+                {[{ value: "", label: "All Job Types" }, ...JOB_TYPE_FILTER_OPTIONS].map((opt) => (
                   <div
                     key={opt.value}
                     className={`custom-dropdown-option${selectedJobType === opt.value ? " selected" : ""}`}
-                    onClick={() => { handleFilterChange(setSelectedJobType, opt.value); setOpenDropdown(null); }}
+                    onClick={() => {
+                      handleFilterChange(setSelectedJobType, opt.value, "jobType");
+                      setOpenDropdown(null);
+                    }}
                   >
                     {opt.label}
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Experience Level Dropdown */}
+            <div className={`custom-dropdown${openDropdown === "experience" ? " open" : ""}`}>
+              <button
+                className="custom-dropdown-trigger"
+                onClick={() =>
+                  setOpenDropdown(openDropdown === "experience" ? null : "experience")
+                }
+              >
+                <span>
+                  {selectedExperience
+                    ? EXPERIENCE_LABELS[selectedExperience] || selectedExperience
+                    : "All Experience Levels"}
+                </span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9" /></svg>
+              </button>
+              <div className="custom-dropdown-menu">
+                {[{ value: "", label: "All Experience Levels" }, ...EXPERIENCE_FILTER_OPTIONS].map(
+                  (opt) => (
+                    <div
+                      key={opt.value || "all"}
+                      className={`custom-dropdown-option${selectedExperience === opt.value ? " selected" : ""}`}
+                      onClick={() => {
+                        handleFilterChange(setSelectedExperience, opt.value, "experience");
+                        setOpenDropdown(null);
+                      }}
+                    >
+                      {opt.label}
+                    </div>
+                  )
+                )}
               </div>
             </div>
 
@@ -251,21 +332,32 @@ export default function JobsPage() {
               {searchQuery && (
                 <span className="jobs-filter-tag">
                   &ldquo;{searchQuery}&rdquo;
-                  <button onClick={() => handleFilterChange(setSearchQuery, "")}>
+                  <button
+                    onClick={() => handleFilterChange(setSearchQuery, "", "skills")}
+                  >
+                    &times;
+                  </button>
+                </span>
+              )}
+              {selectedExperience && (
+                <span className="jobs-filter-tag">
+                  {EXPERIENCE_LABELS[selectedExperience] || selectedExperience}
+                  <button
+                    onClick={() =>
+                      handleFilterChange(setSelectedExperience, "", "experience")
+                    }
+                  >
                     &times;
                   </button>
                 </span>
               )}
               {selectedJobType && (
                 <span className="jobs-filter-tag">
-                  {selectedJobType === "fulltime"
-                    ? "Full-time"
-                    : selectedJobType === "parttime"
-                    ? "Part-time"
-                    : selectedJobType.charAt(0).toUpperCase() +
-                      selectedJobType.slice(1)}
+                  {JOB_TYPE_LABELS[selectedJobType] || selectedJobType}
                   <button
-                    onClick={() => handleFilterChange(setSelectedJobType, "")}
+                    onClick={() =>
+                      handleFilterChange(setSelectedJobType, "", "jobType")
+                    }
                   >
                     &times;
                   </button>
@@ -464,5 +556,25 @@ export default function JobsPage() {
       </main>
       <Footer />
     </>
+  );
+}
+
+export default function JobsPage() {
+  return (
+    <Suspense
+      fallback={
+        <>
+          <Navbar />
+          <main className="jobs-page">
+            <div className="jobs-empty-state">
+              <p>Loading jobs...</p>
+            </div>
+          </main>
+          <Footer />
+        </>
+      }
+    >
+      <JobsPageContent />
+    </Suspense>
   );
 }
