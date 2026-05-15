@@ -21,6 +21,7 @@ export interface ApiJob {
   location: string;
   status: string;
   description: string;
+  skills?: string;
   employment_type: string;
   experience_level: string;
   created_at: string;
