@@ -96,6 +96,7 @@ export default function ScholarshipPage() {
   const [selectedScholarship, setSelectedScholarship] = useState<typeof scholarships[0] | null>(null);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const showScholarships = false;
 
   const handleApply = (scholarship: typeof scholarships[0]) => {
     setSelectedScholarship(scholarship);
@@ -117,7 +118,7 @@ export default function ScholarshipPage() {
     <>
       <Navbar solid />
       <main className="scholarship-page">
-        {/* Hero Section */}
+         {/* Hero Section */}
         <section className="scholarship-hero">
           <div className="scholarship-hero-grid" />
           <div className="hero-content">
@@ -128,60 +129,91 @@ export default function ScholarshipPage() {
             </p>
             <div className="hero-stats">
               <div className="stat">
-                <span className="stat-number">500+</span>
-                <span className="stat-label">Scholarships Awarded</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">$2M+</span>
-                <span className="stat-label">Total Funding</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">20+</span>
-                <span className="stat-label">Partner Organizations</span>
-              </div>
+                <span className="stat-number">Coming soon</span>
+                <span className="stat-label">Sybella Systems is working with universities, foundations, companies, and development
+  organizations to build a trusted scholarship ecosystem that helps students
+  and young professionals access education and career opportunities.</span>
+                </div>
             </div>
           </div>
         </section>
 
         {/* Available Scholarships */}
-        <section className="scholarships-section">
-          <div className="section-header">
-            <h2>Available Scholarships</h2>
-            <p>Find the perfect opportunity to fund your education and career growth</p>
+{showScholarships && (
+<section className="scholarships-section">
+  <div className="section-header">
+    <h2>Available Scholarships</h2>
+    <p>
+      Find the perfect opportunity to fund your education and career growth
+    </p>
+  </div>
+
+  {showScholarships ? (
+    <div className="scholarships-grid">
+      {scholarships.map((scholarship) => (
+        <div key={scholarship.id} className="scholarship-card">
+          <div className="card-header">
+            <span
+              className={`category-badge ${scholarship.category.toLowerCase()}`}
+            >
+              {scholarship.category}
+            </span>
+            <span className="deadline">
+              Deadline: {scholarship.deadline}
+            </span>
           </div>
 
-          <div className="scholarships-grid">
-            {scholarships.map((scholarship) => (
-              <div key={scholarship.id} className="scholarship-card">
-                <div className="card-header">
-                  <span className={`category-badge ${scholarship.category.toLowerCase()}`}>
-                    {scholarship.category}
-                  </span>
-                  <span className="deadline">Deadline: {scholarship.deadline}</span>
-                </div>
-                <h3>{scholarship.title}</h3>
-                <p className="provider">By {scholarship.provider}</p>
-                <p className="description">{scholarship.description}</p>
-                <div className="amount-badge">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M12 6v12M9 9.5c0-1.5 1.5-2.5 3-2.5s3 1 3 2.5c0 2-3 2.5-3 4.5M12 18h.01"/>
-                  </svg>
-                  <span>{scholarship.amount}</span>
-                </div>
-                <div className="eligibility">
-                  <h4>Eligibility:</h4>
-                  <ul>
-                    {scholarship.eligibility.map((req, idx) => (
-                      <li key={idx}>{req}</li>
-                    ))}
-                  </ul>
-                </div>
-                <button className="apply-btn" onClick={() => handleApply(scholarship)}>Apply Now</button>
-              </div>
-            ))}
+          <h3>{scholarship.title}</h3>
+
+          <p className="provider">
+            By {scholarship.provider}
+          </p>
+
+          <p className="description">
+            {scholarship.description}
+          </p>
+
+          <div className="amount-badge">
+            <span>{scholarship.amount}</span>
           </div>
-        </section>
+
+          <div className="eligibility">
+            <h4>Eligibility:</h4>
+            <ul>
+              {scholarship.eligibility.map((req, idx) => (
+                <li key={idx}>{req}</li>
+              ))}
+            </ul>
+          </div>
+
+          <button
+            className="apply-btn"
+            onClick={() => handleApply(scholarship)}
+          >
+            Apply Now
+          </button>
+        </div>
+      ))}
+    </div>
+  ) : (
+    <div className="coming-soon">
+      <h3>Scholarships Coming Soon</h3>
+
+      <p>
+        Ogera is currently building partnerships with universities,
+        organizations, foundations, and companies to provide verified
+        scholarship opportunities for students and young professionals.
+      </p>
+
+      <p>
+        Scholarship applications are not yet open. Follow Ogera for updates
+        and be among the first to access new opportunities when they become
+        available.
+      </p>
+    </div>
+  )}
+</section>
+)}
 
         {/* How to Apply */}
         <section className="how-to-apply">
