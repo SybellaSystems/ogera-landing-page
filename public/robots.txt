@@ -1,7 +1,15 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ogera.sybellasystems.co.rw/sitemap.xml
-
+# Block non-public and backend routes
 Disallow: /admin
 Disallow: /api
+Disallow: /dashboard
+Disallow: /internal
+Disallow: /server
+
+# Block query-heavy or dynamic endpoints (optional but recommended)
+Disallow: /*?*
+
+# Sitemap
+Sitemap: https://ogera.sybellasystems.co.rw/sitemap.xml
