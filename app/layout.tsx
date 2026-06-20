@@ -10,29 +10,33 @@ const nunito = Nunito({
   display: "swap",
 });
 
-// Strong SEO Metadata for Ogera
+// ==========================
+// SEO METADATA (OPTIMIZED)
+// ==========================
 export const metadata: Metadata = {
   metadataBase: new URL("https://ogera.sybellasystems.co.rw"),
 
-  title:
-    "Ogera – Student Jobs, Internships & Remote Work Platform in Africa",
+  title: {
+    default: "Ogera | Student Jobs, Internships & Freelance Platform in Africa",
+    template: "%s | Ogera",
+  },
 
   description:
-    "Ogera by Sybella Systems is Africa’s leading student-first job platform. Find remote jobs, internships, and earn online while building your career using TrustScore™.",
+    "Find student jobs, internships, and freelance work in Africa. Ogera connects students with real opportunities, remote jobs, and entry-level careers across Africa.",
 
   keywords: [
     "student jobs Africa",
-    "online jobs for students",
-    "remote jobs Africa",
-    "internships Africa",
-    "earn money online students",
-    "freelance platform Africa",
-    "job platform Rwanda",
-    "student work platform",
+    "internships for African students",
+    "online jobs for students Africa",
+    "freelance jobs Africa",
+    "remote jobs for students",
+    "entry level jobs Africa",
+    "graduate jobs Africa",
     "youth employment Africa",
-    "Ogera jobs",
-    "TrustScore system",
-    "Sybella Systems Ogera",
+    "part time jobs students Africa",
+    "student job platform Africa",
+    "internship platform Africa",
+    "earn money online students Africa",
   ],
 
   authors: [{ name: "Ogera by Sybella Systems" }],
@@ -56,9 +60,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://ogera.sybellasystems.co.rw",
     siteName: "Ogera",
-    title: "Ogera – Africa’s Student Job & Earning Platform",
+    title: "Student Jobs, Internships & Freelance Platform in Africa",
     description:
-      "Find student jobs, internships, and remote work across Africa. Ogera connects talent with real opportunities using TrustScore™ for skill-based hiring.",
+      "Find verified student jobs, internships, and freelance opportunities across Africa. Build experience and earn online with Ogera.",
     images: [
       {
         url: "/images/og-image.jpg",
@@ -72,21 +76,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@ogera",
-    creator: "@ogera",
-    title: "Ogera – Build now. Graduate proud.",
+    creator: "@sybellasystems",
+    title: "Student Jobs & Internships in Africa | Ogera",
     description:
-      "Join Ogera to access student jobs, remote work, and real earning opportunities. Build your TrustScore™ and get hired based on skills.",
+      "Join Ogera to find internships, freelance work, and student jobs across Africa. Build your career while earning online.",
     images: ["/images/twitter-image.jpg"],
-  },
-
-  alternates: {
-    canonical: "https://ogera.sybellasystems.co.rw",
-    languages: {
-      "en-US": "https://ogera.sybellasystems.co.rw",
-      "fr-FR": "https://ogera.sybellasystems.co.rw/fr",
-      "sw-KE": "https://ogera.sybellasystems.co.rw/sw",
-      "rw-RW": "https://ogera.sybellasystems.co.rw/rw",
-    },
   },
 
   verification: {
@@ -106,28 +100,92 @@ export default function RootLayout({
         className={`${nunito.className} antialiased bg-white text-gray-900`}
       >
         {/* ===================== */}
-        {/* GOOGLE ANALYTICS (CORRECT PLACE) */}
+        {/* GOOGLE ANALYTICS */}
         {/* ===================== */}
-
         <Script
-  src="https://www.googletagmanager.com/gtag/js?id=G-MYPLT8Q17H"
-  strategy="afterInteractive"
-/>
+          src="https://www.googletagmanager.com/gtag/js?id=G-MYPLT8Q17H"
+          strategy="afterInteractive"
+        />
 
-<Script id="ga-init" strategy="afterInteractive">
-  {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){window.dataLayer.push(arguments);}
+        <Script id="ga-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            window.gtag = gtag;
 
-    window.gtag = gtag;
+            gtag('js', new Date());
 
-    gtag('js', new Date());
+            gtag('config', 'G-MYPLT8Q17H', {
+              send_page_view: true
+            });
+          `}
+        </Script>
 
-    gtag('config', 'G-MYPLT8Q17H', {
-      send_page_view: true
-    });
-  `}
-</Script>
+        {/* ===================== */}
+        {/* SEO SCHEMA - ORGANIZATION */}
+        {/* ===================== */}
+        <Script
+          id="schema-org"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Ogera",
+              alternateName: "Ogera Africa",
+              url: "https://ogera.sybellasystems.co.rw",
+              logo: "https://ogera.sybellasystems.co.rw/images/logo.png",
+              sameAs: [
+                "https://twitter.com/ogera",
+                "https://linkedin.com/company/sybella-systems",
+              ],
+              description:
+                "Student jobs, internships, and freelance platform connecting African students with real opportunities.",
+            }),
+          }}
+        />
+
+        {/* ===================== */}
+        {/* SEO SCHEMA - FAQ */}
+        {/* ===================== */}
+        <Script
+          id="faq-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "What is Ogera?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Ogera is a student jobs platform in Africa connecting students with internships, freelance jobs, and entry-level opportunities.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Is Ogera free for students?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Yes, Ogera is completely free for students to find jobs and internships.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "What jobs can I find on Ogera?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Students can find internships, freelance jobs, remote work, and entry-level jobs across Africa.",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
 
         {children}
         <Analytics />
