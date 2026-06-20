@@ -14,9 +14,9 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section className="about-hero">
           <div className="about-hero-content">
-            <h1 className="about-hero-title">About Ogera</h1>
+            <h1 className="about-hero-title">About Sybella Systems</h1>
             <p className="about-hero-subtitle">
-              Building trust in every hire across Africa
+               Building technology that powers trust, education, and opportunity across Africa
             </p>
           </div>
 
@@ -38,11 +38,9 @@ export default function AboutPage() {
                 <div className="mission-block">
                   <h2 className="section-heading">Our Mission</h2>
                   <p className="section-text">
-                    We&apos;re committed to transforming how people find work by creating a transparent,
-                    secure platform where every job listing is verified and every employer is held
-                    accountable. Through our innovative TrustScore system, we empower job seekers
-                    to make confident career decisions without worrying about scams or misleading
-                    opportunities.
+                     Sybella Systems is committed to building digital infrastructure that empowers
+  African youth, businesses, and institutions through trusted, intelligent platforms.
+  We design systems that connect opportunity with capability.
                   </p>
                 </div>
 
@@ -61,7 +59,7 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* Impact Stats */}
+          {/* Impact Stats 
           <section className="stats-section">
             <div className="stats-grid">
               <div className="stat-item">
@@ -81,20 +79,18 @@ export default function AboutPage() {
                 <span className="stat-label">Trust Rating</span>
               </div>
             </div>
-          </section>
+          </section> 
+          */}
 
           {/* Our Story */}
           <section className="our-story-section">
             <div className="our-story-container">
               <h2 className="our-story-title">Our Story</h2>
               <p className="our-story-text">
-                Ogera started with a simple observation: too many talented people were getting
-                burned by fake job postings, while honest employers struggled to stand out in
-                a crowded marketplace. Founded by a team of industry veterans who&apos;d experienced
-                these challenges firsthand, we set out to bridge the gap between job seekers
-                and trustworthy opportunities. From our first prototype to serving thousands of
-                users today, we&apos;ve stayed true to our core principle — trust should be built-in,
-                not an afterthought.
+                Sybella Systems was founded to solve one core problem: Africa has talent, but lacks
+trusted digital systems that connect people to opportunity fairly and transparently.
+From education platforms to job ecosystems like Ogera, we build tools that make
+opportunity more accessible and measurable.
               </p>
             </div>
           </section>
@@ -213,8 +209,8 @@ export default function AboutPage() {
 
           {/* CTA Section */}
           <section className="about-cta">
-            <h2>Ready to Find Jobs You Can Trust?</h2>
-            <p>Join thousands of job seekers and employers building a more transparent job market across Africa.</p>
+            <h2>Ready to build the future of digital trust?</h2>
+            <p>Explore Sybella Systems or partner with us to create impactful platforms like Ogera.</p>
             <div className="cta-buttons">
               <Link href="/contact" className="cta-primary">Get in Touch</Link>
               <Link href="/partners" className="cta-secondary">Become a Partner</Link>

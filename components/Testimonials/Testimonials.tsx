@@ -74,6 +74,8 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 function Testimonials() {
+  const showTestimonials = false;
+  if (!showTestimonials) return null;
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isVisible, setIsVisible] = useState(false);

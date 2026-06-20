@@ -1172,3 +1172,24 @@
   }
 
 }
+.coming-soon {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.coming-soon h3 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.coming-soon p {
+  color: #6b7280;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}

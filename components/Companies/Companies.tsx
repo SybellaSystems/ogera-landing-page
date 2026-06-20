@@ -3,6 +3,8 @@
 import './Companies.css';
 
 function Companies() {
+  const showCompanies = false;
+  if (!showCompanies) return null;
   const companies = [
     {
       name: "Safaricom",

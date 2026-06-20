@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ogera.sybellasystems.co.rw/sitemap.xml
+
+Disallow: /admin
+Disallow: /api
