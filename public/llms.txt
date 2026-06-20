@@ -1,0 +1,7 @@
+Ogera is a student job platform in Africa connecting students with internships, freelance work, and entry-level remote jobs.
+
+Pages:
+- /jobs
+- /scholarship
+- /partners
+- /trustscore
