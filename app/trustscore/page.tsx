@@ -118,6 +118,7 @@ const faqs = [
 export default function TrustScorePage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const showFAQs = false;
 
   const handleMouseMove = useCallback((e: React.MouseEvent<HTMLElement>) => {
     if (!gridRef.current) return;
@@ -229,6 +230,7 @@ export default function TrustScorePage() {
         </section>
 
         {/* FAQ Section */}
+        {showFAQs && (
         <section className="trustscore-faq-section">
           <div className="section-header">
             <h2>Frequently Asked Questions</h2>
@@ -266,6 +268,7 @@ export default function TrustScorePage() {
             ))}
           </div>
         </section>
+        )}
       </main>
       <Footer />
     </>
