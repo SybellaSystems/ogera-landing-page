@@ -18,6 +18,7 @@ import {
   JOB_TYPE_LABELS,
 } from "@/lib/jobSearchParams";
 import "./jobs.css";
+import Script from "next/dist/client/script";
 
 const JOBS_PER_PAGE = 15;
 const DEFAULT_CURRENCY = "USD";
@@ -554,6 +555,25 @@ function JobsPageContent() {
           </div>
         </section>
       </main>
+        
+        <Script
+      id="jobs-jsonld"
+      type="application/ld+json"
+      strategy="afterInteractive"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "JobPosting",
+          title: "Browse Jobs",
+          description: "Find verified job opportunities across Africa",
+          hiringOrganization: {
+            "@type": "Organization",
+            name: "Ogera",
+            url: "https://yourdomain.com",
+          },
+        }),
+      }}
+    />
       <Footer />
     </>
   );
