@@ -1,7 +1,6 @@
-const API_URL =
-  process.env.NEXT_PUBLIC_ENV === 'sbnb'
-    ? 'https://ogera-be-sbnb.onrender.com/api'
-    : 'https://ogera-be-1.onrender.com/api';
+// Public landing page uses prod backend by default; override via NEXT_PUBLIC_API_URL for local dev.
+export const API_URL =
+  process.env.NEXT_PUBLIC_API_URL ?? 'https://ogera-be-sbnb.onrender.com/api';
 export interface ApiWorker {
   user_id: string;
   full_name: string;

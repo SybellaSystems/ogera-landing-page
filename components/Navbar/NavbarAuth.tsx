@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { API_URL } from "@/lib/api";
 
 function parseCookies(): Record<string, string> {
   return document.cookie.split(";").reduce((acc, c) => {
@@ -50,7 +51,6 @@ export default function NavbarAuth({ appUrl, mobile = false, onClose }: Props) {
     //    This is what actually logs the user out of the dashboard session —
     //    without this, they'd still be logged in on app.ogera... next time they visit.
     try {
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://app.ogera.sybellasystems.co.rw/api";
       await fetch(`${API_URL}/auth/logout`, {
         method: "POST",
         credentials: "include",
