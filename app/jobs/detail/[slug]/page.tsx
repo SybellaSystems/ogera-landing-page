@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
+import Head from "next/head";
 import Navbar from "@/components/Navbar/NavbarWrapper";
 import Footer from "@/components/Footer/Footer";
 import { fetchJobById, checkHasApplied, type ApiJob } from "@/lib/api";
@@ -139,8 +140,59 @@ export default function JobDetailPage() {
     : "";
   const budgetLabel = `${(job.currency || DEFAULT_CURRENCY).toUpperCase()} ${Number(job.budget || 0).toLocaleString()}`;
 
+  // Build JobPosting schema data for SEO Rich Snippets
+  const jobPostingSchema = {
+    "@context": "https://schema.org/",
+    "@type": "JobPosting",
+    title: job.job_title,
+    description: job.description,
+    identifier: {
+      "@type": "PropertyValue",
+      name: job.employer?.full_name || "Ogera",
+      value: slug,
+    },
+    datePosted: job.created_at || new Date().toISOString(),
+    employmentType: job.employment_type ? job.employment_type.toUpperCase().replace(/\s+/g, "_") : "FULL_TIME",
+    hiringOrganization: {
+      "@type": "Organization",
+      name: job.employer?.full_name || "Ogera Employer",
+      sameAs: "https://ogera.sybellasystems.co.rw",
+    },
+    jobLocation: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: job.location || "Africa",
+        addressRegion: job.location || "Africa",
+        addressCountry: "Africa",
+      },
+    },
+    ...(job.budget && {
+      baseSalary: {
+        "@type": "MonetaryAmount",
+        currency: (job.currency || DEFAULT_CURRENCY).toUpperCase(),
+        value: {
+          "@type": "QuantitativeValue",
+          value: Number(job.budget),
+          unitText: "MONTH",
+        },
+      },
+    }),
+  };
+
   return (
     <>
+      {/* Dynamic SEO Title & Description for the Client Component */}
+      <Head>
+        <title>{`${job.job_title} | Student Job & Internship | Ogera`}</title>
+        <meta name="description" content={job.description.slice(0, 160)} />
+        <link rel="canonical" href={`https://ogera.sybellasystems.co.rw/jobs/${slug}`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema) }}
+        />
+      </Head>
+
       <Navbar />
       <main className="jd-page">
         {/* Hero Header */}

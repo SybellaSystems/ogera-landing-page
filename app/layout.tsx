@@ -17,16 +17,17 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ogera.sybellasystems.co.rw"),
 
   title: {
-    default: "Ogera | Student Jobs, Internships & Freelance Platform in Africa",
+    default: "Ogera | Student Jobs, Internships & Career Development Platform in Africa",
     template: "%s | Ogera",
   },
 
   description:
-    "Find student jobs, internships, and freelance work in Africa. Ogera connects students with real opportunities, remote jobs, and entry-level careers across Africa.",
+    "Find student jobs, internships, and career development resources in Africa. Ogera connects students with real opportunities, freelance work, and mentorship across Africa.",
 
   keywords: [
     "student jobs Africa",
     "internships for African students",
+    "career development platform students Africa",
     "online jobs for students Africa",
     "freelance jobs Africa",
     "remote jobs for students",
@@ -42,6 +43,20 @@ export const metadata: Metadata = {
   authors: [{ name: "Ogera by Sybella Systems" }],
   creator: "Ogera",
   publisher: "Sybella Systems",
+
+  alternates: {
+    canonical: "https://ogera.sybellasystems.co.rw",
+    languages: {
+      "en-US": "https://ogera.sybellasystems.co.rw",
+    },
+  },
+
+  manifest: "/manifest.json",
+
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/images/apple-touch-icon.png",
+  },
 
   robots: {
     index: true,
@@ -60,15 +75,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://ogera.sybellasystems.co.rw",
     siteName: "Ogera",
-    title: "Student Jobs, Internships & Freelance Platform in Africa",
+    title: "Student Jobs, Internships & Career Development Platform in Africa",
     description:
-      "Find verified student jobs, internships, and freelance opportunities across Africa. Build experience and earn online with Ogera.",
+      "Find verified student jobs, internships, and career development resources across Africa. Build experience and grow your career with Ogera.",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Ogera - Student Job Platform in Africa",
+        alt: "Ogera - Student Job & Career Development Platform in Africa",
       },
     ],
   },
@@ -77,15 +92,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@ogera",
     creator: "@sybellasystems",
-    title: "Student Jobs & Internships in Africa | Ogera",
+    title: "Student Jobs, Internships & Career Development | Ogera",
     description:
-      "Join Ogera to find internships, freelance work, and student jobs across Africa. Build your career while earning online.",
+      "Join Ogera to find internships, student jobs, and career development resources across Africa. Build your professional future today.",
     images: ["/images/twitter-image.jpg"],
   },
 
   verification: {
-    google: "YOUR-GOOGLE-VERIFICATION-CODE",
-    yandex: "YOUR-YANDEX-VERIFICATION-CODE",
+    google: "YOUR-ACTUAL-GOOGLE-VERIFICATION-CODE", // Replace with your real code
   },
 };
 
@@ -122,7 +136,7 @@ export default function RootLayout({
         </Script>
 
         {/* ===================== */}
-        {/* SEO SCHEMA - ORGANIZATION */}
+        {/* SEO SCHEMA - ORGANIZATION & WEBSITE */}
         {/* ===================== */}
         <Script
           id="schema-org"
@@ -131,17 +145,36 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Ogera",
-              alternateName: "Ogera Africa",
-              url: "https://ogera.sybellasystems.co.rw",
-              logo: "https://ogera.sybellasystems.co.rw/images/logo.png",
-              sameAs: [
-                "https://twitter.com/ogera",
-                "https://linkedin.com/company/sybella-systems",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  name: "Ogera",
+                  alternateName: "Ogera Africa",
+                  url: "https://ogera.sybellasystems.co.rw",
+                  logo: "https://ogera.sybellasystems.co.rw/images/logo.png",
+                  sameAs: [
+                    "https://twitter.com/ogera",
+                    "https://linkedin.com/company/sybella-systems",
+                  ],
+                  description:
+                    "Student jobs, internships, and career development platform connecting African students with real opportunities.",
+                  areaServed: {
+                    "@type": "Continent",
+                    name: "Africa",
+                  },
+                },
+                {
+                  "@type": "WebSite",
+                  url: "https://ogera.sybellasystems.co.rw",
+                  name: "Ogera",
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target:
+                      "https://ogera.sybellasystems.co.rw/jobs?q={search_term_string}",
+                    "query-input": "required name=search_term_string",
+                  },
+                },
               ],
-              description:
-                "Student jobs, internships, and freelance platform connecting African students with real opportunities.",
             }),
           }}
         />
@@ -163,7 +196,7 @@ export default function RootLayout({
                   name: "What is Ogera?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Ogera is a student jobs platform in Africa connecting students with internships, freelance jobs, and entry-level opportunities.",
+                    text: "Ogera is a student jobs, internships, and career development platform in Africa connecting students with professional opportunities and guidance.",
                   },
                 },
                 {
@@ -171,15 +204,15 @@ export default function RootLayout({
                   name: "Is Ogera free for students?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Yes, Ogera is completely free for students to find jobs and internships.",
+                    text: "Yes, Ogera is completely free for students to find jobs, internships, and career growth resources.",
                   },
                 },
                 {
                   "@type": "Question",
-                  name: "What jobs can I find on Ogera?",
+                  name: "What can I find on Ogera?",
                   acceptedAnswer: {
                     "@type": "Answer",
-                    text: "Students can find internships, freelance jobs, remote work, and entry-level jobs across Africa.",
+                    text: "Students can find internships, remote freelance jobs, entry-level opportunities, and career development advice across Africa.",
                   },
                 },
               ],
